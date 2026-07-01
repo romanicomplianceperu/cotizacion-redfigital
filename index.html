@@ -43,10 +43,11 @@
   .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
   .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
+    font-family:'Inter',sans-serif;
     text-transform:uppercase;
-    letter-spacing:0.14em;
-    font-size:12px;
+    letter-spacing:0.1em;
+    font-size:clamp(13px,1.4vw,15px);
+    font-weight:600;
     color:var(--gold);
     display:flex;
     align-items:center;
@@ -56,7 +57,6 @@
   .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);}
   ::selection{background:var(--gold-soft);color:var(--ink);}
 
-  /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
   .reveal.visible{opacity:1;transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){
@@ -151,23 +151,6 @@
   .btn-gold{background:var(--gold);color:var(--ink);}
   .btn-gold:hover{background:var(--gold-soft);}
   .btn svg{width:16px;height:16px;flex-shrink:0;}
-
-  .stamp{
-    position:absolute;top:38px;right:36px;
-    width:118px;height:118px;border-radius:50%;
-    border:2px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    transform:rotate(-11deg);opacity:0.85;
-    mix-blend-mode:multiply;
-  }
-  .stamp::before{
-    content:"";position:absolute;inset:8px;border:1px dashed var(--gold);border-radius:50%;
-  }
-  .stamp span{
-    font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold);
-    text-transform:uppercase;letter-spacing:0.12em;text-align:center;line-height:1.5;
-    font-weight:600;
-  }
 
   .hero-card{
     background:var(--ink);color:var(--paper);
@@ -266,7 +249,6 @@
   .folio-body-inner li{margin-bottom:8px;}
   .folio-body-inner li::marker{color:var(--gold);}
 
-  /* time distribution */
   .timedist{margin-top:56px;}
   .timedist h4{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--slate);margin-bottom:18px;}
   .timebar{display:flex;width:100%;height:14px;border-radius:20px;overflow:hidden;background:var(--paper-dim);border:1px solid var(--line);}
@@ -323,10 +305,11 @@
   /* ---------- FACILITADOR ---------- */
   .fac-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
   .fac-avatar{
-    width:220px;height:220px;border-radius:50%;background:var(--ink);
+    width:220px;height:220px;border-radius:50%;background:var(--ink);overflow:hidden;
     display:flex;align-items:center;justify-content:center;color:var(--gold-soft);
     font-family:'Fraunces',serif;font-size:52px;border:1px solid var(--gold);
   }
+  .fac-avatar img{width:100%;height:100%;object-fit:cover;}
   .fac-cred{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--slate-light);text-align:center;}
   .fac-name{font-size:26px;margin-bottom:4px;}
   .fac-role{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:20px;display:block;}
@@ -340,14 +323,58 @@
   /* ---------- CONTACTO ---------- */
   .contact{
     background:var(--ink);color:var(--paper);border-radius:var(--radius);
-    padding:64px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+    padding:52px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
   }
-  .contact h2{color:var(--paper);font-size:clamp(26px,3vw,36px);}
+  .contact h2{color:var(--paper);font-size:clamp(24px,3vw,34px);}
   .contact p{color:rgba(246,244,236,0.7);margin-top:14px;max-width:48ch;}
   .contact-actions{display:flex;flex-direction:column;gap:14px;}
   .contact-actions .btn{justify-content:center;width:100%;}
   .btn-wa{background:#25D366;color:#0E2238;}
   .btn-wa:hover{background:#3ee27f;}
+
+  /* ---------- SCHEDULER MODAL ---------- */
+  .modal-overlay{
+    display:none;position:fixed;inset:0;background:rgba(14,34,56,0.6);
+    z-index:300;align-items:center;justify-content:center;padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--paper);max-width:480px;width:100%;border-radius:4px;
+    box-shadow:0 30px 70px -20px rgba(14,34,56,0.5);overflow:hidden;
+  }
+  .modal-header{
+    padding:24px 28px;border-bottom:1px solid var(--line);display:flex;
+    justify-content:space-between;align-items:center;
+  }
+  .modal-header h3{font-size:20px;}
+  .modal-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink);padding:4px;}
+  .modal-body{padding:28px;}
+  .modal-body label{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    text-transform:uppercase;letter-spacing:0.08em;color:var(--slate);margin-bottom:8px;
+  }
+  .modal-body input,.modal-body select,.modal-body textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);
+    font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);
+    margin-bottom:20px;outline:none;transition:border-color .2s;
+  }
+  .modal-body input:focus,.modal-body select:focus,.modal-body textarea:focus{
+    border-color:var(--gold);
+  }
+  .modal-body textarea{resize:vertical;min-height:70px;}
+  .time-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;}
+  .time-slot{
+    padding:10px;text-align:center;border:1px solid var(--line);border-radius:var(--radius);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;
+    transition:all .2s;color:var(--slate);
+  }
+  .time-slot:hover{border-color:var(--gold);color:var(--ink);}
+  .time-slot.selected{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .modal-footer{padding:0 28px 28px;}
+  .modal-footer .btn{width:100%;justify-content:center;}
+  .modal-success{display:none;text-align:center;padding:48px 28px;}
+  .modal-success h3{font-size:22px;margin-bottom:12px;}
+  .modal-success p{color:var(--slate);font-size:14px;}
 
   /* ---------- FOOTER ---------- */
   footer{padding:40px 0;border-top:1px solid var(--line);}
@@ -371,7 +398,6 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:960px){
     .hero-grid{grid-template-columns:1fr;}
-    .stamp{width:90px;height:90px;top:20px;right:20px;}
     .char-grid{grid-template-columns:1fr;}
     .value-grid{grid-template-columns:1fr;}
     .invest-wrap{grid-template-columns:1fr;}
@@ -380,9 +406,10 @@
     .fac-wrap p{margin:0 auto;}
     .fac-tags{justify-content:center;}
     .fac-avatar{margin:0 auto;}
-    .contact{grid-template-columns:1fr;text-align:center;padding:48px 28px;}
-    .contact p{margin:14px auto 0;}
-    .contact-actions{max-width:340px;margin:0 auto;}
+    .contact{grid-template-columns:1fr;text-align:center;padding:36px 24px;}
+    .contact p{margin:10px auto 0;}
+    .contact-actions{max-width:100%;margin:0 auto;}
+    .contact-actions .btn{font-size:11px;padding:12px 16px;}
   }
   @media (max-width:760px){
     .nav-links{display:none;}
@@ -395,12 +422,15 @@
   }
   @media (max-width:480px){
     .hero{padding:56px 0 44px;}
-    .stamp{position:static;transform:rotate(-6deg);margin-bottom:24px;width:96px;height:96px;}
     .file-meta{font-size:10.5px;gap:8px 16px;}
     .hero-actions{flex-direction:column;}
     .hero-actions .btn{width:100%;justify-content:center;}
     .invest-left,.invest-right{padding:32px 24px;}
     .invest-left .total{font-size:44px;}
+    .contact{padding:28px 20px;gap:24px;}
+    .contact h2{font-size:22px;}
+    .contact p{font-size:14px;margin:8px auto 0;}
+    .contact-actions .btn{font-size:10.5px;padding:11px 14px;gap:6px;}
   }
 </style>
 </head>
@@ -409,29 +439,77 @@
 <header>
   <nav class="nav">
     <a href="#top" class="brand">
-      <img src="logos.png" alt="Romani Compliance">    </a>
+      <img src="logos.png" alt="Romani Compliance">
+    </a>
     <div class="nav-links">
       <a href="#propuesta">Propuesta</a>
       <a href="#temario">Temario</a>
       <a href="#valor">Valor agregado</a>
-      <a href="#inversion">Inversión</a>
+      <a href="#inversion">Inversi&oacute;n</a>
       <a href="#facilitador">Facilitador</a>
       <a href="#contacto" class="nav-cta">Contactar</a>
     </div>
-    <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+    <button class="burger" id="burgerBtn" aria-label="Abrir men&uacute;">
       <span></span><span></span><span></span>
     </button>
   </nav>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">&times;</button>
+  <button class="close-btn" id="closeMenu" aria-label="Cerrar men&uacute;">&times;</button>
   <a href="#propuesta">Propuesta</a>
   <a href="#temario">Temario</a>
   <a href="#valor">Valor agregado</a>
-  <a href="#inversion">Inversión</a>
+  <a href="#inversion">Inversi&oacute;n</a>
   <a href="#facilitador">Facilitador</a>
   <a href="#contacto" class="mm-cta">Contactar</a>
+</div>
+
+<!-- SCHEDULER MODAL -->
+<div class="modal-overlay" id="schedulerModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Agendar capacitaci&oacute;n</h3>
+      <button class="modal-close" id="closeScheduler">&times;</button>
+    </div>
+    <div id="schedulerForm">
+      <div class="modal-body">
+        <label>Nombre completo</label>
+        <input type="text" id="schedName" placeholder="Nombre del contacto">
+
+        <label>Correo electr&oacute;nico</label>
+        <input type="email" id="schedEmail" placeholder="correo@empresa.com">
+
+        <label>Fecha preferida</label>
+        <input type="date" id="schedDate">
+
+        <label>Horario preferido</label>
+        <div class="time-slots" id="timeSlots">
+          <div class="time-slot" data-time="09:00">09:00</div>
+          <div class="time-slot" data-time="10:00">10:00</div>
+          <div class="time-slot" data-time="11:00">11:00</div>
+          <div class="time-slot" data-time="15:00">15:00</div>
+          <div class="time-slot" data-time="16:00">16:00</div>
+          <div class="time-slot" data-time="17:00">17:00</div>
+        </div>
+
+        <label>Comentarios (opcional)</label>
+        <textarea id="schedNotes" placeholder="Alguna indicaci&oacute;n adicional..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="submitSchedule">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+          Confirmar solicitud
+        </button>
+      </div>
+    </div>
+    <div class="modal-success" id="schedulerSuccess">
+      <h3>Solicitud enviada</h3>
+      <p>Se ha enviado la solicitud de agendamiento. Denis Romani confirmara la fecha y hora a la brevedad.</p>
+      <br>
+      <button class="btn btn-outline" id="closeSuccess">Cerrar</button>
+    </div>
+  </div>
 </div>
 
 <main id="top">
@@ -439,46 +517,43 @@
   <!-- HERO -->
   <section class="hero" style="padding-top:72px;">
     <div class="wrap" style="position:relative;">
-      <div class="stamp">
-        <span>Propuesta<br>personalizada<br>2026</span>
-      </div>
       <div class="file-meta">
-        <span><b>Expediente:</b> RD-SPLAFT-2026-001</span>
-        <span><b>Cliente:</b> Red Digital del Perú S.A.C.</span>
+        <span><b>Cotizaci&oacute;n:</b> RC-SPLAFT-2026-001</span>
+        <span><b>Cliente:</b> Red Digital del Per&uacute; S.A.C.</span>
         <span><b>RUC:</b> 20566598389</span>
-        <span><b>Emisión:</b> <span id="issueDate"></span></span>
+        <span><b>Emisi&oacute;n:</b> <span id="issueDate"></span></span>
       </div>
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">Propuesta económica · Servicio de capacitación</div>
-          <h1>Capacitación SPLAFT diseñada <em>exclusivamente</em> para el modelo operativo de Red Digital.</h1>
-          <p class="lead">Un programa de dos horas que identifica los vectores de riesgo LA/FT reales de su red de más de 120,000 puntos de venta y entrega al Oficial de Cumplimiento las herramientas concretas para mitigarlos — con independencia de la condición formal de sujeto obligado.</p>
+          <div class="eyebrow">Propuesta econ&oacute;mica &middot; Servicio de capacitaci&oacute;n</div>
+          <h1>Capacitaci&oacute;n SPLAFT dise&ntilde;ada <em>exclusivamente</em> para Red Digital del Per&uacute; S.A.C.</h1>
+          <p class="lead">Un programa de dos horas que identifica los vectores de riesgo LA/FT reales de su red de m&aacute;s de 120,000 puntos de venta y entrega al Oficial de Cumplimiento las herramientas concretas para mitigarlos.</p>
           <div class="hero-actions">
             <a href="#temario" class="btn btn-primary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
               Ver temario completo
             </a>
-            <button class="btn btn-outline" id="downloadPdfBtn">
+            <a href="https://raw.githubusercontent.com/omaroliden/romanicompliance/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-outline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-              Descargar cotización
-            </button>
+              Descargar cotizaci&oacute;n
+            </a>
             <a href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" class="btn btn-wa">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.48-.02s-.44.06-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
               WhatsApp directo
             </a>
           </div>
         </div>
         <div class="hero-card">
-          <span class="tag">Inversión total</span>
-          <h3>Servicio de capacitación SPLAFT</h3>
-          <div class="price"><sup>USD</sup> 200<small>Equivalente a USD 100.00 por hora de capacitación</small></div>
+          <span class="tag">Inversi&oacute;n total</span>
+          <h3>Servicio de capacitaci&oacute;n SPLAFT</h3>
+          <div class="price"><sup>USD</sup> 200<small>Equivalente a USD 100.00 por hora de capacitaci&oacute;n</small></div>
           <ul>
-            <li><span class="dot"></span>2 horas de exposición + 30 min de consultas específicas</li>
-            <li><span class="dot"></span>Diagnóstico preliminar de riesgo SPLAFT, sin costo adicional</li>
-            <li><span class="dot"></span>Análisis regulatorio escrito entregado en 5 días hábiles</li>
-            <li><span class="dot"></span>Sesión de seguimiento de 30 min dentro de los 15 días posteriores</li>
+            <li><span class="dot"></span>2 horas de exposici&oacute;n + 30 min de consultas espec&iacute;ficas</li>
+            <li><span class="dot"></span>Diagn&oacute;stico preliminar de riesgo SPLAFT, sin costo adicional</li>
+            <li><span class="dot"></span>An&aacute;lisis regulatorio escrito entregado en 5 d&iacute;as h&aacute;biles</li>
+            <li><span class="dot"></span>Sesi&oacute;n de seguimiento de 30 min dentro de los 5 d&iacute;as posteriores</li>
           </ul>
-          <div class="validity">Propuesta válida hasta <span id="validUntil"></span></div>
+          <div class="validity">Propuesta v&aacute;lida hasta <span id="validUntil"></span></div>
         </div>
       </div>
     </div>
@@ -487,8 +562,8 @@
   <!-- STATS -->
   <section class="stats" style="padding:0;">
     <div class="wrap stats-grid" style="padding:56px 24px;">
-      <div class="stat reveal"><b data-count="15">0</b><span>Años de experiencia</span></div>
-      <div class="stat reveal"><b data-count="4">0</b><span>Módulos especializados</span></div>
+      <div class="stat reveal"><b data-count="21">0</b><span>A&ntilde;os de experiencia</span></div>
+      <div class="stat reveal"><b data-count="4">0</b><span>M&oacute;dulos especializados</span></div>
       <div class="stat reveal"><b data-count="120" data-suffix="K+">0</b><span>Puntos de venta analizados</span></div>
       <div class="stat reveal"><b data-count="100" data-suffix="%">0</b><span>Personalizada a su modelo</span></div>
     </div>
@@ -498,25 +573,25 @@
   <section id="propuesta">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Característica del servicio</div>
-        <h2>No es una charla genérica de compliance. Es un análisis de su operación.</h2>
-        <p>El contenido conceptual se construye sobre el modelo operativo real de Red Digital del Perú S.A.C., identificando los vectores de riesgo a los que efectivamente se expone la empresa, más allá de si hoy se le considera formalmente sujeto obligado ante la UIF-Perú.</p>
+        <div class="eyebrow">Caracter&iacute;stica del servicio</div>
+        <h2>No es una charla gen&eacute;rica. Es un an&aacute;lisis de su operaci&oacute;n.</h2>
+        <p>El contenido se construye sobre el modelo operativo real de Red Digital del Per&uacute; S.A.C., identificando los riesgos concretos a los que se expone la empresa en materia de lavado de activos y financiamiento del terrorismo.</p>
       </div>
       <div class="char-grid reveal">
         <div class="char-cell">
-          <span class="num">01 / Duración</span>
-          <h4>2 horas de capacitación</h4>
-          <p>1 hora de preparación de material a medida y 2 horas de exposición, con 30 minutos adicionales para consultas específicas sobre el modelo de Red Digital.</p>
+          <span class="num">01 / Duraci&oacute;n</span>
+          <h4>2 horas de capacitaci&oacute;n</h4>
+          <p>1 hora de preparaci&oacute;n de material a medida y 2 horas de exposici&oacute;n, con 30 minutos adicionales para consultas.</p>
         </div>
         <div class="char-cell">
           <span class="num">02 / Enfoque</span>
-          <h4>Basada en su operación real</h4>
-          <p>Se analizan la estructura de distribución, los flujos de saldo virtual y los sectores económicos predominantes en su red de puntos de venta.</p>
+          <h4>Basada en su operaci&oacute;n real</h4>
+          <p>Se analizan la estructura de distribuci&oacute;n, los flujos de saldo virtual y los sectores econ&oacute;micos de su red de puntos de venta.</p>
         </div>
         <div class="char-cell">
           <span class="num">03 / Entregables</span>
-          <h4>Documentación de respaldo</h4>
-          <p>Diagnóstico preliminar, mapa de tipologías, análisis regulatorio escrito y sesión de seguimiento — todo incluido en la inversión.</p>
+          <h4>Documentaci&oacute;n de respaldo</h4>
+          <p>Diagn&oacute;stico preliminar, mapa de tipolog&iacute;as, an&aacute;lisis regulatorio escrito y sesi&oacute;n de seguimiento.</p>
         </div>
       </div>
     </div>
@@ -526,9 +601,9 @@
   <section id="temario" style="background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Programa de capacitación</div>
+        <div class="eyebrow">Programa de capacitaci&oacute;n</div>
         <h2>Temario</h2>
-        <p>Dirigido al Oficial de Cumplimiento de Red Digital del Perú S.A.C. Facilita: Abg. Mg. Denis Gabriel Romani Seminario. Haga clic en cada módulo para ver el contenido completo.</p>
+        <p>Dirigido al Oficial de Cumplimiento de Red Digital del Per&uacute; S.A.C. Facilita: Abg. Mg. Denis Gabriel Romani Seminario.</p>
       </div>
 
       <div class="folios reveal">
@@ -537,7 +612,7 @@
           <div class="folio-head">
             <span class="folio-index">01</span>
             <div class="folio-title">
-              <h3>¿Por qué Red Digital necesita entender el SPLAFT?</h3>
+              <h3>&iquest;Qu&eacute; es el SPLAFT y por qu&eacute; le importa a Red Digital?</h3>
               <span class="meta">20 minutos</span>
             </div>
             <span class="folio-toggle"></span>
@@ -545,19 +620,27 @@
           <div class="folio-body">
             <div class="folio-body-inner">
               <div class="sub">
-                <h5>1.1 · El riesgo que viene del modelo de negocio</h5>
+                <h5>1.1 &middot; &iquest;Qu&eacute; es el SPLAFT?</h5>
                 <ul>
-                  <li>Más de 120,000 puntos de venta que manejan efectivo de forma descentralizada y a gran escala: una señal de riesgo en sí misma para la UIF-Perú y el GAFI.</li>
-                  <li>La recaudación por cuenta de marcas afiliadas convierte a cada punto de venta en un canal de ingreso de dinero al sistema formal, acercándolo a los servicios de transferencia de valor (MVTS) de alto riesgo según el GAFI.</li>
-                  <li>El D.Leg. N.° 1106 sanciona la facilitación del lavado de activos aunque la empresa no esté formalmente inscrita ante la UIF.</li>
+                  <li>El Sistema de Prevenci&oacute;n de Lavado de Activos y Financiamiento del Terrorismo (SPLAFT) es el conjunto de pol&iacute;ticas y controles que toda empresa debe implementar para evitar que su negocio sea usado, directa o indirectamente, para mover dinero de origen il&iacute;cito.</li>
+                  <li>No importa si la empresa est&aacute; formalmente inscrita ante la UIF-Per&uacute;: el riesgo penal existe igual. El D.Leg. N.&deg; 1106 sanciona la facilitaci&oacute;n del lavado de activos sin importar la condici&oacute;n formal de la empresa.</li>
                 </ul>
               </div>
               <div class="sub">
-                <h5>1.2 · El marco normativo y su impacto real</h5>
+                <h5>1.2 &middot; &iquest;Por qu&eacute; Red Digital est&aacute; expuesta?</h5>
                 <ul>
-                  <li>Ley N.° 27693 y su Reglamento (D.S. N.° 020-2017-JUS): definición de sujeto obligado, categorías y consecuencias del incumplimiento.</li>
-                  <li>Nuevo Reglamento del Sistema de Pagos del BCRP (Circular 2025/2026): la figura del Proveedor de Servicios de Pago (PSP).</li>
-                  <li>D.Leg. N.° 1106 y responsabilidad de la persona jurídica (Ley N.° 30424).</li>
+                  <li>M&aacute;s de 120,000 puntos de venta manejan efectivo de forma descentralizada. Eso, por s&iacute; solo, ya es una se&ntilde;al de riesgo para la UIF-Per&uacute; y el GAFI.</li>
+                  <li>La recaudaci&oacute;n por cuenta de marcas afiliadas convierte a cada punto de venta en un canal de ingreso de dinero al sistema formal.</li>
+                  <li>El nuevo Reglamento del Sistema de Pagos del BCRP introduce la figura del Proveedor de Servicios de Pago (PSP), que podr&iacute;a aplicar a Red Digital.</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <h5>1.3 &middot; &iquest;C&oacute;mo le sirve a Red Digital?</h5>
+                <ul>
+                  <li>Protege a la empresa y a sus directivos de responsabilidad penal.</li>
+                  <li>Reduce el riesgo de sanciones administrativas y multas.</li>
+                  <li>Genera confianza ante las marcas afiliadas, bancos y socios comerciales.</li>
+                  <li>Prepara a Red Digital para cumplir con las nuevas exigencias regulatorias antes de que sean obligatorias.</li>
                 </ul>
               </div>
             </div>
@@ -576,19 +659,19 @@
           <div class="folio-body">
             <div class="folio-body-inner">
               <div class="sub">
-                <h5>2.1 · Componentes mínimos de un sistema de prevención</h5>
+                <h5>2.1 &middot; Componentes m&iacute;nimos de un sistema de prevenci&oacute;n</h5>
                 <ul>
-                  <li>Política de prevención, Código de Conducta y Manual interno adaptados al modelo de distribución con terceros.</li>
-                  <li>El Oficial de Cumplimiento: funciones, autonomía operativa y protección legal ante una eventual investigación.</li>
-                  <li>Registro de Operaciones: qué datos del sistema transaccional deben conservarse, en qué formato y por cuánto tiempo.</li>
+                  <li>Pol&iacute;tica de prevenci&oacute;n, C&oacute;digo de Conducta y Manual interno adaptados al modelo de distribuci&oacute;n con terceros.</li>
+                  <li>El Oficial de Cumplimiento: funciones, autonom&iacute;a operativa y protecci&oacute;n legal.</li>
+                  <li>Registro de Operaciones: qu&eacute; datos conservar, en qu&eacute; formato y por cu&aacute;nto tiempo.</li>
                 </ul>
               </div>
               <div class="sub">
-                <h5>2.2 · Conocimiento del cliente (KYC) en la red de distribución</h5>
+                <h5>2.2 &middot; Conocimiento del cliente (KYC) en la red de distribuci&oacute;n</h5>
                 <ul>
-                  <li>A quién se aplica el KYC: puntos de venta, distribuidores y usuarios finales.</li>
-                  <li>Debida diligencia básica en el alta de un punto de venta y señales que activan una debida diligencia reforzada.</li>
-                  <li>Listas de control OFAC, ONU, GAFI y Personas Expuestas Políticamente (PEP).</li>
+                  <li>A qui&eacute;n se aplica el KYC: puntos de venta, distribuidores y usuarios finales.</li>
+                  <li>Debida diligencia b&aacute;sica en el alta de un punto de venta y se&ntilde;ales que activan una debida diligencia reforzada.</li>
+                  <li>Listas de control OFAC, ONU, GAFI y Personas Expuestas Pol&iacute;ticamente (PEP).</li>
                   <li>Umbrales de alerta y fraccionamiento en el monitoreo de operaciones.</li>
                 </ul>
               </div>
@@ -600,7 +683,7 @@
           <div class="folio-head">
             <span class="folio-index">03</span>
             <div class="folio-title">
-              <h3>Tipologías de riesgo específicas y señales de alerta</h3>
+              <h3>Tipolog&iacute;as de riesgo y se&ntilde;ales de alerta</h3>
               <span class="meta">30 minutos</span>
             </div>
             <span class="folio-toggle"></span>
@@ -608,31 +691,31 @@
           <div class="folio-body">
             <div class="folio-body-inner">
               <div class="sub">
-                <h5>3.1 · Tipologías identificadas en el modelo de negocio</h5>
+                <h5>3.1 &middot; Tipolog&iacute;as identificadas en el modelo de negocio</h5>
                 <ul>
-                  <li>Fraccionamiento coordinado en múltiples puntos de venta (structuring).</li>
+                  <li>Fraccionamiento coordinado en m&uacute;ltiples puntos de venta (structuring).</li>
                   <li>Puntos de venta de fachada, sin actividad comercial real.</li>
-                  <li>Colocación de efectivo mediante saldo virtual prepagado.</li>
-                  <li>Triangulación a través de distribuidores.</li>
-                  <li>Lavado mediante venta de loterías y juegos de azar.</li>
+                  <li>Colocaci&oacute;n de efectivo mediante saldo virtual prepagado.</li>
+                  <li>Triangulaci&oacute;n a trav&eacute;s de distribuidores.</li>
+                  <li>Lavado mediante venta de loter&iacute;as y juegos de azar.</li>
                   <li>Uso de identidades de terceros (testaferros) en el registro de puntos de venta.</li>
                 </ul>
               </div>
               <div class="sub">
-                <h5>3.2 · Señales de alerta y proceso de reporte</h5>
+                <h5>3.2 &middot; Se&ntilde;ales de alerta y proceso de reporte</h5>
                 <ul>
-                  <li>Señales operativas: horarios atípicos, volúmenes inusuales, concentración de operaciones.</li>
-                  <li>Proceso interno de detección, análisis y escalamiento.</li>
-                  <li>El Reporte de Operaciones Sospechosas (ROS): plazos y canal ante la UIF-Perú.</li>
-                  <li>Prohibición de alertar al cliente (no tipping off) y responsabilidad penal por incumplimiento.</li>
+                  <li>Se&ntilde;ales operativas: horarios at&iacute;picos, vol&uacute;menes inusuales, concentraci&oacute;n de operaciones.</li>
+                  <li>Proceso interno de detecci&oacute;n, an&aacute;lisis y escalamiento.</li>
+                  <li>El Reporte de Operaciones Sospechosas (ROS): plazos y canal ante la UIF-Per&uacute;.</li>
+                  <li>Prohibici&oacute;n de alertar al cliente (no tipping off) y responsabilidad penal.</li>
                 </ul>
               </div>
               <div class="sub">
-                <h5>3.3 · Sanciones e infracciones</h5>
+                <h5>3.3 &middot; Sanciones</h5>
                 <ul>
-                  <li>Infracciones leves, graves y muy graves según la normativa SBS/UIF.</li>
-                  <li>Responsabilidad penal personal del Oficial de Cumplimiento y del representante legal.</li>
-                  <li>Casos reales de empresas de distribución y recaudación digital sancionadas en la región.</li>
+                  <li>Infracciones leves, graves y muy graves seg&uacute;n la normativa SBS/UIF.</li>
+                  <li>Responsabilidad penal del Oficial de Cumplimiento y del representante legal.</li>
+                  <li>Casos reales de empresas de distribuci&oacute;n y recaudaci&oacute;n digital sancionadas en la regi&oacute;n.</li>
                 </ul>
               </div>
             </div>
@@ -643,7 +726,7 @@
           <div class="folio-head">
             <span class="folio-index">04</span>
             <div class="folio-title">
-              <h3>Taller práctico y consultas</h3>
+              <h3>Taller pr&aacute;ctico y consultas</h3>
               <span class="meta">35 minutos</span>
             </div>
             <span class="folio-toggle"></span>
@@ -652,11 +735,11 @@
             <div class="folio-body-inner">
               <div class="sub">
                 <ul>
-                  <li>Revisión conjunta del diagnóstico preliminar de riesgo SPLAFT de Red Digital.</li>
-                  <li>Ejercicio práctico con tres escenarios reales del modelo transaccional: recarga masiva, cobro de servicios en punto de venta reciente y venta de SOAT con datos inconsistentes.</li>
-                  <li>Evaluación de la posición regulatoria de Red Digital como posible PSP y como potencial sujeto obligado, con recomendación de pasos de adecuación preventiva.</li>
-                  <li>Preguntas y respuestas abiertas sobre el modelo de negocio específico.</li>
-                  <li>Hoja de ruta mínima para iniciar la implementación interna del SPLAFT.</li>
+                  <li>Revisi&oacute;n conjunta del diagn&oacute;stico preliminar de riesgo SPLAFT de Red Digital.</li>
+                  <li>Ejercicio pr&aacute;ctico con tres escenarios reales: recarga masiva, cobro de servicios en punto de venta reciente y venta de SOAT con datos inconsistentes.</li>
+                  <li>Evaluaci&oacute;n de la posici&oacute;n regulatoria de Red Digital como posible PSP y como potencial sujeto obligado.</li>
+                  <li>Preguntas y respuestas sobre el modelo de negocio.</li>
+                  <li>Hoja de ruta m&iacute;nima para iniciar la implementaci&oacute;n interna del SPLAFT.</li>
                 </ul>
               </div>
             </div>
@@ -666,7 +749,7 @@
       </div>
 
       <div class="timedist reveal">
-        <h4>Distribución del tiempo — 2 horas totales</h4>
+        <h4>Distribuci&oacute;n del tiempo — 2 horas totales</h4>
         <div class="timebar" id="timebar">
           <span class="m1" data-width="16.6"></span>
           <span class="m2" data-width="29.2"></span>
@@ -674,10 +757,10 @@
           <span class="m4" data-width="29.2"></span>
         </div>
         <div class="timelegend">
-          <div><i style="background:#8C7A55"></i> Módulo 1 · 20 min</div>
-          <div><i style="background:#A9814C"></i> Módulo 2 · 35 min</div>
-          <div><i style="background:#8C3B3B"></i> Módulo 3 · 30 min</div>
-          <div><i style="background:#0E2238"></i> Módulo 4 · 35 min</div>
+          <div><i style="background:#8C7A55"></i> M&oacute;dulo 1 &middot; 20 min</div>
+          <div><i style="background:#A9814C"></i> M&oacute;dulo 2 &middot; 35 min</div>
+          <div><i style="background:#8C3B3B"></i> M&oacute;dulo 3 &middot; 30 min</div>
+          <div><i style="background:#0E2238"></i> M&oacute;dulo 4 &middot; 35 min</div>
         </div>
       </div>
     </div>
@@ -688,29 +771,29 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">Valor agregado</div>
-        <h2>Incluido en la inversión, sin costo adicional</h2>
-        <p>Más allá de la exposición, la propuesta entrega documentación de trabajo real que el Oficial de Cumplimiento puede usar de inmediato.</p>
+        <h2>Incluido en la inversi&oacute;n</h2>
+        <p>Documentaci&oacute;n de trabajo real que el Oficial de Cumplimiento puede usar de inmediato.</p>
       </div>
       <div class="value-grid reveal">
         <div class="value-card">
-          <span class="vnum">Antes de la sesión</span>
-          <h4>Diagnóstico preliminar de riesgo SPLAFT</h4>
-          <p>Adaptado al modelo de Red Digital: se analizan la estructura de distribución, los flujos de saldo virtual y los sectores económicos predominantes en la red de puntos de venta, entregado antes de la sesión.</p>
+          <span class="vnum">Antes de la sesi&oacute;n</span>
+          <h4>Diagn&oacute;stico preliminar de riesgo SPLAFT</h4>
+          <p>Adaptado al modelo de Red Digital: estructura de distribuci&oacute;n, flujos de saldo virtual y sectores econ&oacute;micos predominantes en la red de puntos de venta.</p>
         </div>
         <div class="value-card">
-          <span class="vnum">Durante la sesión</span>
-          <h4>Mapa de tipologías de riesgo</h4>
-          <p>Específico para redes de recaudación digital, elaborado con base en las alertas tipológicas del GAFI, la UIF-Perú y la experiencia en compliance de empresas con modelos similares.</p>
+          <span class="vnum">Durante la sesi&oacute;n</span>
+          <h4>Mapa de tipolog&iacute;as de riesgo</h4>
+          <p>Espec&iacute;fico para redes de recaudaci&oacute;n digital, elaborado con base en las alertas tipol&oacute;gicas del GAFI y la UIF-Per&uacute;.</p>
         </div>
         <div class="value-card">
-          <span class="vnum">5 días hábiles después</span>
-          <h4>Análisis regulatorio escrito</h4>
-          <p>Posición de Red Digital bajo la Ley N.° 29038 y el nuevo Reglamento del Sistema de Pagos del BCRP (2026), con recomendación sobre los pasos mínimos de adecuación preventiva.</p>
+          <span class="vnum">5 d&iacute;as h&aacute;biles despu&eacute;s</span>
+          <h4>An&aacute;lisis regulatorio escrito</h4>
+          <p>Posici&oacute;n de Red Digital bajo el nuevo Reglamento del Sistema de Pagos del BCRP (Circular 2025/2026), con recomendaci&oacute;n sobre los pasos m&iacute;nimos de adecuaci&oacute;n preventiva.</p>
         </div>
         <div class="value-card">
-          <span class="vnum">Dentro de 15 días</span>
-          <h4>Sesión de seguimiento</h4>
-          <p>30 minutos adicionales para resolver dudas sobre la implementación concreta de las recomendaciones entregadas.</p>
+          <span class="vnum">Dentro de 5 d&iacute;as</span>
+          <h4>Sesi&oacute;n de seguimiento</h4>
+          <p>30 minutos adicionales para resolver dudas sobre la implementaci&oacute;n de las recomendaciones entregadas.</p>
         </div>
       </div>
     </div>
@@ -721,118 +804,96 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">Costo del servicio</div>
-        <h2>Inversión</h2>
-        <p>Cotización personalizada para Red Digital del Perú S.A.C. Incluye recibo por honorarios.</p>
+        <h2>Inversi&oacute;n</h2>
+        <p>Cotizaci&oacute;n para Red Digital del Per&uacute; S.A.C. Incluye recibo por honorarios.</p>
       </div>
       <div class="invest-wrap reveal">
         <div class="invest-left">
           <span class="mono" style="font-size:12px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.08em;">Costo total del servicio</span>
           <div class="total"><sup>USD</sup> 200.00</div>
-          <span class="per-hour">Equivalente a USD 100.00 por hora de capacitación</span>
+          <span class="per-hour">Equivalente a USD 100.00 por hora de capacitaci&oacute;n</span>
           <div class="breakdown">
-            <div class="breakdown-row"><span>Preparación de material</span><b>1 hora</b></div>
-            <div class="breakdown-row"><span>Exposición</span><b>2 horas</b></div>
-            <div class="breakdown-row"><span>Consultas sobre el modelo operativo</span><b>30 min. adicionales</b></div>
-            <div class="breakdown-row"><span>Documentación y seguimiento</span><b>Incluidos</b></div>
+            <div class="breakdown-row"><span>Preparaci&oacute;n de material</span><b>1 hora</b></div>
+            <div class="breakdown-row"><span>Exposici&oacute;n</span><b>2 horas</b></div>
+            <div class="breakdown-row"><span>Consultas sobre el modelo operativo</span><b>30 min.</b></div>
+            <div class="breakdown-row"><span>Documentaci&oacute;n y seguimiento</span><b>Incluidos</b></div>
           </div>
         </div>
         <div class="invest-right">
           <h4>Modalidad de pago</h4>
           <div class="pay-step">
             <span class="circ">1</span>
-            <p>50% del total al confirmar la sesión, para reservar la fecha y dar inicio a la preparación del material.</p>
+            <p>50% al confirmar la sesi&oacute;n, para reservar la fecha e iniciar la preparaci&oacute;n del material.</p>
           </div>
           <div class="pay-step">
             <span class="circ">2</span>
-            <p>50% restante al término de la capacitación, contra la entrega de los materiales de la sesión.</p>
+            <p>50% restante al t&eacute;rmino de la capacitaci&oacute;n, contra entrega de materiales.</p>
           </div>
           <div class="pay-step">
             <span class="circ">3</span>
             <p>Se emite recibo por honorarios profesionales por el total del servicio.</p>
           </div>
-          <div class="invest-note mono">Propuesta sujeta a confirmación de fecha y disponibilidad del facilitador.</div>
+          <div class="invest-note mono">Propuesta sujeta a confirmaci&oacute;n de fecha y disponibilidad del facilitador.</div>
         </div>
       </div>
     </div>
   </section>
- <!-- FACILITADOR -->
-<section id="facilitador">
-  <div class="wrap">
 
-    <div class="section-head reveal">
-      <div class="eyebrow">Facilitador</div>
-      <h2>Quién dicta la capacitación</h2>
-    </div>
-
-    <div class="fac-wrap reveal">
-
-      <!-- FOTO -->
-      <div class="fac-avatar">
-        <img src="imagen.png" alt="Foto del facilitador">
+  <!-- FACILITADOR -->
+  <section id="facilitador">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Facilitador</div>
+        <h2>Qui&eacute;n dicta la capacitaci&oacute;n</h2>
       </div>
-
-      <!-- INFORMACIÓN -->
-      <div class="fac-info">
-
-        <h3 class="fac-name">
-          Abg. Mg. Denis Gabriel Romani Seminario
-        </h3>
-
-        <span class="fac-role">
-          Especialista en Derecho Penal Económico y Compliance
-        </span>
-
-        <p>
-          Abogado especialista en Compliance Penal, ALA/CFT e Investigaciones Financieras
-        </p>
-
-        <p>
-          Magister en Derecho Penal (PUCP) | Máster en Cumplimiento Normativo Penal (UCLM, España)
-        </p>
-
-        <p>
-          Ex analista principal de la Unidad de Inteligencia Financiera - PERÚ
-        </p>
-
-        <p>
-          Especialista en Compliance y Oficial de Cumplimiento – ISO 37001:2021 (AENOR Latam / IPC)
-        </p>
-
-        <div class="fac-tags">
-          <span>Derecho Penal Económico</span>
-          <span>SPLAFT / LA-FT</span>
-          <span>Compliance corporativo</span>
-          <span>Litigio y asesoría regulatoria</span>
+      <div class="fac-wrap reveal">
+        <div class="fac-avatar">
+          <img src="imagen.png" alt="Foto del facilitador">
         </div>
-
+        <div class="fac-info">
+          <h3 class="fac-name">Abg. Mg. Denis Gabriel Romani Seminario</h3>
+          <span class="fac-role">Especialista en Derecho Penal Econ&oacute;mico y Compliance</span>
+          <p>Abogado especialista en Compliance Penal, ALA/CFT e Investigaciones Financieras</p>
+          <p>Magister en Derecho Penal (PUCP) | M&aacute;ster en Cumplimiento Normativo Penal (UCLM, Espa&ntilde;a)</p>
+          <p>Ex analista principal de la Unidad de Inteligencia Financiera - PER&Uacute;</p>
+          <p>Especialista en Compliance y Oficial de Cumplimiento – ISO 37001:2021 (AENOR Latam / IPC)</p>
+          <div class="fac-tags">
+            <span>Derecho Penal Econ&oacute;mico</span>
+            <span>SPLAFT / LA-FT</span>
+            <span>Compliance corporativo</span>
+            <span>Litigio y asesor&iacute;a regulatoria</span>
+          </div>
+        </div>
       </div>
-
     </div>
+  </section>
 
-  </div>
-</section>
   <!-- CONTACTO -->
   <section id="contacto">
     <div class="wrap">
       <div class="contact reveal">
         <div>
           <div class="eyebrow" style="color:var(--gold-soft);">Siguiente paso</div>
-          <h2>Coordinemos la fecha de la capacitación</h2>
-          <p>Escriba directamente a Denis Romani para confirmar disponibilidad, resolver dudas sobre el alcance de la propuesta o solicitar ajustes al programa.</p>
+          <h2>Coordinemos la fecha</h2>
+          <p>Escriba a Denis Romani para confirmar disponibilidad o agende directamente.</p>
         </div>
         <div class="contact-actions">
+          <button class="btn btn-primary" id="openScheduler">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Agendar cita
+          </button>
           <a href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" class="btn btn-wa">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
             +51 969 754 983
           </a>
           <a href="mailto:denis@romanicompliance.com?subject=Consulta%20-%20Propuesta%20SPLAFT%20Red%20Digital" class="btn btn-outline" style="border-color:rgba(246,244,236,0.4);color:var(--paper);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
             denis@romanicompliance.com
           </a>
-          <button class="btn btn-gold" id="downloadPdfBtn2">
+          <a href="https://raw.githubusercontent.com/omaroliden/romanicompliance/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-            Descargar cotización PDF
-          </button>
+            Descargar cotizaci&oacute;n PDF
+          </a>
         </div>
       </div>
     </div>
@@ -844,10 +905,10 @@
   <div class="wrap foot-wrap">
     <div class="foot-brand">
       <img src="logos.png" alt="Romani Compliance">
-      <span>Romani Compliance — Derecho Penal Económico &amp; Compliance</span>
+      <span>Romani Compliance — Derecho Penal Econ&oacute;mico &amp; Compliance</span>
     </div>
     <div class="foot-links">
-      <span>Expediente RD-SPLAFT-2026-001</span>
+      <span>Cotizaci&oacute;n RC-SPLAFT-2026-001</span>
       <span id="footYear"></span>
     </div>
   </div>
@@ -862,7 +923,6 @@
   </a>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
   // ---- Mobile menu ----
   const burgerBtn = document.getElementById('burgerBtn');
@@ -879,7 +939,7 @@
   const valid = new Date(today.getTime() + 15*24*60*60*1000);
   document.getElementById('issueDate').textContent = formatDate(today);
   document.getElementById('validUntil').textContent = formatDate(valid);
-  document.getElementById('footYear').textContent = "© " + today.getFullYear() + " Romani Compliance";
+  document.getElementById('footYear').textContent = "\u00a9 " + today.getFullYear() + " Romani Compliance";
 
   // ---- Accordion ----
   document.querySelectorAll('.folio-head').forEach(head => {
@@ -943,132 +1003,80 @@
   const timebarEl = document.getElementById('timebar');
   if(timebarEl){ timebarObserver.observe(timebarEl); }
 
-  // ---- PDF generation ----
-  function generatePDF(){
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({unit:'mm', format:'a4'});
-    const marginX = 20;
-    let y = 22;
-    const pageHeight = doc.internal.pageSize.getHeight();
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const inkColor = [14,34,56];
-    const goldColor = [169,129,76];
-    const slateColor = [74,85,104];
+  // ---- Scheduler Modal ----
+  const schedulerModal = document.getElementById('schedulerModal');
+  const schedulerForm = document.getElementById('schedulerForm');
+  const schedulerSuccess = document.getElementById('schedulerSuccess');
 
-    function checkPage(space){
-      if(y + space > pageHeight - 18){ doc.addPage(); y = 22; }
-    }
-    function heading(text, size){
-      checkPage(12);
-      doc.setFont('helvetica','bold');
-      doc.setFontSize(size || 13);
-      doc.setTextColor(...inkColor);
-      doc.text(text, marginX, y);
-      y += 7;
-      doc.setDrawColor(...goldColor);
-      doc.setLineWidth(0.4);
-      doc.line(marginX, y-4.5, marginX + 26, y-4.5);
-    }
-    function subheading(text){
-      checkPage(8);
-      doc.setFont('helvetica','bold');
-      doc.setFontSize(10.5);
-      doc.setTextColor(...goldColor);
-      doc.text(text, marginX, y);
-      y += 6;
-    }
-    function bullet(text){
-      doc.setFont('helvetica','normal');
-      doc.setFontSize(10);
-      doc.setTextColor(...slateColor);
-      const lines = doc.splitTextToSize(text, pageWidth - marginX*2 - 5);
-      lines.forEach((line, i) => {
-        checkPage(6);
-        doc.text((i===0? '- ' : '  ') + line, marginX, y);
-        y += 5;
-      });
-      y += 1;
-    }
-    function paragraph(text, size){
-      doc.setFont('helvetica','normal');
-      doc.setFontSize(size || 10);
-      doc.setTextColor(...slateColor);
-      const lines = doc.splitTextToSize(text, pageWidth - marginX*2);
-      lines.forEach(line => { checkPage(6); doc.text(line, marginX, y); y += 5.2; });
-      y += 2;
+  document.getElementById('openScheduler').addEventListener('click', () => {
+    schedulerModal.classList.add('open');
+    schedulerForm.style.display = 'block';
+    schedulerSuccess.style.display = 'none';
+    // Set min date to tomorrow
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const dateInput = document.getElementById('schedDate');
+    dateInput.min = tomorrow.toISOString().split('T')[0];
+    // Default to 3 days from now (skip weekends)
+    const suggested = new Date();
+    suggested.setDate(suggested.getDate() + 3);
+    while(suggested.getDay() === 0 || suggested.getDay() === 6){ suggested.setDate(suggested.getDate() + 1); }
+    dateInput.value = suggested.toISOString().split('T')[0];
+  });
+
+  document.getElementById('closeScheduler').addEventListener('click', () => {
+    schedulerModal.classList.remove('open');
+  });
+  document.getElementById('closeSuccess').addEventListener('click', () => {
+    schedulerModal.classList.remove('open');
+  });
+  schedulerModal.addEventListener('click', (e) => {
+    if(e.target === schedulerModal) schedulerModal.classList.remove('open');
+  });
+
+  // Time slot selection
+  document.querySelectorAll('.time-slot').forEach(slot => {
+    slot.addEventListener('click', () => {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+      slot.classList.add('selected');
+    });
+  });
+
+  // Submit scheduler
+  document.getElementById('submitSchedule').addEventListener('click', () => {
+    const name = document.getElementById('schedName').value.trim();
+    const email = document.getElementById('schedEmail').value.trim();
+    const date = document.getElementById('schedDate').value;
+    const selectedSlot = document.querySelector('.time-slot.selected');
+    const time = selectedSlot ? selectedSlot.getAttribute('data-time') : '';
+    const notes = document.getElementById('schedNotes').value.trim();
+
+    if(!name || !email || !date || !time){
+      alert('Complete todos los campos obligatorios: nombre, correo, fecha y horario.');
+      return;
     }
 
-    // Header block
-    doc.setFillColor(...inkColor);
-    doc.rect(0, 0, pageWidth, 34, 'F');
-    doc.setFont('helvetica','bold');
-    doc.setFontSize(16);
-    doc.setTextColor(246,244,236);
-    doc.text('ROMANI COMPLIANCE', marginX, 15);
-    doc.setFont('helvetica','normal');
-    doc.setFontSize(9.5);
-    doc.setTextColor(201,168,118);
-    doc.text('Propuesta economica - Servicio de capacitacion SPLAFT', marginX, 22);
-    doc.setFontSize(8.5);
-    doc.setTextColor(210,210,210);
-    doc.text('Expediente RD-SPLAFT-2026-001', marginX, 28);
-    doc.text('Emision: ' + document.getElementById('issueDate').textContent, pageWidth - marginX, 28, {align:'right'});
+    const dateObj = new Date(date + 'T00:00:00');
+    const dateFormatted = dateObj.getDate() + ' de ' + monthsEs[dateObj.getMonth()] + ' de ' + dateObj.getFullYear();
 
-    y = 46;
-    heading('Cliente');
-    paragraph('Red Digital del Peru S.A.C. — RUC 20566598389');
+    const subject = encodeURIComponent('Solicitud de agendamiento - Capacitacion SPLAFT Red Digital');
+    const body = encodeURIComponent(
+      'SOLICITUD DE AGENDAMIENTO - CAPACITACION SPLAFT\n' +
+      '================================================\n\n' +
+      'Nombre: ' + name + '\n' +
+      'Correo: ' + email + '\n' +
+      'Fecha solicitada: ' + dateFormatted + '\n' +
+      'Horario preferido: ' + time + ' hrs\n' +
+      (notes ? 'Comentarios: ' + notes + '\n' : '') +
+      '\n---\nEnviado desde la propuesta web RC-SPLAFT-2026-001'
+    );
 
-    heading('Caracteristicas del servicio');
-    bullet('Duracion total: 2 horas (1 hora de preparacion + 2 horas de exposicion), mas 30 minutos adicionales para consultas especificas.');
-    bullet('Contenido diseñado exclusivamente sobre el modelo operativo real de Red Digital, identificando sus vectores de riesgo LA/FT.');
+    // Send to both emails
+    window.open('mailto:omaroliden1@gmail.com,dromani@pucp.pe?subject=' + subject + '&body=' + body, '_self');
 
-    heading('Temario');
-    subheading('Modulo 1 (20 min) - Por que Red Digital necesita entender el SPLAFT');
-    bullet('Riesgo del modelo de negocio: mas de 120,000 puntos de venta con manejo descentralizado de efectivo.');
-    bullet('Marco normativo: Ley 27693, Reglamento del Sistema de Pagos del BCRP, D.Leg. 1106.');
-    subheading('Modulo 2 (35 min) - El SPLAFT aplicado a Red Digital');
-    bullet('Componentes minimos del sistema de prevencion y rol del Oficial de Cumplimiento.');
-    bullet('Conocimiento del cliente (KYC) en la red de distribucion, listas de control y umbrales de alerta.');
-    subheading('Modulo 3 (30 min) - Tipologias de riesgo y señales de alerta');
-    bullet('Fraccionamiento, puntos de venta de fachada, colocacion via saldo virtual, triangulacion, loterias, testaferros.');
-    bullet('Proceso de reporte (ROS), no tipping off, sanciones e infracciones aplicables.');
-    subheading('Modulo 4 (35 min) - Taller practico y consultas');
-    bullet('Revision del diagnostico preliminar y ejercicio con escenarios reales del modelo transaccional.');
-    bullet('Evaluacion de la posicion regulatoria de Red Digital y hoja de ruta minima de implementacion.');
-
-    heading('Valor agregado incluido');
-    bullet('Diagnostico preliminar de riesgo SPLAFT adaptado al modelo de Red Digital, entregado antes de la sesion.');
-    bullet('Mapa de tipologias de riesgo especificas para redes de recaudacion digital.');
-    bullet('Analisis escrito de la posicion regulatoria bajo la Ley 29038 y el Reglamento del Sistema de Pagos del BCRP, entregado en 5 dias habiles.');
-    bullet('Sesion de seguimiento de 30 minutos dentro de los 15 dias posteriores a la capacitacion.');
-
-    heading('Inversion');
-    paragraph('Costo total del servicio: USD 200.00, equivalente a USD 100.00 por hora de capacitacion.');
-    paragraph('Modalidad de pago: 50% al confirmar la sesion, 50% al termino de la capacitacion. Se emite recibo por honorarios.');
-
-    heading('Facilitador');
-    paragraph('Abg. Mg. Denis Gabriel Romani Seminario — Especialista en Derecho Penal Economico y Compliance, con mas de 15 años de experiencia en sistemas de prevencion de lavado de activos y financiamiento del terrorismo.');
-
-    checkPage(30);
-    doc.setDrawColor(220,214,198);
-    doc.line(marginX, y, pageWidth - marginX, y);
-    y += 8;
-    doc.setFont('helvetica','bold');
-    doc.setFontSize(10.5);
-    doc.setTextColor(...inkColor);
-    doc.text('Contacto', marginX, y);
-    y += 6;
-    doc.setFont('helvetica','normal');
-    doc.setFontSize(10);
-    doc.setTextColor(...slateColor);
-    doc.text('WhatsApp: +51 969 754 983', marginX, y); y += 5.5;
-    doc.text('Correo: denis@romanicompliance.com', marginX, y); y += 5.5;
-    doc.text('Propuesta valida hasta ' + document.getElementById('validUntil').textContent + '.', marginX, y);
-
-    doc.save('cotizacion.pdf');
-  }
-  document.getElementById('downloadPdfBtn').addEventListener('click', generatePDF);
-  document.getElementById('downloadPdfBtn2').addEventListener('click', generatePDF);
+    schedulerForm.style.display = 'none';
+    schedulerSuccess.style.display = 'block';
+  });
 </script>
 
 </body>
