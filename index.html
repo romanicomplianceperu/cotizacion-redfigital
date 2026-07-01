@@ -1,1098 +1,1050 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Romani Compliance | Derecho Penal Económico & Compliance</title>
-<meta name="description" content="Estudio especializado en Derecho Penal Económico, Compliance ALA/CFT y Due Diligence. Lima, Perú.">
+<title>Propuesta SPLAFT — Red Digital del Perú S.A.C. | Romani Compliance</title>
+<meta name="description" content="Propuesta económica personalizada de capacitación SPLAFT para Red Digital del Perú S.A.C., elaborada por Romani Compliance.">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0B1628;
-  --navy-mid:#132040;
-  --navy-light:#1C2E52;
-  --gold:#C9A84C;
-  --gold-light:#E8C96B;
-  --gold-dim:#8B6E2E;
-  --slate:#8A9AB8;
-  --slate-light:#C2CEDF;
-  --white:#FFFFFF;
-  --off-white:#F4F6FA;
-  --text:#E8ECF4;
-  --text-muted:#8A9AB8;
-  --border:rgba(201,168,76,0.2);
-  --radius:4px;
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'Inter',system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',monospace;
-  --transition:0.35s cubic-bezier(0.4,0,0.2,1);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--navy);color:var(--text);font-family:var(--font-body);line-height:1.7;overflow-x:hidden}
-::selection{background:var(--gold);color:var(--navy)}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  :root{
+    --ink:#0E2238;
+    --ink-soft:#1B3350;
+    --paper:#F6F4EC;
+    --paper-dim:#EFEBDF;
+    --gold:#A9814C;
+    --gold-soft:#C9A876;
+    --slate:#4A5568;
+    --slate-light:#7A8494;
+    --risk:#8C3B3B;
+    --line:#DCD6C6;
+    --line-dark:rgba(246,244,236,0.16);
+    --radius:2px;
+    --shadow:0 20px 50px -20px rgba(14,34,56,0.35);
+    --max:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;margin:0;color:var(--ink);}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12px;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);}
+  ::selection{background:var(--gold-soft);color:var(--ink);}
 
-/* ─── SCROLLBAR ─── */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--navy)}
-::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
 
-/* ─── NAV ─── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),backdrop-filter var(--transition)}
-nav.scrolled{background:rgba(11,22,40,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
-.nav-logo img{height:36px;width:auto;filter:brightness(0) invert(1)}
-.nav-logo-text{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:0.02em;white-space:nowrap}
-.nav-logo-sub{font-size:0.65rem;color:var(--gold);letter-spacing:0.12em;font-weight:500;text-transform:uppercase;display:block;margin-top:-2px}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--slate-light);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;transition:color var(--transition);position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--transition);transform-origin:left}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:0.55rem 1.4rem;border-radius:var(--radius);font-size:0.82rem;font-weight:600;cursor:pointer;transition:all var(--transition);text-decoration:none;white-space:nowrap;letter-spacing:0.04em}
-.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
-.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all var(--transition)}
-.mobile-menu{display:none;position:fixed;inset:0;top:64px;background:rgba(11,22,40,0.98);backdrop-filter:blur(20px);z-index:99;flex-direction:column;padding:2rem;gap:0.5rem;border-top:1px solid var(--border)}
-.mobile-menu a{color:var(--text);text-decoration:none;font-size:1.1rem;font-weight:500;padding:1rem 0;border-bottom:1px solid var(--border);display:block;transition:color var(--transition)}
-.mobile-menu a:hover{color:var(--gold)}
-.mobile-menu.open{display:flex}
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(246,244,236,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:var(--max);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{height:38px;width:auto;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text strong{font-family:'Fraunces',serif;font-size:16px;letter-spacing:0.01em;}
+  .brand-text span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--slate-light);text-transform:uppercase;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{
+    font-size:13px;font-weight:600;letter-spacing:0.02em;
+    color:var(--ink-soft);position:relative;padding:6px 0;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--ink);color:var(--paper)!important;
+    padding:10px 18px;font-size:12px!important;font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;letter-spacing:0.08em;border-radius:var(--radius);
+  }
+  .nav-cta::after{display:none;}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s;}
+  .mobile-menu{
+    display:none;position:fixed;inset:0;background:var(--ink);z-index:200;
+    flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--paper);font-family:'Fraunces',serif;font-size:26px;}
+  .mobile-menu .close-btn{position:absolute;top:22px;right:24px;background:none;border:none;color:var(--paper);font-size:28px;cursor:pointer;}
+  .mobile-menu .mm-cta{
+    margin-top:10px;background:var(--gold);color:var(--ink);padding:12px 26px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;
+  }
 
-/* ─── HERO ─── */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 6rem}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(201,168,76,0.06) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 10% 80%,rgba(28,46,82,0.8) 0%,transparent 60%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
-.hero-h1{font-family:var(--font-display);font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;color:var(--white);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
-.hero-h1 em{color:var(--gold);font-style:normal;display:block}
-.hero-sub{max-width:580px;color:var(--slate-light);font-size:1.05rem;line-height:1.75;margin-bottom:3rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.8s forwards}
-.btn-primary{background:var(--gold);color:var(--navy);padding:0.85rem 2.2rem;border-radius:var(--radius);font-weight:700;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;letter-spacing:0.04em;transition:all var(--transition);border:none;cursor:pointer}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.3)}
-.btn-secondary{background:transparent;color:var(--white);padding:0.85rem 2.2rem;border-radius:var(--radius);font-weight:500;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;letter-spacing:0.04em;transition:all var(--transition);border:1px solid rgba(255,255,255,0.25)}
-.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:5rem;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;opacity:0;animation:fadeUp 0.8s 1s forwards}
-.stat-box{background:var(--navy-mid);padding:1.5rem;text-align:center;position:relative}
-.stat-box::before{content:'';position:absolute;inset:0;background:rgba(201,168,76,0.03);opacity:0;transition:opacity var(--transition)}
-.stat-box:hover::before{opacity:1}
-.stat-num{font-family:var(--font-display);font-size:2.4rem;font-weight:900;color:var(--gold);line-height:1;display:block}
-.stat-label{font-size:0.72rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.35rem}
-.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(--slate);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0;animation:fadeIn 1s 1.4s forwards}
-.scroll-indicator::after{content:'';width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s infinite}
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:radial-gradient(circle at 85% -10%, rgba(169,129,76,0.16), transparent 45%), var(--paper);
+    padding:72px 0 60px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:start;
+  }
+  .file-meta{
+    display:flex;flex-wrap:wrap;gap:10px 22px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--slate);
+    text-transform:uppercase;letter-spacing:0.05em;margin-bottom:26px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:12px 0;
+  }
+  .file-meta b{color:var(--ink);font-weight:600;}
+  .hero h1{
+    font-size:clamp(32px,5vw,54px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:18px;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero p.lead{
+    font-size:17px;color:var(--slate);max-width:56ch;margin-bottom:32px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 24px;font-size:13px;font-weight:600;
+    font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;
+    border-radius:var(--radius);border:1px solid transparent;cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--ink);color:var(--paper);box-shadow:var(--shadow);}
+  .btn-primary:hover{background:var(--ink-soft);}
+  .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-gold{background:var(--gold);color:var(--ink);}
+  .btn-gold:hover{background:var(--gold-soft);}
+  .btn svg{width:16px;height:16px;flex-shrink:0;}
 
-/* ─── SECTIONS SHARED ─── */
-section{padding:7rem 2rem;position:relative}
-.section-inner{max-width:1200px;margin:0 auto}
-.section-label{font-family:var(--font-mono);font-size:0.72rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
-.section-label::before{content:'';width:20px;height:1px;background:var(--gold)}
-.section-h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);line-height:1.15;letter-spacing:-0.01em}
-.section-sub{color:var(--slate-light);font-size:1rem;max-width:560px;margin-top:0.75rem;line-height:1.75}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+  .stamp{
+    position:absolute;top:38px;right:36px;
+    width:118px;height:118px;border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    transform:rotate(-11deg);opacity:0.85;
+    mix-blend-mode:multiply;
+  }
+  .stamp::before{
+    content:"";position:absolute;inset:8px;border:1px dashed var(--gold);border-radius:50%;
+  }
+  .stamp span{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold);
+    text-transform:uppercase;letter-spacing:0.12em;text-align:center;line-height:1.5;
+    font-weight:600;
+  }
 
-/* ─── ABOUT ─── */
-#about{background:var(--navy-mid)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
-.about-text p{color:var(--slate-light);line-height:1.85;margin-bottom:1.25rem;font-size:0.97rem}
-.about-text strong{color:var(--white)}
-.about-features{display:grid;grid-template-columns:1fr;gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.feature-item{background:var(--navy);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:background var(--transition)}
-.feature-item:hover{background:rgba(201,168,76,0.05)}
-.feature-icon{width:36px;height:36px;border-radius:var(--radius);background:rgba(201,168,76,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
-.feature-title{font-weight:600;color:var(--white);font-size:0.88rem;margin-bottom:0.2rem}
-.feature-desc{font-size:0.78rem;color:var(--slate);line-height:1.55}
+  .hero-card{
+    background:var(--ink);color:var(--paper);
+    border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow);
+    position:relative;
+  }
+  .hero-card .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
+    letter-spacing:0.1em;color:var(--gold-soft);margin-bottom:10px;display:block;
+  }
+  .hero-card h3{color:var(--paper);font-size:22px;margin-bottom:6px;}
+  .hero-card .price{
+    font-family:'Fraunces',serif;font-size:46px;color:var(--paper);margin:14px 0 4px;
+  }
+  .hero-card .price sup{font-size:18px;color:var(--gold-soft);}
+  .hero-card .price small{font-family:'Inter',sans-serif;font-size:13px;color:rgba(246,244,236,0.55);display:block;margin-top:4px;}
+  .hero-card ul{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .hero-card li{
+    display:flex;gap:10px;font-size:13.5px;color:rgba(246,244,236,0.85);align-items:flex-start;
+  }
+  .hero-card li .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:7px;flex-shrink:0;
+  }
+  .hero-card .validity{
+    border-top:1px solid var(--line-dark);margin-top:20px;padding-top:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,244,236,0.5);
+    text-transform:uppercase;letter-spacing:0.06em;
+  }
 
-/* ─── SERVICES ─── */
-#services{background:var(--navy)}
-.services-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3.5rem}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.service-card{background:var(--navy-mid);padding:2rem;transition:all var(--transition);cursor:default;position:relative}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform var(--transition)}
-.service-card:hover{background:var(--navy-light)}
-.service-card:hover::before{transform:scaleX(1)}
-.service-num{font-family:var(--font-mono);font-size:0.68rem;color:var(--gold-dim);letter-spacing:0.1em;margin-bottom:1.25rem}
-.service-icon{font-size:1.6rem;margin-bottom:1rem;display:block}
-.service-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:0.75rem;line-height:1.25}
-.service-desc{font-size:0.83rem;color:var(--slate);line-height:1.7}
-.service-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.25rem}
-.tag{font-size:0.68rem;padding:0.25rem 0.6rem;border-radius:2px;background:rgba(201,168,76,0.08);color:var(--gold-dim);border:1px solid rgba(201,168,76,0.15);font-family:var(--font-mono);letter-spacing:0.05em}
+  /* ---------- STATS ---------- */
+  .stats{
+    background:var(--ink);color:var(--paper);padding:56px 0;
+  }
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;
+  }
+  .stat b{
+    display:block;font-family:'Fraunces',serif;font-size:clamp(34px,4vw,50px);color:var(--gold-soft);
+  }
+  .stat span{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;
+    letter-spacing:0.08em;color:rgba(246,244,236,0.65);display:block;margin-top:8px;
+  }
 
-/* ─── TYPOLOGIES ─── */
-#typologies{background:var(--navy-mid)}
-.typo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3rem}
-.typo-item{background:var(--navy);padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;transition:background var(--transition)}
-.typo-item:hover{background:rgba(201,168,76,0.04)}
-.typo-bullet{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.55rem}
-.typo-title{font-weight:600;color:var(--white);font-size:0.9rem;margin-bottom:0.3rem}
-.typo-desc{font-size:0.8rem;color:var(--slate);line-height:1.6}
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;}
+  .section-head p{color:var(--slate);font-size:16px;margin-top:14px;}
+  .divider{border:none;border-top:1px solid var(--line);}
 
-/* ─── PROPOSALS (ACCORDION) ─── */
-#proposals{background:var(--navy)}
-.proposals-intro{margin-bottom:3rem;max-width:700px}
-.accordion{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.accordion-item{}
-.accordion-header{background:var(--navy-mid);padding:1.5rem 1.75rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background var(--transition);user-select:none}
-.accordion-header:hover{background:var(--navy-light)}
-.accordion-header.active{background:var(--navy-light);border-left:3px solid var(--gold)}
-.accordion-title{font-weight:600;color:var(--white);font-size:0.95rem;display:flex;align-items:center;gap:0.75rem}
-.accordion-badge{font-size:0.65rem;padding:0.2rem 0.55rem;background:rgba(201,168,76,0.12);color:var(--gold);border-radius:2px;font-family:var(--font-mono);letter-spacing:0.08em;border:1px solid rgba(201,168,76,0.2)}
-.accordion-icon{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;transition:transform var(--transition),background var(--transition)}
-.accordion-header.active .accordion-icon{transform:rotate(45deg);background:rgba(201,168,76,0.1)}
-.accordion-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1)}
-.accordion-body.open{max-height:600px}
-.accordion-content{background:var(--navy);padding:1.75rem;border-top:1px solid var(--border)}
-.prop-desc{color:var(--slate-light);font-size:0.88rem;line-height:1.75;margin-bottom:1.25rem}
-.prop-modules{display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-bottom:1.25rem}
-.prop-module{background:var(--navy-mid);padding:0.75rem 1rem;border-radius:var(--radius);border:1px solid var(--border)}
-.prop-module-num{font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);margin-bottom:0.2rem}
-.prop-module-title{font-size:0.78rem;color:var(--white);font-weight:500}
-.prop-module-time{font-size:0.7rem;color:var(--slate)}
-.prop-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.25rem;border-top:1px solid var(--border)}
-.prop-price{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--gold)}
-.prop-price span{font-size:0.8rem;color:var(--slate);font-family:var(--font-body);font-weight:400}
-.prop-value{display:flex;flex-wrap:wrap;gap:0.5rem}
-.prop-val-item{font-size:0.72rem;color:var(--slate-light);display:flex;align-items:center;gap:0.3rem}
-.prop-val-item::before{content:'✓';color:var(--gold);font-weight:700}
+  /* ---------- CARACTERISTICAS ---------- */
+  .char-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .char-cell{background:var(--paper);padding:32px 28px;}
+  .char-cell .num{font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:12px;letter-spacing:0.1em;margin-bottom:10px;display:block;}
+  .char-cell h4{font-size:19px;margin-bottom:10px;}
+  .char-cell p{color:var(--slate);font-size:14.5px;margin:0;}
 
-/* ─── PROCESS ─── */
-#process{background:var(--navy-mid)}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:3.5rem}
-.process-steps::before{content:'';position:absolute;top:22px;left:12.5%;right:12.5%;height:1px;background:var(--border)}
-.step{text-align:center;padding:0 1rem}
-.step-num{width:44px;height:44px;border-radius:50%;background:var(--navy);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--gold);margin:0 auto 1.25rem;position:relative;z-index:1;transition:all var(--transition)}
-.step:hover .step-num{background:var(--gold);color:var(--navy)}
-.step-title{font-weight:600;color:var(--white);font-size:0.88rem;margin-bottom:0.4rem}
-.step-desc{font-size:0.78rem;color:var(--slate);line-height:1.6}
+  /* ---------- TEMARIO / ACCORDION ---------- */
+  .folio{
+    border:1px solid var(--line);background:var(--paper);margin-bottom:14px;
+    border-radius:var(--radius);overflow:hidden;transition:box-shadow .3s ease;
+  }
+  .folio.open{box-shadow:var(--shadow);}
+  .folio-head{
+    display:flex;align-items:center;gap:20px;padding:22px 26px;cursor:pointer;background:var(--paper);
+    transition:background .25s ease;
+  }
+  .folio-head:hover{background:var(--paper-dim);}
+  .folio-index{
+    font-family:'Fraunces',serif;font-size:34px;color:var(--gold-soft);width:56px;flex-shrink:0;
+  }
+  .folio-title{flex:1;}
+  .folio-title h3{font-size:19px;margin-bottom:4px;}
+  .folio-title .meta{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.06em;
+  }
+  .folio-toggle{
+    width:30px;height:30px;border:1px solid var(--line);border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .folio-toggle::before,.folio-toggle::after{
+    content:"";position:absolute;background:var(--ink);transition:transform .3s ease;
+  }
+  .folio-toggle::before{width:12px;height:1.5px;}
+  .folio-toggle::after{width:1.5px;height:12px;}
+  .folio.open .folio-toggle::after{transform:scaleY(0);}
+  .folio-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+  .folio-body-inner{padding:0 26px 30px 26px;}
+  .folio-body-inner .sub{margin-bottom:18px;}
+  .folio-body-inner .sub h5{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
+    letter-spacing:0.08em;color:var(--gold);margin-bottom:10px;
+  }
+  .folio-body-inner ul{margin:0;padding-left:18px;color:var(--slate);font-size:14.5px;}
+  .folio-body-inner li{margin-bottom:8px;}
+  .folio-body-inner li::marker{color:var(--gold);}
 
-/* ─── EXPERTISE COUNTERS ─── */
-#expertise{background:var(--navy)}
-.expertise-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;margin-top:3.5rem}
-.counters{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.counter-box{background:var(--navy-mid);padding:2rem 1.5rem;text-align:center;transition:background var(--transition)}
-.counter-box:hover{background:var(--navy-light)}
-.counter-value{font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--gold);line-height:1;display:block}
-.counter-suffix{font-size:1.5rem;color:var(--gold-dim)}
-.counter-label{font-size:0.72rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem}
-.expertise-bars{display:flex;flex-direction:column;gap:1.5rem}
-.bar-item{}
-.bar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem}
-.bar-label{font-size:0.85rem;font-weight:500;color:var(--white)}
-.bar-pct{font-family:var(--font-mono);font-size:0.78rem;color:var(--gold)}
-.bar-track{height:4px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
-.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(0.4,0,0.2,1)}
-.bar-fill.animated{transform:scaleX(1)}
+  /* time distribution */
+  .timedist{margin-top:56px;}
+  .timedist h4{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--slate);margin-bottom:18px;}
+  .timebar{display:flex;width:100%;height:14px;border-radius:20px;overflow:hidden;background:var(--paper-dim);border:1px solid var(--line);}
+  .timebar span{height:100%;display:block;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1);}
+  .timebar .m1{background:#8C7A55;}
+  .timebar .m2{background:#A9814C;}
+  .timebar .m3{background:#8C3B3B;}
+  .timebar .m4{background:#0E2238;}
+  .timelegend{display:flex;flex-wrap:wrap;gap:18px 26px;margin-top:16px;}
+  .timelegend div{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);}
+  .timelegend i{width:9px;height:9px;border-radius:50%;display:block;}
 
-/* ─── WHY US ─── */
-#why{background:var(--navy-mid)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3.5rem}
-.why-card{background:var(--navy);padding:2rem;transition:all var(--transition)}
-.why-card:hover{background:rgba(201,168,76,0.04)}
-.why-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
-.why-title{font-weight:700;color:var(--white);font-size:0.95rem;margin-bottom:0.6rem}
-.why-text{font-size:0.82rem;color:var(--slate);line-height:1.7}
+  /* ---------- VALOR AGREGADO ---------- */
+  .value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .value-card{
+    border:1px solid var(--line);padding:30px 28px;background:var(--paper);position:relative;
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold);}
+  .value-card .vnum{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.1em;
+    display:block;margin-bottom:12px;
+  }
+  .value-card h4{font-size:18px;margin-bottom:10px;}
+  .value-card p{color:var(--slate);font-size:14.5px;margin:0;}
 
-/* ─── CONTACT ─── */
-#contact{background:var(--navy);padding:7rem 2rem}
-.contact-inner{max-width:1200px;margin:0 auto}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem}
-.contact-info{}
-.contact-sub{color:var(--slate-light);font-size:0.95rem;line-height:1.8;margin-bottom:2rem}
-.contact-methods{display:flex;flex-direction:column;gap:1rem}
-.contact-method{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(--navy-mid);border-radius:var(--radius);border:1px solid var(--border);text-decoration:none;transition:all var(--transition)}
-.contact-method:hover{border-color:var(--gold);transform:translateX(4px);background:rgba(201,168,76,0.04)}
-.contact-method-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.icon-wa{background:rgba(37,211,102,0.12);color:#25D366}
-.icon-mail{background:rgba(201,168,76,0.12);color:var(--gold)}
-.icon-web{background:rgba(100,149,237,0.12);color:#6495ED}
-.contact-method-info{}
-.contact-method-type{font-size:0.7rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono)}
-.contact-method-value{font-size:0.9rem;color:var(--white);font-weight:500;margin-top:0.1rem}
-.contact-form{background:var(--navy-mid);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem}
-.form-group{margin-bottom:1.25rem}
-.form-label{display:block;font-size:0.78rem;color:var(--slate);font-weight:500;margin-bottom:0.5rem;letter-spacing:0.04em;text-transform:uppercase;font-family:var(--font-mono)}
-.form-input,.form-textarea,.form-select{width:100%;background:var(--navy);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;color:var(--white);font-family:var(--font-body);font-size:0.88rem;transition:border-color var(--transition);outline:none}
-.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--gold);background:rgba(201,168,76,0.03)}
-.form-textarea{min-height:110px;resize:vertical}
-.form-select{cursor:pointer}
-.form-select option{background:var(--navy-mid)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-submit{width:100%;padding:0.9rem;background:var(--gold);color:var(--navy);border:none;border-radius:var(--radius);font-weight:700;font-size:0.9rem;cursor:pointer;transition:all var(--transition);letter-spacing:0.04em}
-.form-submit:hover{background:var(--gold-light);transform:translateY(-1px)}
-.form-success{display:none;text-align:center;padding:2rem;color:var(--gold);font-size:0.9rem}
+  /* ---------- INVERSION ---------- */
+  .invest-wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--paper);
+  }
+  .invest-left{padding:44px 40px;border-right:1px solid var(--line);}
+  .invest-left .total{font-family:'Fraunces',serif;font-size:58px;color:var(--ink);margin:8px 0 2px;}
+  .invest-left .total sup{font-size:22px;color:var(--gold);vertical-align:super;}
+  .invest-left .per-hour{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.05em;}
+  .breakdown{margin-top:30px;border-top:1px solid var(--line);}
+  .breakdown-row{
+    display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);
+    font-size:14.5px;color:var(--slate);
+  }
+  .breakdown-row b{color:var(--ink);font-weight:600;}
+  .invest-right{padding:44px 40px;background:var(--ink);color:var(--paper);}
+  .invest-right h4{color:var(--paper);font-size:18px;margin-bottom:18px;}
+  .pay-step{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+  .pay-step .circ{
+    width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;flex-shrink:0;
+  }
+  .pay-step p{margin:0;font-size:13.5px;color:rgba(246,244,236,0.8);}
+  .invest-note{
+    font-size:12.5px;color:rgba(246,244,236,0.55);margin-top:24px;padding-top:20px;
+    border-top:1px solid var(--line-dark);
+  }
 
-/* ─── FOOTER ─── */
-footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
-.footer-brand{}
-.footer-logo{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
-.footer-logo img{height:30px;filter:brightness(0) invert(1)}
-.footer-desc{font-size:0.82rem;color:var(--slate);line-height:1.7;max-width:320px}
-.footer-col h4{font-size:0.78rem;color:var(--white);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem;font-family:var(--font-mono)}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
-.footer-col ul li a{font-size:0.82rem;color:var(--slate);text-decoration:none;transition:color var(--transition)}
-.footer-col ul li a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:0.78rem;color:var(--slate)}
-.footer-copy strong{color:var(--gold)}
+  /* ---------- FACILITADOR ---------- */
+  .fac-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+  .fac-avatar{
+    width:180px;height:180px;border-radius:50%;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-soft);
+    font-family:'Fraunces',serif;font-size:52px;border:1px solid var(--gold);
+  }
+  .fac-cred{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--slate-light);text-align:center;}
+  .fac-name{font-size:26px;margin-bottom:4px;}
+  .fac-role{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:20px;display:block;}
+  .fac-wrap p{color:var(--slate);font-size:15.5px;max-width:64ch;}
+  .fac-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .fac-tags span{
+    border:1px solid var(--line);padding:7px 14px;font-size:12px;font-family:'IBM Plex Mono',monospace;
+    color:var(--slate);border-radius:20px;
+  }
 
-/* ─── WHATSAPP FLOAT ─── */
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200}
-.wa-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;transition:all var(--transition);text-decoration:none;border:none}
-.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5)}
-.wa-btn svg{width:28px;height:28px;fill:white}
-.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--navy-mid);color:var(--white);padding:0.4rem 0.8rem;border-radius:var(--radius);font-size:0.75rem;white-space:nowrap;border:1px solid var(--border);opacity:0;transition:opacity var(--transition);pointer-events:none}
-.wa-float:hover .wa-tooltip{opacity:1}
+  /* ---------- CONTACTO ---------- */
+  .contact{
+    background:var(--ink);color:var(--paper);border-radius:var(--radius);
+    padding:64px 48px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+  }
+  .contact h2{color:var(--paper);font-size:clamp(26px,3vw,36px);}
+  .contact p{color:rgba(246,244,236,0.7);margin-top:14px;max-width:48ch;}
+  .contact-actions{display:flex;flex-direction:column;gap:14px;}
+  .contact-actions .btn{justify-content:center;width:100%;}
+  .btn-wa{background:#25D366;color:#0E2238;}
+  .btn-wa:hover{background:#3ee27f;}
 
-/* ─── DIVIDER ─── */
-.gold-line{width:48px;height:2px;background:var(--gold);margin:1.25rem 0 0}
+  /* ---------- FOOTER ---------- */
+  footer{padding:40px 0;border-top:1px solid var(--line);}
+  .foot-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;}
+  .foot-brand img{height:26px;}
+  .foot-brand span{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.08em;}
+  .foot-links{display:flex;gap:22px;font-size:12.5px;color:var(--slate-light);font-family:'IBM Plex Mono',monospace;}
 
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+  /* ---------- FLOATING ACTIONS ---------- */
+  .fab-group{position:fixed;bottom:26px;right:26px;z-index:150;display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+  .fab{
+    width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 28px -8px rgba(14,34,56,0.5);cursor:pointer;border:none;transition:transform .25s ease;
+  }
+  .fab:hover{transform:scale(1.08);}
+  .fab-wa{background:#25D366;}
+  .fab-mail{background:var(--ink);}
+  .fab svg{width:24px;height:24px;}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:900px){
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .about-grid,.contact-grid,.expertise-grid{grid-template-columns:1fr;gap:3rem}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .process-steps{grid-template-columns:repeat(2,1fr)}
-  .process-steps::before{display:none}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
-  .prop-modules{grid-template-columns:1fr}
-  .typo-grid{grid-template-columns:1fr}
-}
-@media(max-width:640px){
-  .nav-links,.nav-cta{display:none}
-  .hamburger{display:flex}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .services-grid,.why-grid,.counters{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  section{padding:5rem 1.25rem}
-}
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .stamp{width:90px;height:90px;top:20px;right:20px;}
+    .char-grid{grid-template-columns:1fr;}
+    .value-grid{grid-template-columns:1fr;}
+    .invest-wrap{grid-template-columns:1fr;}
+    .invest-left{border-right:none;border-bottom:1px solid var(--line);}
+    .fac-wrap{grid-template-columns:1fr;text-align:center;}
+    .fac-wrap p{margin:0 auto;}
+    .fac-tags{justify-content:center;}
+    .fac-avatar{margin:0 auto;}
+    .contact{grid-template-columns:1fr;text-align:center;padding:48px 28px;}
+    .contact p{margin:14px auto 0;}
+    .contact-actions{max-width:340px;margin:0 auto;}
+  }
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 20px;}
+    section{padding:64px 0;}
+    .folio-index{width:40px;font-size:26px;}
+    .folio-head{padding:18px;gap:14px;}
+    .folio-body-inner{padding:0 18px 24px;}
+  }
+  @media (max-width:480px){
+    .hero{padding:56px 0 44px;}
+    .stamp{position:static;transform:rotate(-6deg);margin-bottom:24px;width:96px;height:96px;}
+    .file-meta{font-size:10.5px;gap:8px 16px;}
+    .hero-actions{flex-direction:column;}
+    .hero-actions .btn{width:100%;justify-content:center;}
+    .invest-left,.invest-right{padding:32px 24px;}
+    .invest-left .total{font-size:44px;}
+  }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
       <img src="logo.png" alt="Romani Compliance">
-      <span>
-        <span class="nav-logo-text">Romani.</span>
-        <span class="nav-logo-sub">Compliance & Advisory</span>
-      </span>
+      <span class="brand-text"><strong>Romani Compliance</strong><span>Derecho Penal Económico</span></span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#about">Nosotros</a></li>
-      <li><a href="#services">Servicios</a></li>
-      <li><a href="#proposals">Propuestas</a></li>
-      <li><a href="#expertise">Experiencia</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Consulta gratuita</a>
-    <button class="hamburger" id="hamburger" aria-label="Menú">
+    <div class="nav-links">
+      <a href="#propuesta">Propuesta</a>
+      <a href="#temario">Temario</a>
+      <a href="#valor">Valor agregado</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#facilitador">Facilitador</a>
+      <a href="#contacto" class="nav-cta">Contactar</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#about" onclick="closeMobile()">Nosotros</a>
-  <a href="#services" onclick="closeMobile()">Servicios</a>
-  <a href="#proposals" onclick="closeMobile()">Propuestas</a>
-  <a href="#expertise" onclick="closeMobile()">Experiencia</a>
-  <a href="#contact" onclick="closeMobile()">Contacto</a>
-  <a href="https://wa.me/51969754983" target="_blank" style="color:#25D366;margin-top:1rem">WhatsApp → +51 969 754 983</a>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">&times;</button>
+  <a href="#propuesta">Propuesta</a>
+  <a href="#temario">Temario</a>
+  <a href="#valor">Valor agregado</a>
+  <a href="#inversion">Inversión</a>
+  <a href="#facilitador">Facilitador</a>
+  <a href="#contacto" class="mm-cta">Contactar</a>
 </div>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Lima, Perú — Especialistas desde 2018</div>
-    <h1 class="hero-h1">
-      Protección legal<br>
-      <em>frente al riesgo</em>
-      económico
-    </h1>
-    <p class="hero-sub">Estudio especializado en Derecho Penal Económico, Compliance ALA/CFT y Due Diligence. Asesoramos a empresas en la prevención de riesgos legales antes de que se conviertan en problemas reales.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Agendar consulta →</a>
-      <a href="#services" class="btn-secondary">Ver servicios</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-box">
-        <span class="stat-num" data-count="8">0</span>
-        <div class="stat-label">Años de experiencia</div>
-      </div>
-      <div class="stat-box">
-        <span class="stat-num" data-count="120" data-suffix="K+">0</span>
-        <div class="stat-label">Agentes capacitados</div>
-      </div>
-      <div class="stat-box">
-        <span class="stat-num" data-count="50" data-suffix="+">0</span>
-        <div class="stat-label">Clientes asesorados</div>
-      </div>
-      <div class="stat-box">
-        <span class="stat-num" data-count="100" data-suffix="%">0</span>
-        <div class="stat-label">Enfoque preventivo</div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-indicator">Descubrir</div>
-</section>
+<main id="top">
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Quiénes somos</div>
-      <h2 class="section-h2">Compliance de alto nivel,<br>sin tecnicismos innecesarios</h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>Romani Compliance es un estudio boutique fundado por el <strong>Abg. Mg. Denis Gabriel Romani Seminario</strong>, especialista en Derecho Penal Económico con maestría en Derecho Procesal Penal y formación especializada en compliance ALA/CFT.</p>
-        <p>Nuestro enfoque combina el <strong>rigor académico</strong> con una visión práctica del negocio: identificamos riesgos reales antes de que se conviertan en investigaciones, sanciones o daños reputacionales.</p>
-        <p>Trabajamos con empresas del sector financiero, de distribución, tecnología de pagos y servicios, diseñando sistemas de prevención que funcionan en el mundo real, no solo en el papel.</p>
-        <div style="margin-top:1.75rem;display:flex;gap:1rem;flex-wrap:wrap">
-          <a href="mailto:denis@romanicompliance.com" class="btn-primary" style="font-size:0.82rem;padding:0.65rem 1.4rem">Correo directo</a>
-          <a href="https://romanicompliance.com/" target="_blank" class="btn-secondary" style="font-size:0.82rem;padding:0.65rem 1.4rem">Sitio web →</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero" style="padding-top:72px;">
+    <div class="wrap" style="position:relative;">
+      <div class="stamp">
+        <span>Propuesta<br>personalizada<br>2026</span>
       </div>
-      <div class="about-features reveal">
-        <div class="feature-item">
-          <div class="feature-icon">⚖️</div>
-          <div>
-            <div class="feature-title">Derecho Penal Económico</div>
-            <div class="feature-desc">Defensa y asesoría en delitos tributarios, aduaneros, monetarios y de corrupción privada.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🔍</div>
-          <div>
-            <div class="feature-title">Compliance ALA/CFT</div>
-            <div class="feature-desc">Diseño, implementación y auditoría de sistemas SPLAFT para sujetos obligados y empresas en riesgo.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📋</div>
-          <div>
-            <div class="feature-title">Due Diligence</div>
-            <div class="feature-desc">Análisis de riesgo de contraparte, proveedores, socios y empresas en procesos de adquisición.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎓</div>
-          <div>
-            <div class="feature-title">Capacitación especializada</div>
-            <div class="feature-desc">Programas a medida para oficiales de cumplimiento, directorios y equipos operativos.</div>
-          </div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📊</div>
-          <div>
-            <div class="feature-title">Diagnóstico SPLAFT</div>
-            <div class="feature-desc">Evaluación del nivel de riesgo LA/FT adaptada al modelo de negocio de cada cliente.</div>
-          </div>
-        </div>
+      <div class="file-meta">
+        <span><b>Expediente:</b> RD-SPLAFT-2026-001</span>
+        <span><b>Cliente:</b> Red Digital del Perú S.A.C.</span>
+        <span><b>RUC:</b> 20566598389</span>
+        <span><b>Emisión:</b> <span id="issueDate"></span></span>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-inner">
-    <div class="services-header reveal">
-      <div>
-        <div class="section-label">Lo que hacemos</div>
-        <h2 class="section-h2">Servicios</h2>
-        <div class="gold-line"></div>
-      </div>
-      <p class="section-sub" style="margin-top:0">Cada servicio está diseñado para responder a un riesgo real y específico, no a una plantilla genérica.</p>
-    </div>
-    <div class="services-grid reveal">
-      <div class="service-card">
-        <div class="service-num">01 / PREVENCIÓN</div>
-        <span class="service-icon">🛡️</span>
-        <h3 class="service-title">Sistema de Prevención LA/FT (SPLAFT)</h3>
-        <p class="service-desc">Diseñamos e implementamos el sistema completo de prevención adaptado a su modelo de negocio, sector e industria. Incluye política de prevención, manual de cumplimiento, procedimientos KYC y matriz de riesgo.</p>
-        <div class="service-tags">
-          <span class="tag">UIF-Perú</span>
-          <span class="tag">Ley 27693</span>
-          <span class="tag">KYC/KYB</span>
-          <span class="tag">GAFI</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-num">02 / CAPACITACIÓN</div>
-        <span class="service-icon">🎓</span>
-        <h3 class="service-title">Capacitación para Oficiales de Cumplimiento</h3>
-        <p class="service-desc">Programas de capacitación personalizados para oficiales de cumplimiento, directorios y equipos operativos. Basados en tipologías reales de la industria, no en manuales genéricos.</p>
-        <div class="service-tags">
-          <span class="tag">Oficial OC</span>
-          <span class="tag">Tipologías</span>
-          <span class="tag">ROS</span>
-          <span class="tag">Señales de alerta</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-num">03 / ASESORÍA</div>
-        <span class="service-icon">⚖️</span>
-        <h3 class="service-title">Asesoría en Derecho Penal Económico</h3>
-        <p class="service-desc">Consultoría legal especializada en delitos tributarios, aduaneros, monetarios y de corrupción privada. Análisis de riesgo penal empresarial y orientación estratégica ante investigaciones fiscales.</p>
-        <div class="service-tags">
-          <span class="tag">D. Leg. 1106</span>
-          <span class="tag">Ley Penal Trib.</span>
-          <span class="tag">Ley 27693</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-num">04 / ANÁLISIS</div>
-        <span class="service-icon">🔍</span>
-        <h3 class="service-title">Due Diligence & Diagnóstico de Riesgo</h3>
-        <p class="service-desc">Análisis de contraparte, perfil de riesgo de proveedores y socios estratégicos. Diagnóstico SPLAFT previo a auditorías o procesos de adquisición. Entregable escrito con recomendaciones.</p>
-        <div class="service-tags">
-          <span class="tag">Perfil de riesgo</span>
-          <span class="tag">OFAC/ONU</span>
-          <span class="tag">PEP</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-num">05 / REGULATORIO</div>
-        <span class="service-icon">📋</span>
-        <h3 class="service-title">Análisis de Posición Regulatoria</h3>
-        <p class="service-desc">Determinamos si su empresa califica como sujeto obligado ante la UIF-Perú y qué obligaciones le corresponden bajo la Ley 29038, el D.S. 020-2017-JUS y el nuevo Reglamento del Sistema de Pagos del BCRP.</p>
-        <div class="service-tags">
-          <span class="tag">Ley 29038</span>
-          <span class="tag">BCRP 2026</span>
-          <span class="tag">SBS</span>
-          <span class="tag">PSP</span>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-num">06 / AUDITORÍA</div>
-        <span class="service-icon">📊</span>
-        <h3 class="service-title">Auditoría de Cumplimiento</h3>
-        <p class="service-desc">Revisión integral del sistema de prevención existente: identificamos brechas, evaluamos controles y emitimos un informe con el nivel de exposición actual y las medidas correctivas priorizadas.</p>
-        <div class="service-tags">
-          <span class="tag">Brechas SPLAFT</span>
-          <span class="tag">Controles</span>
-          <span class="tag">Informe</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TYPOLOGIES -->
-<section id="typologies">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Riesgos que identificamos</div>
-      <h2 class="section-h2">Tipologías de riesgo LA/FT<br>en el sector de pagos y distribución</h2>
-      <p class="section-sub">Las empresas de recaudación, distribución digital y redes de puntos de venta están expuestas a modalidades específicas que el GAFI y la UIF-Perú han identificado como de alto riesgo.</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="typo-grid reveal">
-      <div class="typo-item">
-        <div class="typo-bullet"></div>
+      <div class="hero-grid">
         <div>
-          <div class="typo-title">Structuring / Fraccionamiento coordinado</div>
-          <div class="typo-desc">Uso deliberado de múltiples puntos de venta en una misma zona para dividir operaciones y evadir umbrales de detección del sistema transaccional.</div>
+          <div class="eyebrow">Propuesta económica · Servicio de capacitación</div>
+          <h1>Capacitación SPLAFT diseñada <em>exclusivamente</em> para el modelo operativo de Red Digital.</h1>
+          <p class="lead">Un programa de dos horas que identifica los vectores de riesgo LA/FT reales de su red de más de 120,000 puntos de venta y entrega al Oficial de Cumplimiento las herramientas concretas para mitigarlos — con independencia de la condición formal de sujeto obligado.</p>
+          <div class="hero-actions">
+            <a href="#temario" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+              Ver temario completo
+            </a>
+            <button class="btn btn-outline" id="downloadPdfBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+              Descargar cotización
+            </button>
+            <a href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" class="btn btn-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.48-.02s-.44.06-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+              WhatsApp directo
+            </a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="tag">Inversión total</span>
+          <h3>Servicio de capacitación SPLAFT</h3>
+          <div class="price"><sup>USD</sup> 200<small>Equivalente a USD 100.00 por hora de capacitación</small></div>
+          <ul>
+            <li><span class="dot"></span>2 horas de exposición + 30 min de consultas específicas</li>
+            <li><span class="dot"></span>Diagnóstico preliminar de riesgo SPLAFT, sin costo adicional</li>
+            <li><span class="dot"></span>Análisis regulatorio escrito entregado en 5 días hábiles</li>
+            <li><span class="dot"></span>Sesión de seguimiento de 30 min dentro de los 15 días posteriores</li>
+          </ul>
+          <div class="validity">Propuesta válida hasta <span id="validUntil"></span></div>
         </div>
       </div>
-      <div class="typo-item">
-        <div class="typo-bullet"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" style="padding:0;">
+    <div class="wrap stats-grid" style="padding:56px 24px;">
+      <div class="stat reveal"><b data-count="15">0</b><span>Años de experiencia</span></div>
+      <div class="stat reveal"><b data-count="4">0</b><span>Módulos especializados</span></div>
+      <div class="stat reveal"><b data-count="120" data-suffix="K+">0</b><span>Puntos de venta analizados</span></div>
+      <div class="stat reveal"><b data-count="100" data-suffix="%">0</b><span>Personalizada a su modelo</span></div>
+    </div>
+  </section>
+
+  <!-- PROPUESTA / CARACTERISTICAS -->
+  <section id="propuesta">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Característica del servicio</div>
+        <h2>No es una charla genérica de compliance. Es un análisis de su operación.</h2>
+        <p>El contenido conceptual se construye sobre el modelo operativo real de Red Digital del Perú S.A.C., identificando los vectores de riesgo a los que efectivamente se expone la empresa, más allá de si hoy se le considera formalmente sujeto obligado ante la UIF-Perú.</p>
+      </div>
+      <div class="char-grid reveal">
+        <div class="char-cell">
+          <span class="num">01 / Duración</span>
+          <h4>2 horas de capacitación</h4>
+          <p>1 hora de preparación de material a medida y 2 horas de exposición, con 30 minutos adicionales para consultas específicas sobre el modelo de Red Digital.</p>
+        </div>
+        <div class="char-cell">
+          <span class="num">02 / Enfoque</span>
+          <h4>Basada en su operación real</h4>
+          <p>Se analizan la estructura de distribución, los flujos de saldo virtual y los sectores económicos predominantes en su red de puntos de venta.</p>
+        </div>
+        <div class="char-cell">
+          <span class="num">03 / Entregables</span>
+          <h4>Documentación de respaldo</h4>
+          <p>Diagnóstico preliminar, mapa de tipologías, análisis regulatorio escrito y sesión de seguimiento — todo incluido en la inversión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMARIO -->
+  <section id="temario" style="background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Programa de capacitación</div>
+        <h2>Temario</h2>
+        <p>Dirigido al Oficial de Cumplimiento de Red Digital del Perú S.A.C. Facilita: Abg. Mg. Denis Gabriel Romani Seminario. Haga clic en cada módulo para ver el contenido completo.</p>
+      </div>
+
+      <div class="folios reveal">
+
+        <div class="folio">
+          <div class="folio-head">
+            <span class="folio-index">01</span>
+            <div class="folio-title">
+              <h3>¿Por qué Red Digital necesita entender el SPLAFT?</h3>
+              <span class="meta">20 minutos</span>
+            </div>
+            <span class="folio-toggle"></span>
+          </div>
+          <div class="folio-body">
+            <div class="folio-body-inner">
+              <div class="sub">
+                <h5>1.1 · El riesgo que viene del modelo de negocio</h5>
+                <ul>
+                  <li>Más de 120,000 puntos de venta que manejan efectivo de forma descentralizada y a gran escala: una señal de riesgo en sí misma para la UIF-Perú y el GAFI.</li>
+                  <li>La recaudación por cuenta de marcas afiliadas convierte a cada punto de venta en un canal de ingreso de dinero al sistema formal, acercándolo a los servicios de transferencia de valor (MVTS) de alto riesgo según el GAFI.</li>
+                  <li>El D.Leg. N.° 1106 sanciona la facilitación del lavado de activos aunque la empresa no esté formalmente inscrita ante la UIF.</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <h5>1.2 · El marco normativo y su impacto real</h5>
+                <ul>
+                  <li>Ley N.° 27693 y su Reglamento (D.S. N.° 020-2017-JUS): definición de sujeto obligado, categorías y consecuencias del incumplimiento.</li>
+                  <li>Nuevo Reglamento del Sistema de Pagos del BCRP (Circular 2025/2026): la figura del Proveedor de Servicios de Pago (PSP).</li>
+                  <li>D.Leg. N.° 1106 y responsabilidad de la persona jurídica (Ley N.° 30424).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="folio">
+          <div class="folio-head">
+            <span class="folio-index">02</span>
+            <div class="folio-title">
+              <h3>El SPLAFT aplicado a Red Digital: estructura y herramientas</h3>
+              <span class="meta">35 minutos</span>
+            </div>
+            <span class="folio-toggle"></span>
+          </div>
+          <div class="folio-body">
+            <div class="folio-body-inner">
+              <div class="sub">
+                <h5>2.1 · Componentes mínimos de un sistema de prevención</h5>
+                <ul>
+                  <li>Política de prevención, Código de Conducta y Manual interno adaptados al modelo de distribución con terceros.</li>
+                  <li>El Oficial de Cumplimiento: funciones, autonomía operativa y protección legal ante una eventual investigación.</li>
+                  <li>Registro de Operaciones: qué datos del sistema transaccional deben conservarse, en qué formato y por cuánto tiempo.</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <h5>2.2 · Conocimiento del cliente (KYC) en la red de distribución</h5>
+                <ul>
+                  <li>A quién se aplica el KYC: puntos de venta, distribuidores y usuarios finales.</li>
+                  <li>Debida diligencia básica en el alta de un punto de venta y señales que activan una debida diligencia reforzada.</li>
+                  <li>Listas de control OFAC, ONU, GAFI y Personas Expuestas Políticamente (PEP).</li>
+                  <li>Umbrales de alerta y fraccionamiento en el monitoreo de operaciones.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="folio">
+          <div class="folio-head">
+            <span class="folio-index">03</span>
+            <div class="folio-title">
+              <h3>Tipologías de riesgo específicas y señales de alerta</h3>
+              <span class="meta">30 minutos</span>
+            </div>
+            <span class="folio-toggle"></span>
+          </div>
+          <div class="folio-body">
+            <div class="folio-body-inner">
+              <div class="sub">
+                <h5>3.1 · Tipologías identificadas en el modelo de negocio</h5>
+                <ul>
+                  <li>Fraccionamiento coordinado en múltiples puntos de venta (structuring).</li>
+                  <li>Puntos de venta de fachada, sin actividad comercial real.</li>
+                  <li>Colocación de efectivo mediante saldo virtual prepagado.</li>
+                  <li>Triangulación a través de distribuidores.</li>
+                  <li>Lavado mediante venta de loterías y juegos de azar.</li>
+                  <li>Uso de identidades de terceros (testaferros) en el registro de puntos de venta.</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <h5>3.2 · Señales de alerta y proceso de reporte</h5>
+                <ul>
+                  <li>Señales operativas: horarios atípicos, volúmenes inusuales, concentración de operaciones.</li>
+                  <li>Proceso interno de detección, análisis y escalamiento.</li>
+                  <li>El Reporte de Operaciones Sospechosas (ROS): plazos y canal ante la UIF-Perú.</li>
+                  <li>Prohibición de alertar al cliente (no tipping off) y responsabilidad penal por incumplimiento.</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <h5>3.3 · Sanciones e infracciones</h5>
+                <ul>
+                  <li>Infracciones leves, graves y muy graves según la normativa SBS/UIF.</li>
+                  <li>Responsabilidad penal personal del Oficial de Cumplimiento y del representante legal.</li>
+                  <li>Casos reales de empresas de distribución y recaudación digital sancionadas en la región.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="folio">
+          <div class="folio-head">
+            <span class="folio-index">04</span>
+            <div class="folio-title">
+              <h3>Taller práctico y consultas</h3>
+              <span class="meta">35 minutos</span>
+            </div>
+            <span class="folio-toggle"></span>
+          </div>
+          <div class="folio-body">
+            <div class="folio-body-inner">
+              <div class="sub">
+                <ul>
+                  <li>Revisión conjunta del diagnóstico preliminar de riesgo SPLAFT de Red Digital.</li>
+                  <li>Ejercicio práctico con tres escenarios reales del modelo transaccional: recarga masiva, cobro de servicios en punto de venta reciente y venta de SOAT con datos inconsistentes.</li>
+                  <li>Evaluación de la posición regulatoria de Red Digital como posible PSP y como potencial sujeto obligado, con recomendación de pasos de adecuación preventiva.</li>
+                  <li>Preguntas y respuestas abiertas sobre el modelo de negocio específico.</li>
+                  <li>Hoja de ruta mínima para iniciar la implementación interna del SPLAFT.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="timedist reveal">
+        <h4>Distribución del tiempo — 2 horas totales</h4>
+        <div class="timebar" id="timebar">
+          <span class="m1" data-width="16.6"></span>
+          <span class="m2" data-width="29.2"></span>
+          <span class="m3" data-width="25"></span>
+          <span class="m4" data-width="29.2"></span>
+        </div>
+        <div class="timelegend">
+          <div><i style="background:#8C7A55"></i> Módulo 1 · 20 min</div>
+          <div><i style="background:#A9814C"></i> Módulo 2 · 35 min</div>
+          <div><i style="background:#8C3B3B"></i> Módulo 3 · 30 min</div>
+          <div><i style="background:#0E2238"></i> Módulo 4 · 35 min</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALOR AGREGADO -->
+  <section id="valor">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Valor agregado</div>
+        <h2>Incluido en la inversión, sin costo adicional</h2>
+        <p>Más allá de la exposición, la propuesta entrega documentación de trabajo real que el Oficial de Cumplimiento puede usar de inmediato.</p>
+      </div>
+      <div class="value-grid reveal">
+        <div class="value-card">
+          <span class="vnum">Antes de la sesión</span>
+          <h4>Diagnóstico preliminar de riesgo SPLAFT</h4>
+          <p>Adaptado al modelo de Red Digital: se analizan la estructura de distribución, los flujos de saldo virtual y los sectores económicos predominantes en la red de puntos de venta, entregado antes de la sesión.</p>
+        </div>
+        <div class="value-card">
+          <span class="vnum">Durante la sesión</span>
+          <h4>Mapa de tipologías de riesgo</h4>
+          <p>Específico para redes de recaudación digital, elaborado con base en las alertas tipológicas del GAFI, la UIF-Perú y la experiencia en compliance de empresas con modelos similares.</p>
+        </div>
+        <div class="value-card">
+          <span class="vnum">5 días hábiles después</span>
+          <h4>Análisis regulatorio escrito</h4>
+          <p>Posición de Red Digital bajo la Ley N.° 29038 y el nuevo Reglamento del Sistema de Pagos del BCRP (2026), con recomendación sobre los pasos mínimos de adecuación preventiva.</p>
+        </div>
+        <div class="value-card">
+          <span class="vnum">Dentro de 15 días</span>
+          <h4>Sesión de seguimiento</h4>
+          <p>30 minutos adicionales para resolver dudas sobre la implementación concreta de las recomendaciones entregadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVERSION -->
+  <section id="inversion" style="background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Costo del servicio</div>
+        <h2>Inversión</h2>
+        <p>Cotización personalizada para Red Digital del Perú S.A.C. Incluye recibo por honorarios.</p>
+      </div>
+      <div class="invest-wrap reveal">
+        <div class="invest-left">
+          <span class="mono" style="font-size:12px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.08em;">Costo total del servicio</span>
+          <div class="total"><sup>USD</sup> 200.00</div>
+          <span class="per-hour">Equivalente a USD 100.00 por hora de capacitación</span>
+          <div class="breakdown">
+            <div class="breakdown-row"><span>Preparación de material</span><b>1 hora</b></div>
+            <div class="breakdown-row"><span>Exposición</span><b>2 horas</b></div>
+            <div class="breakdown-row"><span>Consultas sobre el modelo operativo</span><b>30 min. adicionales</b></div>
+            <div class="breakdown-row"><span>Documentación y seguimiento</span><b>Incluidos</b></div>
+          </div>
+        </div>
+        <div class="invest-right">
+          <h4>Modalidad de pago</h4>
+          <div class="pay-step">
+            <span class="circ">1</span>
+            <p>50% del total al confirmar la sesión, para reservar la fecha y dar inicio a la preparación del material.</p>
+          </div>
+          <div class="pay-step">
+            <span class="circ">2</span>
+            <p>50% restante al término de la capacitación, contra la entrega de los materiales de la sesión.</p>
+          </div>
+          <div class="pay-step">
+            <span class="circ">3</span>
+            <p>Se emite recibo por honorarios profesionales por el total del servicio.</p>
+          </div>
+          <div class="invest-note mono">Propuesta sujeta a confirmación de fecha y disponibilidad del facilitador.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITADOR -->
+  <section id="facilitador">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Facilitador</div>
+        <h2>Quién dicta la capacitación</h2>
+      </div>
+      <div class="fac-wrap reveal">
         <div>
-          <div class="typo-title">Puntos de venta de fachada</div>
-          <div class="typo-desc">Establecimientos registrados en la plataforma sin actividad comercial real, utilizados para introducir efectivo ilícito bajo la apariencia de operaciones de recarga o cobro de servicios.</div>
+          <div class="fac-avatar">DR</div>
+          <div class="fac-cred">Colegio de Abogados</div>
         </div>
-      </div>
-      <div class="typo-item">
-        <div class="typo-bullet"></div>
         <div>
-          <div class="typo-title">Colocación de efectivo mediante saldo virtual</div>
-          <div class="typo-desc">El mecanismo de prepago puede emplearse como primera etapa del lavado: depósito de efectivo ilícito a cambio de saldo virtual que parece provenir de actividad comercial legítima.</div>
+          <h3 class="fac-name">Abg. Mg. Denis Gabriel Romani Seminario</h3>
+          <span class="fac-role">Especialista en Derecho Penal Económico y Compliance</span>
+          <p>Con más de 15 años de experiencia en Derecho Penal Económico y sistemas de prevención de lavado de activos y financiamiento del terrorismo, Denis Romani asesora a empresas de distintos sectores en el diseño e implementación de sus programas SPLAFT, la evaluación de su exposición regulatoria y la defensa de sus intereses ante procesos de fiscalización.</p>
+          <p>Su enfoque parte siempre del modelo de negocio real del cliente: antes de proponer una estructura de cumplimiento, analiza cómo se mueve el dinero dentro de la operación para diseñar herramientas que efectivamente mitiguen el riesgo, no solo que cumplan la forma.</p>
+          <div class="fac-tags">
+            <span>Derecho Penal Económico</span>
+            <span>SPLAFT / LA-FT</span>
+            <span>Compliance corporativo</span>
+            <span>Litigio y asesoría regulatoria</span>
+          </div>
         </div>
       </div>
-      <div class="typo-item">
-        <div class="typo-bullet"></div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact reveal">
         <div>
-          <div class="typo-title">Triangulación a través de distribuidores</div>
-          <div class="typo-desc">El representante comercial opera como intermediario en la consolidación de fondos de origen ilícito, aprovechando la relación contractual indirecta con la plataforma.</div>
+          <div class="eyebrow" style="color:var(--gold-soft);">Siguiente paso</div>
+          <h2>Coordinemos la fecha de la capacitación</h2>
+          <p>Escriba directamente a Denis Romani para confirmar disponibilidad, resolver dudas sobre el alcance de la propuesta o solicitar ajustes al programa.</p>
         </div>
-      </div>
-      <div class="typo-item">
-        <div class="typo-bullet"></div>
-        <div>
-          <div class="typo-title">Lavado mediante loterías y juegos de azar</div>
-          <div class="typo-desc">Compra de boletos con dinero ilícito y presentación de premios como fuente legítima de ingresos. Tipología clásica identificada por el GAFI directamente aplicable en plataformas de distribución.</div>
-        </div>
-      </div>
-      <div class="typo-item">
-        <div class="typo-bullet"></div>
-        <div>
-          <div class="typo-title">Testaferros en el registro de agentes</div>
-          <div class="typo-desc">Registro de puntos de venta a nombre de personas sin vinculación real con el negocio para dificultar la trazabilidad del beneficiario final de las operaciones.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROPOSALS ACCORDION -->
-<section id="proposals">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Propuestas disponibles</div>
-      <h2 class="section-h2">Programas de capacitación</h2>
-      <p class="section-sub">Cada programa se diseña a partir del modelo de negocio del cliente. Lo que ve aquí es el punto de partida, no el límite.</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="accordion reveal" style="margin-top:3rem">
-
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          <div class="accordion-title">
-            Prevención LA/FT para Redes de Distribución Digital
-            <span class="accordion-badge">USD 200 · 2 horas</span>
-          </div>
-          <div class="accordion-icon">+</div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-content">
-            <p class="prop-desc">Capacitación diseñada para empresas con redes de puntos de venta, recaudación por cuenta de terceros y saldo virtual prepagado. Identifica los vectores de riesgo LA/FT reales del modelo operativo y equipa al Oficial de Cumplimiento con herramientas concretas, con independencia de si la empresa es actualmente sujeto obligado.</p>
-            <div class="prop-modules">
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 01</div>
-                <div class="prop-module-title">¿Por qué su empresa necesita el SPLAFT?</div>
-                <div class="prop-module-time">20 min · Marco normativo y contexto de riesgo</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 02</div>
-                <div class="prop-module-title">Estructura y herramientas SPLAFT</div>
-                <div class="prop-module-time">35 min · KYC, debida diligencia, registros</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 03</div>
-                <div class="prop-module-title">Tipologías y señales de alerta</div>
-                <div class="prop-module-time">30 min · 6 tipologías específicas del sector</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 04</div>
-                <div class="prop-module-title">Taller práctico con escenarios reales</div>
-                <div class="prop-module-time">35 min · Análisis de casos y consultas</div>
-              </div>
-            </div>
-            <div class="prop-footer">
-              <div class="prop-price">USD 200 <span>· 2 horas de exposición</span></div>
-              <div class="prop-value">
-                <div class="prop-val-item">Diagnóstico SPLAFT previo</div>
-                <div class="prop-val-item">Mapa de tipologías</div>
-                <div class="prop-val-item">Informe regulatorio</div>
-                <div class="prop-val-item">Seguimiento 30 min</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          <div class="accordion-title">
-            SPLAFT para Sujetos Obligados (PSAV / Empresas Financieras)
-            <span class="accordion-badge">A consultar · 3 horas</span>
-          </div>
-          <div class="accordion-icon">+</div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-content">
-            <p class="prop-desc">Capacitación integral para empresas formalmente registradas ante la UIF-Perú como sujetos obligados: empresas de transferencia de fondos, proveedores de servicios de activos virtuales (PSAV), cooperativas y entidades del sistema financiero no bancario. Cubre todas las obligaciones regulatorias con énfasis en responsabilidad del Oficial de Cumplimiento.</p>
-            <div class="prop-modules">
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 01</div>
-                <div class="prop-module-title">Marco ALA/CFT: UIF-Perú, GAFI y normativa vigente</div>
-                <div class="prop-module-time">45 min · Ley 27693, D.S. 020-2017-JUS</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 02</div>
-                <div class="prop-module-title">Componentes del SPLAFT y Oficial de Cumplimiento</div>
-                <div class="prop-module-time">45 min · Manual, política, registros, responsabilidad</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 03</div>
-                <div class="prop-module-title">KYC avanzado, PEP y debida diligencia reforzada</div>
-                <div class="prop-module-time">30 min · OFAC, ONU, umbrales</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">MÓDULO 04</div>
-                <div class="prop-module-title">ROS, sanciones y casos prácticos</div>
-                <div class="prop-module-time">60 min · Simulación de reporte y evaluación</div>
-              </div>
-            </div>
-            <div class="prop-footer">
-              <div class="prop-price">A consultar <span>· 3 horas · Modalidad virtual o presencial</span></div>
-              <div class="prop-value">
-                <div class="prop-val-item">Diagnóstico previo</div>
-                <div class="prop-val-item">Checklist regulatorio</div>
-                <div class="prop-val-item">Sesión de seguimiento</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-          <div class="accordion-title">
-            Diseño e Implementación del SPLAFT (Servicio Integral)
-            <span class="accordion-badge">A consultar · Proyecto</span>
-          </div>
-          <div class="accordion-icon">+</div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-content">
-            <p class="prop-desc">Servicio integral para empresas que necesitan construir su sistema de prevención desde cero o actualizar un sistema existente que no cumple con la normativa vigente. Incluye diagnóstico, diseño, documentación, capacitación e implementación acompañada.</p>
-            <div class="prop-modules">
-              <div class="prop-module">
-                <div class="prop-module-num">FASE 01</div>
-                <div class="prop-module-title">Diagnóstico de riesgo LA/FT</div>
-                <div class="prop-module-time">Entrevistas, análisis del modelo de negocio, matriz de riesgo</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">FASE 02</div>
-                <div class="prop-module-title">Diseño del sistema SPLAFT</div>
-                <div class="prop-module-time">Política, manual, procedimientos KYC, código de conducta</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">FASE 03</div>
-                <div class="prop-module-title">Capacitación y despliegue</div>
-                <div class="prop-module-time">Formación del OC y equipos, entregables finales</div>
-              </div>
-              <div class="prop-module">
-                <div class="prop-module-num">FASE 04</div>
-                <div class="prop-module-title">Seguimiento y ajuste</div>
-                <div class="prop-module-time">Revisión post-implementación y soporte continuo</div>
-              </div>
-            </div>
-            <div class="prop-footer">
-              <div class="prop-price">A consultar <span>· Cronograma personalizado</span></div>
-              <div class="prop-value">
-                <div class="prop-val-item">Proyecto a medida</div>
-                <div class="prop-val-item">Documentación completa</div>
-                <div class="prop-val-item">Soporte post-entrega</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Cómo trabajamos</div>
-      <h2 class="section-h2">El proceso</h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="process-steps reveal">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Diagnóstico inicial</div>
-        <div class="step-desc">Analizamos el modelo de negocio, los flujos de dinero y los riesgos específicos del sector antes de proponer cualquier solución.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Propuesta personalizada</div>
-        <div class="step-desc">Diseñamos un servicio a medida: sin plantillas, sin contenido genérico. Todo basado en los riesgos reales identificados.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">Ejecución y entrega</div>
-        <div class="step-desc">Capacitación, implementación o asesoría con entregables concretos: informes, manuales, diagnósticos o matrices de riesgo.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-title">Seguimiento continuo</div>
-        <div class="step-desc">Sesión de seguimiento post-entrega para resolver dudas de implementación y ajustar en función de cambios normativos.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERTISE -->
-<section id="expertise">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Trayectoria</div>
-      <h2 class="section-h2">Experiencia en números</h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="expertise-grid reveal">
-      <div class="counters" id="counters">
-        <div class="counter-box">
-          <span class="counter-value" data-target="8">0</span>
-          <div class="counter-label">Años activo</div>
-        </div>
-        <div class="counter-box">
-          <span class="counter-value" data-target="50" data-suffix="+">0</span>
-          <div class="counter-label">Clientes</div>
-        </div>
-        <div class="counter-box">
-          <span class="counter-value" data-target="120" data-suffix="K">0</span>
-          <div class="counter-label">Agentes formados</div>
-        </div>
-        <div class="counter-box">
-          <span class="counter-value" data-target="3">0</span>
-          <div class="counter-label">Sectores clave</div>
-        </div>
-      </div>
-      <div class="expertise-bars" id="bars">
-        <div class="bar-item">
-          <div class="bar-header">
-            <span class="bar-label">Compliance ALA/CFT</span>
-            <span class="bar-pct">95%</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill" style="--w:0.95"></div></div>
-        </div>
-        <div class="bar-item">
-          <div class="bar-header">
-            <span class="bar-label">Derecho Penal Económico</span>
-            <span class="bar-pct">90%</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill" style="--w:0.9"></div></div>
-        </div>
-        <div class="bar-item">
-          <div class="bar-header">
-            <span class="bar-label">Due Diligence & Riesgo Regulatorio</span>
-            <span class="bar-pct">88%</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill" style="--w:0.88"></div></div>
-        </div>
-        <div class="bar-item">
-          <div class="bar-header">
-            <span class="bar-label">Capacitación corporativa</span>
-            <span class="bar-pct">92%</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill" style="--w:0.92"></div></div>
-        </div>
-        <div class="bar-item">
-          <div class="bar-header">
-            <span class="bar-label">Análisis de posición regulatoria</span>
-            <span class="bar-pct">85%</span>
-          </div>
-          <div class="bar-track"><div class="bar-fill" style="--w:0.85"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section id="why">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Por qué elegirnos</div>
-      <h2 class="section-h2">Lo que nos distingue</h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <span class="why-icon">🎯</span>
-        <div class="why-title">Personalización real</div>
-        <div class="why-text">Analizamos su modelo de negocio antes de proponer cualquier servicio. El diagnóstico previo es parte del trabajo, no un extra. Nada de plantillas.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">🧠</span>
-        <div class="why-title">Doble perspectiva: legal y operativa</div>
-        <div class="why-text">Combinamos el conocimiento jurídico con la comprensión de cómo operan los negocios reales. Nuestras recomendaciones son implementables, no solo teóricamente correctas.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">📅</span>
-        <div class="why-title">Entregables concretos</div>
-        <div class="why-text">Cada servicio termina con un entregable tangible: un informe, un manual, una matriz de riesgo o un diagnóstico escrito. No solo reuniones y conversaciones.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">⚡</span>
-        <div class="why-title">Respuesta ágil</div>
-        <div class="why-text">Somos un estudio boutique: sin burocracia, sin intermediarios. El especialista que diseña el servicio es el mismo que lo ejecuta y con quien se comunica.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">🌐</span>
-        <div class="why-title">Actualización normativa constante</div>
-        <div class="why-text">Seguimos de cerca los cambios regulatorios del BCRP, SBS y UIF-Perú. Nuestros servicios incorporan la normativa vigente, incluido el Reglamento PSP 2026.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">🤝</span>
-        <div class="why-title">Confidencialidad garantizada</div>
-        <div class="why-text">Toda la información que comparte con nosotros está protegida por el deber de confidencialidad profesional y por los acuerdos de no divulgación que formalizamos desde el inicio.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="reveal">
-      <div class="section-label">Hablemos</div>
-      <h2 class="section-h2">¿Cómo podemos ayudarle?</h2>
-      <p class="section-sub">La primera consulta es sin costo. Cuéntenos su caso y le diremos si podemos ayudarle y cómo.</p>
-      <div class="gold-line"></div>
-    </div>
-    <div class="contact-grid reveal">
-      <div class="contact-info">
-        <p class="contact-sub">Atendemos consultas sobre compliance, diseño de sistemas SPLAFT, capacitación y asesoría en Derecho Penal Económico. Respondemos en menos de 24 horas hábiles.</p>
-        <div class="contact-methods">
-          <a href="https://wa.me/51969754983?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20compliance" target="_blank" class="contact-method">
-            <div class="contact-method-icon icon-wa">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </div>
-            <div class="contact-method-info">
-              <div class="contact-method-type">WhatsApp</div>
-              <div class="contact-method-value">+51 969 754 983</div>
-            </div>
+        <div class="contact-actions">
+          <a href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" class="btn btn-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
+            +51 969 754 983
           </a>
-          <a href="mailto:denis@romanicompliance.com" class="contact-method">
-            <div class="contact-method-icon icon-mail">✉️</div>
-            <div class="contact-method-info">
-              <div class="contact-method-type">Correo electrónico</div>
-              <div class="contact-method-value">denis@romanicompliance.com</div>
-            </div>
+          <a href="mailto:denis@romanicompliance.com?subject=Consulta%20-%20Propuesta%20SPLAFT%20Red%20Digital" class="btn btn-outline" style="border-color:rgba(246,244,236,0.4);color:var(--paper);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
+            denis@romanicompliance.com
           </a>
-          <a href="https://romanicompliance.com/" target="_blank" class="contact-method">
-            <div class="contact-method-icon icon-web">🌐</div>
-            <div class="contact-method-info">
-              <div class="contact-method-type">Sitio web</div>
-              <div class="contact-method-value">romanicompliance.com</div>
-            </div>
-          </a>
-        </div>
-        <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--navy-mid);border-radius:var(--radius);border:1px solid var(--border)">
-          <div style="font-size:0.72rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono);margin-bottom:0.5rem">Sede</div>
-          <div style="font-size:0.88rem;color:var(--white)">Av. A. Benavides N° 540, Dpto 604</div>
-          <div style="font-size:0.82rem;color:var(--slate)">Miraflores, Lima — Perú</div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-input" placeholder="Su nombre completo" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Empresa</label>
-              <input type="text" class="form-input" placeholder="Nombre de la empresa">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Correo electrónico</label>
-            <input type="email" class="form-input" placeholder="correo@empresa.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Servicio de interés</label>
-            <select class="form-select form-input">
-              <option value="">Seleccione un servicio</option>
-              <option>Sistema de Prevención LA/FT (SPLAFT)</option>
-              <option>Capacitación para Oficial de Cumplimiento</option>
-              <option>Asesoría en Derecho Penal Económico</option>
-              <option>Due Diligence y diagnóstico de riesgo</option>
-              <option>Análisis de posición regulatoria</option>
-              <option>Auditoría de cumplimiento</option>
-              <option>Otro / Consulta general</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Mensaje</label>
-            <textarea class="form-textarea" placeholder="Describa brevemente su situación o consulta…"></textarea>
-          </div>
-          <button type="submit" class="form-submit">Enviar consulta →</button>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <div style="font-size:2rem;margin-bottom:0.75rem">✓</div>
-          <div style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.4rem">Mensaje recibido</div>
-          <div style="font-size:0.85rem;color:var(--slate)">Le responderemos en menos de 24 horas hábiles.</div>
+          <button class="btn btn-gold" id="downloadPdfBtn2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            Descargar cotización PDF
+          </button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
+</main>
+
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="logo.png" alt="Romani Compliance">
-        </div>
-        <p class="footer-desc">Estudio especializado en Derecho Penal Económico, Compliance ALA/CFT y Due Diligence. Protegemos a las empresas antes de que el riesgo se convierta en un problema legal.</p>
-        <div style="margin-top:1.25rem;display:flex;gap:0.75rem">
-          <a href="https://wa.me/51969754983" target="_blank" style="width:36px;height:36px;border-radius:var(--radius);background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;transition:all 0.3s" title="WhatsApp">💬</a>
-          <a href="mailto:denis@romanicompliance.com" style="width:36px;height:36px;border-radius:var(--radius);background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;transition:all 0.3s" title="Email">✉️</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="#services">Diseño SPLAFT</a></li>
-          <li><a href="#services">Capacitación OC</a></li>
-          <li><a href="#services">Due Diligence</a></li>
-          <li><a href="#services">Posición regulatoria</a></li>
-          <li><a href="#services">Auditoría compliance</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="https://wa.me/51969754983">+51 969 754 983</a></li>
-          <li><a href="mailto:denis@romanicompliance.com">denis@romanicompliance.com</a></li>
-          <li><a href="mailto:dromani@pucp.pe">dromani@pucp.pe</a></li>
-          <li><a href="https://romanicompliance.com/" target="_blank">romanicompliance.com</a></li>
-          <li><a href="#contact">Consulta gratuita</a></li>
-        </ul>
-      </div>
+  <div class="wrap foot-wrap">
+    <div class="foot-brand">
+      <img src="logo.png" alt="Romani Compliance">
+      <span>Romani Compliance — Derecho Penal Económico &amp; Compliance</span>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2025 <strong>Romani Compliance</strong> — Todos los derechos reservados.</div>
-      <div class="footer-copy">Miraflores, Lima — Perú</div>
+    <div class="foot-links">
+      <span>Expediente RD-SPLAFT-2026-001</span>
+      <span id="footYear"></span>
     </div>
   </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<div class="wa-float">
-  <div class="wa-tooltip">Escribir por WhatsApp</div>
-  <a href="https://wa.me/51969754983?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20compliance" target="_blank" class="wa-btn" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<div class="fab-group">
+  <a class="fab fab-wa" href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#0E2238"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
+  </a>
+  <a class="fab fab-mail" href="mailto:denis@romanicompliance.com?subject=Consulta%20-%20Propuesta%20SPLAFT%20Red%20Digital" aria-label="Correo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EC" stroke-width="2"><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
   </a>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-/* NAV SCROLL */
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+  // ---- Mobile menu ----
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  burgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-/* HAMBURGER */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-function closeMobile() { mobileMenu.classList.remove('open'); }
+  // ---- Dates ----
+  const monthsEs = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  function formatDate(d){ return d.getDate() + " de " + monthsEs[d.getMonth()] + " de " + d.getFullYear(); }
+  const today = new Date();
+  const valid = new Date(today.getTime() + 15*24*60*60*1000);
+  document.getElementById('issueDate').textContent = formatDate(today);
+  document.getElementById('validUntil').textContent = formatDate(valid);
+  document.getElementById('footYear').textContent = "© " + today.getFullYear() + " Romani Compliance";
 
-/* ACCORDION */
-function toggleAccordion(header) {
-  const body = header.nextElementSibling;
-  const isOpen = header.classList.contains('active');
-  document.querySelectorAll('.accordion-header').forEach(h => {
-    h.classList.remove('active');
-    h.nextElementSibling.classList.remove('open');
+  // ---- Accordion ----
+  document.querySelectorAll('.folio-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const folio = head.parentElement;
+      const body = folio.querySelector('.folio-body');
+      const isOpen = folio.classList.contains('open');
+      document.querySelectorAll('.folio').forEach(f => {
+        f.classList.remove('open');
+        f.querySelector('.folio-body').style.maxHeight = null;
+      });
+      if(!isOpen){
+        folio.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + "px";
+      }
+    });
   });
-  if (!isOpen) {
-    header.classList.add('active');
-    body.classList.add('open');
-  }
-}
 
-/* SCROLL REVEAL */
-const reveals = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-      revealObs.unobserve(e.target);
+  // ---- Scroll reveal ----
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ---- Counters ----
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        let current = 0;
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start)/duration, 1);
+          const eased = 1 - Math.pow(1-progress, 3);
+          current = Math.floor(eased * target);
+          el.textContent = current + suffix;
+          if(progress < 1){ requestAnimationFrame(tick); }
+          else { el.textContent = target + suffix; }
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, {threshold:0.4});
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  // ---- Time distribution bar ----
+  const timebarObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('span[data-width]').forEach(s => {
+          s.style.width = s.getAttribute('data-width') + '%';
+        });
+        timebarObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.5});
+  const timebarEl = document.getElementById('timebar');
+  if(timebarEl){ timebarObserver.observe(timebarEl); }
+
+  // ---- PDF generation ----
+  function generatePDF(){
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({unit:'mm', format:'a4'});
+    const marginX = 20;
+    let y = 22;
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const inkColor = [14,34,56];
+    const goldColor = [169,129,76];
+    const slateColor = [74,85,104];
+
+    function checkPage(space){
+      if(y + space > pageHeight - 18){ doc.addPage(); y = 22; }
     }
-  });
-}, { threshold: 0.12 });
-reveals.forEach(r => revealObs.observe(r));
-
-/* HERO STAT COUNTERS */
-function animateCount(el) {
-  const target = parseInt(el.dataset.count);
-  const suffix = el.dataset.suffix || '';
-  const duration = 1800;
-  const start = performance.now();
-  function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(eased * target) + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = target + suffix;
-  }
-  requestAnimationFrame(update);
-}
-const heroStats = document.querySelectorAll('.stat-num[data-count]');
-const heroObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCount(e.target);
-      heroObs.unobserve(e.target);
+    function heading(text, size){
+      checkPage(12);
+      doc.setFont('helvetica','bold');
+      doc.setFontSize(size || 13);
+      doc.setTextColor(...inkColor);
+      doc.text(text, marginX, y);
+      y += 7;
+      doc.setDrawColor(...goldColor);
+      doc.setLineWidth(0.4);
+      doc.line(marginX, y-4.5, marginX + 26, y-4.5);
     }
-  });
-}, { threshold: 0.5 });
-heroStats.forEach(el => heroObs.observe(el));
+    function subheading(text){
+      checkPage(8);
+      doc.setFont('helvetica','bold');
+      doc.setFontSize(10.5);
+      doc.setTextColor(...goldColor);
+      doc.text(text, marginX, y);
+      y += 6;
+    }
+    function bullet(text){
+      doc.setFont('helvetica','normal');
+      doc.setFontSize(10);
+      doc.setTextColor(...slateColor);
+      const lines = doc.splitTextToSize(text, pageWidth - marginX*2 - 5);
+      lines.forEach((line, i) => {
+        checkPage(6);
+        doc.text((i===0? '- ' : '  ') + line, marginX, y);
+        y += 5;
+      });
+      y += 1;
+    }
+    function paragraph(text, size){
+      doc.setFont('helvetica','normal');
+      doc.setFontSize(size || 10);
+      doc.setTextColor(...slateColor);
+      const lines = doc.splitTextToSize(text, pageWidth - marginX*2);
+      lines.forEach(line => { checkPage(6); doc.text(line, marginX, y); y += 5.2; });
+      y += 2;
+    }
 
-/* EXPERTISE COUNTERS */
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
-  const suffix = el.dataset.suffix || '';
-  const duration = 2000;
-  const start = performance.now();
-  function update(now) {
-    const t = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - t, 4);
-    el.textContent = Math.floor(eased * target) + suffix;
-    if (t < 1) requestAnimationFrame(update);
-    else el.textContent = target + suffix;
-  }
-  requestAnimationFrame(update);
-}
-const counterEls = document.querySelectorAll('.counter-value[data-target]');
-const barFills = document.querySelectorAll('.bar-fill');
-let countersStarted = false;
-const counterSection = document.getElementById('expertise');
-const expertiseObs = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting && !countersStarted) {
-    countersStarted = true;
-    counterEls.forEach(el => animateCounter(el));
-    setTimeout(() => barFills.forEach(b => b.classList.add('animated')), 200);
-  }
-}, { threshold: 0.3 });
-expertiseObs.observe(counterSection);
+    // Header block
+    doc.setFillColor(...inkColor);
+    doc.rect(0, 0, pageWidth, 34, 'F');
+    doc.setFont('helvetica','bold');
+    doc.setFontSize(16);
+    doc.setTextColor(246,244,236);
+    doc.text('ROMANI COMPLIANCE', marginX, 15);
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(9.5);
+    doc.setTextColor(201,168,118);
+    doc.text('Propuesta economica - Servicio de capacitacion SPLAFT', marginX, 22);
+    doc.setFontSize(8.5);
+    doc.setTextColor(210,210,210);
+    doc.text('Expediente RD-SPLAFT-2026-001', marginX, 28);
+    doc.text('Emision: ' + document.getElementById('issueDate').textContent, pageWidth - marginX, 28, {align:'right'});
 
-/* FORM SUBMIT */
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  form.style.display = 'none';
-  success.style.display = 'block';
-}
+    y = 46;
+    heading('Cliente');
+    paragraph('Red Digital del Peru S.A.C. — RUC 20566598389');
+
+    heading('Caracteristicas del servicio');
+    bullet('Duracion total: 2 horas (1 hora de preparacion + 2 horas de exposicion), mas 30 minutos adicionales para consultas especificas.');
+    bullet('Contenido diseñado exclusivamente sobre el modelo operativo real de Red Digital, identificando sus vectores de riesgo LA/FT.');
+
+    heading('Temario');
+    subheading('Modulo 1 (20 min) - Por que Red Digital necesita entender el SPLAFT');
+    bullet('Riesgo del modelo de negocio: mas de 120,000 puntos de venta con manejo descentralizado de efectivo.');
+    bullet('Marco normativo: Ley 27693, Reglamento del Sistema de Pagos del BCRP, D.Leg. 1106.');
+    subheading('Modulo 2 (35 min) - El SPLAFT aplicado a Red Digital');
+    bullet('Componentes minimos del sistema de prevencion y rol del Oficial de Cumplimiento.');
+    bullet('Conocimiento del cliente (KYC) en la red de distribucion, listas de control y umbrales de alerta.');
+    subheading('Modulo 3 (30 min) - Tipologias de riesgo y señales de alerta');
+    bullet('Fraccionamiento, puntos de venta de fachada, colocacion via saldo virtual, triangulacion, loterias, testaferros.');
+    bullet('Proceso de reporte (ROS), no tipping off, sanciones e infracciones aplicables.');
+    subheading('Modulo 4 (35 min) - Taller practico y consultas');
+    bullet('Revision del diagnostico preliminar y ejercicio con escenarios reales del modelo transaccional.');
+    bullet('Evaluacion de la posicion regulatoria de Red Digital y hoja de ruta minima de implementacion.');
+
+    heading('Valor agregado incluido');
+    bullet('Diagnostico preliminar de riesgo SPLAFT adaptado al modelo de Red Digital, entregado antes de la sesion.');
+    bullet('Mapa de tipologias de riesgo especificas para redes de recaudacion digital.');
+    bullet('Analisis escrito de la posicion regulatoria bajo la Ley 29038 y el Reglamento del Sistema de Pagos del BCRP, entregado en 5 dias habiles.');
+    bullet('Sesion de seguimiento de 30 minutos dentro de los 15 dias posteriores a la capacitacion.');
+
+    heading('Inversion');
+    paragraph('Costo total del servicio: USD 200.00, equivalente a USD 100.00 por hora de capacitacion.');
+    paragraph('Modalidad de pago: 50% al confirmar la sesion, 50% al termino de la capacitacion. Se emite recibo por honorarios.');
+
+    heading('Facilitador');
+    paragraph('Abg. Mg. Denis Gabriel Romani Seminario — Especialista en Derecho Penal Economico y Compliance, con mas de 15 años de experiencia en sistemas de prevencion de lavado de activos y financiamiento del terrorismo.');
+
+    checkPage(30);
+    doc.setDrawColor(220,214,198);
+    doc.line(marginX, y, pageWidth - marginX, y);
+    y += 8;
+    doc.setFont('helvetica','bold');
+    doc.setFontSize(10.5);
+    doc.setTextColor(...inkColor);
+    doc.text('Contacto', marginX, y);
+    y += 6;
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(10);
+    doc.setTextColor(...slateColor);
+    doc.text('WhatsApp: +51 969 754 983', marginX, y); y += 5.5;
+    doc.text('Correo: denis@romanicompliance.com', marginX, y); y += 5.5;
+    doc.text('Propuesta valida hasta ' + document.getElementById('validUntil').textContent + '.', marginX, y);
+
+    doc.save('cotizacion.pdf');
+  }
+  document.getElementById('downloadPdfBtn').addEventListener('click', generatePDF);
+  document.getElementById('downloadPdfBtn2').addEventListener('click', generatePDF);
 </script>
+
 </body>
 </html>
-
