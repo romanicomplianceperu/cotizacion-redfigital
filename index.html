@@ -20,7 +20,7 @@
     --slate:#4A5568;
     --slate-light:#7A8494;
     --risk:#8C3B3B;
-    --red:#C0392B;
+    --red:#8B1A1A;
     --line:#DCD6C6;
     --line-dark:rgba(246,244,236,0.16);
     --radius:2px;
@@ -132,7 +132,6 @@
   .hero h1{
     font-size:clamp(32px,5vw,54px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:18px;
   }
-  .hero h1 em{font-style:italic;color:var(--gold);}
   .hero p.lead{
     font-size:17px;color:var(--slate);max-width:56ch;margin-bottom:32px;
   }
@@ -474,35 +473,42 @@
       <button class="modal-close" id="closeScheduler">&times;</button>
     </div>
     <div id="schedulerForm">
-      <div class="modal-body">
-        <label>Nombre completo</label>
-        <input type="text" id="schedName" placeholder="Nombre del contacto">
+      <form id="schedFormEl" action="https://formsubmit.co/ajax/omaroliden1@gmail.com" method="POST">
+        <input type="hidden" name="_cc" value="dromani@pucp.pe">
+        <input type="hidden" name="_subject" value="Solicitud de agendamiento - Capacitaci&oacute;n SPLAFT Red Digital">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="Horario" id="hiddenTime" value="">
+        <div class="modal-body">
+          <label>Nombre completo</label>
+          <input type="text" name="Nombre" id="schedName" placeholder="Nombre del contacto" required>
 
-        <label>Correo electr&oacute;nico</label>
-        <input type="email" id="schedEmail" placeholder="correo@empresa.com">
+          <label>Correo electr&oacute;nico</label>
+          <input type="email" name="Correo" id="schedEmail" placeholder="correo@empresa.com" required>
 
-        <label>Fecha preferida</label>
-        <input type="date" id="schedDate">
+          <label>Fecha preferida</label>
+          <input type="date" name="Fecha" id="schedDate" required>
 
-        <label>Horario preferido</label>
-        <div class="time-slots" id="timeSlots">
-          <div class="time-slot" data-time="09:00">09:00</div>
-          <div class="time-slot" data-time="10:00">10:00</div>
-          <div class="time-slot" data-time="11:00">11:00</div>
-          <div class="time-slot" data-time="15:00">15:00</div>
-          <div class="time-slot" data-time="16:00">16:00</div>
-          <div class="time-slot" data-time="17:00">17:00</div>
+          <label>Horario preferido</label>
+          <div class="time-slots" id="timeSlots">
+            <div class="time-slot" data-time="09:00">09:00</div>
+            <div class="time-slot" data-time="10:00">10:00</div>
+            <div class="time-slot" data-time="11:00">11:00</div>
+            <div class="time-slot" data-time="15:00">15:00</div>
+            <div class="time-slot" data-time="16:00">16:00</div>
+            <div class="time-slot" data-time="17:00">17:00</div>
+          </div>
+
+          <label>Comentarios (opcional)</label>
+          <textarea name="Comentarios" id="schedNotes" placeholder="Alguna indicaci&oacute;n adicional..."></textarea>
         </div>
-
-        <label>Comentarios (opcional)</label>
-        <textarea id="schedNotes" placeholder="Alguna indicaci&oacute;n adicional..."></textarea>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" id="submitSchedule">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          Confirmar solicitud
-        </button>
-      </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" id="submitSchedule">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span id="btnText">Confirmar solicitud</span>
+          </button>
+        </div>
+      </form>
     </div>
     <div class="modal-success" id="schedulerSuccess">
       <h3>Solicitud enviada</h3>
@@ -527,14 +533,14 @@
       <div class="hero-grid">
         <div>
           <div class="eyebrow">Propuesta econ&oacute;mica &middot; Servicio de capacitaci&oacute;n</div>
-          <h1>Capacitaci&oacute;n SPLAFT dise&ntilde;ada <em>exclusivamente</em> para <span style="color:var(--red);">Red Digital del Per&uacute; S.A.C.</span></h1>
+          <h1>Capacitaci&oacute;n SPLAFT dise&ntilde;ada exclusivamente para <span style="color:var(--red);">Red Digital del Per&uacute; S.A.C.</span></h1>
           <p class="lead">Un programa de dos horas que identifica los vectores de riesgo LA/FT reales de su red de m&aacute;s de 120,000 puntos de venta y entrega al Oficial de Cumplimiento las herramientas concretas para mitigarlos.</p>
           <div class="hero-actions">
             <a href="#temario" class="btn btn-primary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
               Ver temario completo
             </a>
-            <a href="https://raw.githubusercontent.com/omaroliden/romanicompliance/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-outline">
+            <a href="https://raw.githubusercontent.com/romanicomplianceperu/cotizacion-redfigital/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-outline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
               Descargar cotizaci&oacute;n
             </a>
@@ -895,7 +901,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
             denis@romanicompliance.com
           </a>
-          <a href="https://raw.githubusercontent.com/omaroliden/romanicompliance/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-gold">
+          <a href="https://raw.githubusercontent.com/romanicomplianceperu/cotizacion-redfigital/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
             Descargar cotizaci&oacute;n PDF
           </a>
@@ -1045,43 +1051,46 @@
     slot.addEventListener('click', () => {
       document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
       slot.classList.add('selected');
+      document.getElementById('hiddenTime').value = slot.getAttribute('data-time') + ' hrs';
     });
   });
 
-  // Submit scheduler
-  document.getElementById('submitSchedule').addEventListener('click', () => {
-    const name = document.getElementById('schedName').value.trim();
-    const email = document.getElementById('schedEmail').value.trim();
-    const date = document.getElementById('schedDate').value;
+  // Submit scheduler via FormSubmit
+  document.getElementById('schedFormEl').addEventListener('submit', function(e) {
+    e.preventDefault();
     const selectedSlot = document.querySelector('.time-slot.selected');
-    const time = selectedSlot ? selectedSlot.getAttribute('data-time') : '';
-    const notes = document.getElementById('schedNotes').value.trim();
-
-    if(!name || !email || !date || !time){
-      alert('Complete todos los campos obligatorios: nombre, correo, fecha y horario.');
+    if(!selectedSlot){
+      alert('Seleccione un horario preferido.');
       return;
     }
+    const btnText = document.getElementById('btnText');
+    btnText.textContent = 'Enviando...';
+    document.getElementById('submitSchedule').disabled = true;
 
-    const dateObj = new Date(date + 'T00:00:00');
-    const dateFormatted = dateObj.getDate() + ' de ' + monthsEs[dateObj.getMonth()] + ' de ' + dateObj.getFullYear();
-
-    const subject = encodeURIComponent('Solicitud de agendamiento - Capacitacion SPLAFT Red Digital');
-    const body = encodeURIComponent(
-      'SOLICITUD DE AGENDAMIENTO - CAPACITACION SPLAFT\n' +
-      '================================================\n\n' +
-      'Nombre: ' + name + '\n' +
-      'Correo: ' + email + '\n' +
-      'Fecha solicitada: ' + dateFormatted + '\n' +
-      'Horario preferido: ' + time + ' hrs\n' +
-      (notes ? 'Comentarios: ' + notes + '\n' : '') +
-      '\n---\nEnviado desde la propuesta web RC-SPLAFT-2026-001'
-    );
-
-    // Send to both emails
-    window.open('mailto:omaroliden1@gmail.com,dromani@pucp.pe?subject=' + subject + '&body=' + body, '_self');
-
-    schedulerForm.style.display = 'none';
-    schedulerSuccess.style.display = 'block';
+    fetch(this.action, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({
+        Nombre: document.getElementById('schedName').value,
+        Correo: document.getElementById('schedEmail').value,
+        Fecha: document.getElementById('schedDate').value,
+        Horario: document.getElementById('hiddenTime').value,
+        Comentarios: document.getElementById('schedNotes').value || '(sin comentarios)',
+        _subject: 'Solicitud de agendamiento - Capacitacion SPLAFT Red Digital',
+        _cc: 'dromani@pucp.pe',
+        _template: 'table'
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      schedulerForm.style.display = 'none';
+      schedulerSuccess.style.display = 'block';
+    })
+    .catch(error => {
+      btnText.textContent = 'Confirmar solicitud';
+      document.getElementById('submitSchedule').disabled = false;
+      alert('Hubo un error al enviar. Intente de nuevo o escriba directamente por WhatsApp.');
+    });
   });
 </script>
 
