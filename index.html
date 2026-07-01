@@ -1,1 +1,1098 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romani Compliance | Derecho Penal Económico & Compliance</title>
+<meta name="description" content="Estudio especializado en Derecho Penal Económico, Compliance ALA/CFT y Due Diligence. Lima, Perú.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1628;
+  --navy-mid:#132040;
+  --navy-light:#1C2E52;
+  --gold:#C9A84C;
+  --gold-light:#E8C96B;
+  --gold-dim:#8B6E2E;
+  --slate:#8A9AB8;
+  --slate-light:#C2CEDF;
+  --white:#FFFFFF;
+  --off-white:#F4F6FA;
+  --text:#E8ECF4;
+  --text-muted:#8A9AB8;
+  --border:rgba(201,168,76,0.2);
+  --radius:4px;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --transition:0.35s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--navy);color:var(--text);font-family:var(--font-body);line-height:1.7;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--navy)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),backdrop-filter var(--transition)}
+nav.scrolled{background:rgba(11,22,40,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+.nav-logo img{height:36px;width:auto;filter:brightness(0) invert(1)}
+.nav-logo-text{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:0.02em;white-space:nowrap}
+.nav-logo-sub{font-size:0.65rem;color:var(--gold);letter-spacing:0.12em;font-weight:500;text-transform:uppercase;display:block;margin-top:-2px}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--slate-light);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;transition:color var(--transition);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--transition);transform-origin:left}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:0.55rem 1.4rem;border-radius:var(--radius);font-size:0.82rem;font-weight:600;cursor:pointer;transition:all var(--transition);text-decoration:none;white-space:nowrap;letter-spacing:0.04em}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all var(--transition)}
+.mobile-menu{display:none;position:fixed;inset:0;top:64px;background:rgba(11,22,40,0.98);backdrop-filter:blur(20px);z-index:99;flex-direction:column;padding:2rem;gap:0.5rem;border-top:1px solid var(--border)}
+.mobile-menu a{color:var(--text);text-decoration:none;font-size:1.1rem;font-weight:500;padding:1rem 0;border-bottom:1px solid var(--border);display:block;transition:color var(--transition)}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu.open{display:flex}
+
+/* ─── HERO ─── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 6rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(201,168,76,0.06) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 10% 80%,rgba(28,46,82,0.8) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero-h1{font-family:var(--font-display);font-size:clamp(2.8rem,6vw,5.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;color:var(--white);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
+.hero-h1 em{color:var(--gold);font-style:normal;display:block}
+.hero-sub{max-width:580px;color:var(--slate-light);font-size:1.05rem;line-height:1.75;margin-bottom:3rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.8s forwards}
+.btn-primary{background:var(--gold);color:var(--navy);padding:0.85rem 2.2rem;border-radius:var(--radius);font-weight:700;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;letter-spacing:0.04em;transition:all var(--transition);border:none;cursor:pointer}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.3)}
+.btn-secondary{background:transparent;color:var(--white);padding:0.85rem 2.2rem;border-radius:var(--radius);font-weight:500;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;letter-spacing:0.04em;transition:all var(--transition);border:1px solid rgba(255,255,255,0.25)}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:5rem;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;opacity:0;animation:fadeUp 0.8s 1s forwards}
+.stat-box{background:var(--navy-mid);padding:1.5rem;text-align:center;position:relative}
+.stat-box::before{content:'';position:absolute;inset:0;background:rgba(201,168,76,0.03);opacity:0;transition:opacity var(--transition)}
+.stat-box:hover::before{opacity:1}
+.stat-num{font-family:var(--font-display);font-size:2.4rem;font-weight:900;color:var(--gold);line-height:1;display:block}
+.stat-label{font-size:0.72rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.35rem}
+.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(--slate);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0;animation:fadeIn 1s 1.4s forwards}
+.scroll-indicator::after{content:'';width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s infinite}
+
+/* ─── SECTIONS SHARED ─── */
+section{padding:7rem 2rem;position:relative}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--font-mono);font-size:0.72rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+.section-label::before{content:'';width:20px;height:1px;background:var(--gold)}
+.section-h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);line-height:1.15;letter-spacing:-0.01em}
+.section-sub{color:var(--slate-light);font-size:1rem;max-width:560px;margin-top:0.75rem;line-height:1.75}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ─── ABOUT ─── */
+#about{background:var(--navy-mid)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.about-text p{color:var(--slate-light);line-height:1.85;margin-bottom:1.25rem;font-size:0.97rem}
+.about-text strong{color:var(--white)}
+.about-features{display:grid;grid-template-columns:1fr;gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.feature-item{background:var(--navy);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:background var(--transition)}
+.feature-item:hover{background:rgba(201,168,76,0.05)}
+.feature-icon{width:36px;height:36px;border-radius:var(--radius);background:rgba(201,168,76,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.feature-title{font-weight:600;color:var(--white);font-size:0.88rem;margin-bottom:0.2rem}
+.feature-desc{font-size:0.78rem;color:var(--slate);line-height:1.55}
+
+/* ─── SERVICES ─── */
+#services{background:var(--navy)}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.service-card{background:var(--navy-mid);padding:2rem;transition:all var(--transition);cursor:default;position:relative}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform var(--transition)}
+.service-card:hover{background:var(--navy-light)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-num{font-family:var(--font-mono);font-size:0.68rem;color:var(--gold-dim);letter-spacing:0.1em;margin-bottom:1.25rem}
+.service-icon{font-size:1.6rem;margin-bottom:1rem;display:block}
+.service-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:0.75rem;line-height:1.25}
+.service-desc{font-size:0.83rem;color:var(--slate);line-height:1.7}
+.service-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.25rem}
+.tag{font-size:0.68rem;padding:0.25rem 0.6rem;border-radius:2px;background:rgba(201,168,76,0.08);color:var(--gold-dim);border:1px solid rgba(201,168,76,0.15);font-family:var(--font-mono);letter-spacing:0.05em}
+
+/* ─── TYPOLOGIES ─── */
+#typologies{background:var(--navy-mid)}
+.typo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3rem}
+.typo-item{background:var(--navy);padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;transition:background var(--transition)}
+.typo-item:hover{background:rgba(201,168,76,0.04)}
+.typo-bullet{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.55rem}
+.typo-title{font-weight:600;color:var(--white);font-size:0.9rem;margin-bottom:0.3rem}
+.typo-desc{font-size:0.8rem;color:var(--slate);line-height:1.6}
+
+/* ─── PROPOSALS (ACCORDION) ─── */
+#proposals{background:var(--navy)}
+.proposals-intro{margin-bottom:3rem;max-width:700px}
+.accordion{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.accordion-item{}
+.accordion-header{background:var(--navy-mid);padding:1.5rem 1.75rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background var(--transition);user-select:none}
+.accordion-header:hover{background:var(--navy-light)}
+.accordion-header.active{background:var(--navy-light);border-left:3px solid var(--gold)}
+.accordion-title{font-weight:600;color:var(--white);font-size:0.95rem;display:flex;align-items:center;gap:0.75rem}
+.accordion-badge{font-size:0.65rem;padding:0.2rem 0.55rem;background:rgba(201,168,76,0.12);color:var(--gold);border-radius:2px;font-family:var(--font-mono);letter-spacing:0.08em;border:1px solid rgba(201,168,76,0.2)}
+.accordion-icon{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;transition:transform var(--transition),background var(--transition)}
+.accordion-header.active .accordion-icon{transform:rotate(45deg);background:rgba(201,168,76,0.1)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1)}
+.accordion-body.open{max-height:600px}
+.accordion-content{background:var(--navy);padding:1.75rem;border-top:1px solid var(--border)}
+.prop-desc{color:var(--slate-light);font-size:0.88rem;line-height:1.75;margin-bottom:1.25rem}
+.prop-modules{display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-bottom:1.25rem}
+.prop-module{background:var(--navy-mid);padding:0.75rem 1rem;border-radius:var(--radius);border:1px solid var(--border)}
+.prop-module-num{font-family:var(--font-mono);font-size:0.65rem;color:var(--gold);margin-bottom:0.2rem}
+.prop-module-title{font-size:0.78rem;color:var(--white);font-weight:500}
+.prop-module-time{font-size:0.7rem;color:var(--slate)}
+.prop-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.25rem;border-top:1px solid var(--border)}
+.prop-price{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--gold)}
+.prop-price span{font-size:0.8rem;color:var(--slate);font-family:var(--font-body);font-weight:400}
+.prop-value{display:flex;flex-wrap:wrap;gap:0.5rem}
+.prop-val-item{font-size:0.72rem;color:var(--slate-light);display:flex;align-items:center;gap:0.3rem}
+.prop-val-item::before{content:'✓';color:var(--gold);font-weight:700}
+
+/* ─── PROCESS ─── */
+#process{background:var(--navy-mid)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:3.5rem}
+.process-steps::before{content:'';position:absolute;top:22px;left:12.5%;right:12.5%;height:1px;background:var(--border)}
+.step{text-align:center;padding:0 1rem}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--navy);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--gold);margin:0 auto 1.25rem;position:relative;z-index:1;transition:all var(--transition)}
+.step:hover .step-num{background:var(--gold);color:var(--navy)}
+.step-title{font-weight:600;color:var(--white);font-size:0.88rem;margin-bottom:0.4rem}
+.step-desc{font-size:0.78rem;color:var(--slate);line-height:1.6}
+
+/* ─── EXPERTISE COUNTERS ─── */
+#expertise{background:var(--navy)}
+.expertise-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.counters{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.counter-box{background:var(--navy-mid);padding:2rem 1.5rem;text-align:center;transition:background var(--transition)}
+.counter-box:hover{background:var(--navy-light)}
+.counter-value{font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--gold);line-height:1;display:block}
+.counter-suffix{font-size:1.5rem;color:var(--gold-dim)}
+.counter-label{font-size:0.72rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.4rem}
+.expertise-bars{display:flex;flex-direction:column;gap:1.5rem}
+.bar-item{}
+.bar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem}
+.bar-label{font-size:0.85rem;font-weight:500;color:var(--white)}
+.bar-pct{font-family:var(--font-mono);font-size:0.78rem;color:var(--gold)}
+.bar-track{height:4px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(0.4,0,0.2,1)}
+.bar-fill.animated{transform:scaleX(1)}
+
+/* ─── WHY US ─── */
+#why{background:var(--navy-mid)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3.5rem}
+.why-card{background:var(--navy);padding:2rem;transition:all var(--transition)}
+.why-card:hover{background:rgba(201,168,76,0.04)}
+.why-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
+.why-title{font-weight:700;color:var(--white);font-size:0.95rem;margin-bottom:0.6rem}
+.why-text{font-size:0.82rem;color:var(--slate);line-height:1.7}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--navy);padding:7rem 2rem}
+.contact-inner{max-width:1200px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.contact-info{}
+.contact-sub{color:var(--slate-light);font-size:0.95rem;line-height:1.8;margin-bottom:2rem}
+.contact-methods{display:flex;flex-direction:column;gap:1rem}
+.contact-method{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(--navy-mid);border-radius:var(--radius);border:1px solid var(--border);text-decoration:none;transition:all var(--transition)}
+.contact-method:hover{border-color:var(--gold);transform:translateX(4px);background:rgba(201,168,76,0.04)}
+.contact-method-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.icon-wa{background:rgba(37,211,102,0.12);color:#25D366}
+.icon-mail{background:rgba(201,168,76,0.12);color:var(--gold)}
+.icon-web{background:rgba(100,149,237,0.12);color:#6495ED}
+.contact-method-info{}
+.contact-method-type{font-size:0.7rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono)}
+.contact-method-value{font-size:0.9rem;color:var(--white);font-weight:500;margin-top:0.1rem}
+.contact-form{background:var(--navy-mid);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:0.78rem;color:var(--slate);font-weight:500;margin-bottom:0.5rem;letter-spacing:0.04em;text-transform:uppercase;font-family:var(--font-mono)}
+.form-input,.form-textarea,.form-select{width:100%;background:var(--navy);border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem 1rem;color:var(--white);font-family:var(--font-body);font-size:0.88rem;transition:border-color var(--transition);outline:none}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--gold);background:rgba(201,168,76,0.03)}
+.form-textarea{min-height:110px;resize:vertical}
+.form-select{cursor:pointer}
+.form-select option{background:var(--navy-mid)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;padding:0.9rem;background:var(--gold);color:var(--navy);border:none;border-radius:var(--radius);font-weight:700;font-size:0.9rem;cursor:pointer;transition:all var(--transition);letter-spacing:0.04em}
+.form-submit:hover{background:var(--gold-light);transform:translateY(-1px)}
+.form-success{display:none;text-align:center;padding:2rem;color:var(--gold);font-size:0.9rem}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.footer-logo img{height:30px;filter:brightness(0) invert(1)}
+.footer-desc{font-size:0.82rem;color:var(--slate);line-height:1.7;max-width:320px}
+.footer-col h4{font-size:0.78rem;color:var(--white);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem;font-family:var(--font-mono)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.footer-col ul li a{font-size:0.82rem;color:var(--slate);text-decoration:none;transition:color var(--transition)}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.78rem;color:var(--slate)}
+.footer-copy strong{color:var(--gold)}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200}
+.wa-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);cursor:pointer;transition:all var(--transition);text-decoration:none;border:none}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5)}
+.wa-btn svg{width:28px;height:28px;fill:white}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--navy-mid);color:var(--white);padding:0.4rem 0.8rem;border-radius:var(--radius);font-size:0.75rem;white-space:nowrap;border:1px solid var(--border);opacity:0;transition:opacity var(--transition);pointer-events:none}
+.wa-float:hover .wa-tooltip{opacity:1}
+
+/* ─── DIVIDER ─── */
+.gold-line{width:48px;height:2px;background:var(--gold);margin:1.25rem 0 0}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.contact-grid,.expertise-grid{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .process-steps::before{display:none}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .prop-modules{grid-template-columns:1fr}
+  .typo-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .services-grid,.why-grid,.counters{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  section{padding:5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Romani Compliance">
+      <span>
+        <span class="nav-logo-text">Romani.</span>
+        <span class="nav-logo-sub">Compliance & Advisory</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#proposals">Propuestas</a></li>
+      <li><a href="#expertise">Experiencia</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Consulta gratuita</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobile()">Nosotros</a>
+  <a href="#services" onclick="closeMobile()">Servicios</a>
+  <a href="#proposals" onclick="closeMobile()">Propuestas</a>
+  <a href="#expertise" onclick="closeMobile()">Experiencia</a>
+  <a href="#contact" onclick="closeMobile()">Contacto</a>
+  <a href="https://wa.me/51969754983" target="_blank" style="color:#25D366;margin-top:1rem">WhatsApp → +51 969 754 983</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Lima, Perú — Especialistas desde 2018</div>
+    <h1 class="hero-h1">
+      Protección legal<br>
+      <em>frente al riesgo</em>
+      económico
+    </h1>
+    <p class="hero-sub">Estudio especializado en Derecho Penal Económico, Compliance ALA/CFT y Due Diligence. Asesoramos a empresas en la prevención de riesgos legales antes de que se conviertan en problemas reales.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Agendar consulta →</a>
+      <a href="#services" class="btn-secondary">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <span class="stat-num" data-count="8">0</span>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num" data-count="120" data-suffix="K+">0</span>
+        <div class="stat-label">Agentes capacitados</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num" data-count="50" data-suffix="+">0</span>
+        <div class="stat-label">Clientes asesorados</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num" data-count="100" data-suffix="%">0</span>
+        <div class="stat-label">Enfoque preventivo</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">Descubrir</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Quiénes somos</div>
+      <h2 class="section-h2">Compliance de alto nivel,<br>sin tecnicismos innecesarios</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Romani Compliance es un estudio boutique fundado por el <strong>Abg. Mg. Denis Gabriel Romani Seminario</strong>, especialista en Derecho Penal Económico con maestría en Derecho Procesal Penal y formación especializada en compliance ALA/CFT.</p>
+        <p>Nuestro enfoque combina el <strong>rigor académico</strong> con una visión práctica del negocio: identificamos riesgos reales antes de que se conviertan en investigaciones, sanciones o daños reputacionales.</p>
+        <p>Trabajamos con empresas del sector financiero, de distribución, tecnología de pagos y servicios, diseñando sistemas de prevención que funcionan en el mundo real, no solo en el papel.</p>
+        <div style="margin-top:1.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="mailto:denis@romanicompliance.com" class="btn-primary" style="font-size:0.82rem;padding:0.65rem 1.4rem">Correo directo</a>
+          <a href="https://romanicompliance.com/" target="_blank" class="btn-secondary" style="font-size:0.82rem;padding:0.65rem 1.4rem">Sitio web →</a>
+        </div>
+      </div>
+      <div class="about-features reveal">
+        <div class="feature-item">
+          <div class="feature-icon">⚖️</div>
+          <div>
+            <div class="feature-title">Derecho Penal Económico</div>
+            <div class="feature-desc">Defensa y asesoría en delitos tributarios, aduaneros, monetarios y de corrupción privada.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <div>
+            <div class="feature-title">Compliance ALA/CFT</div>
+            <div class="feature-desc">Diseño, implementación y auditoría de sistemas SPLAFT para sujetos obligados y empresas en riesgo.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📋</div>
+          <div>
+            <div class="feature-title">Due Diligence</div>
+            <div class="feature-desc">Análisis de riesgo de contraparte, proveedores, socios y empresas en procesos de adquisición.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎓</div>
+          <div>
+            <div class="feature-title">Capacitación especializada</div>
+            <div class="feature-desc">Programas a medida para oficiales de cumplimiento, directorios y equipos operativos.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <div>
+            <div class="feature-title">Diagnóstico SPLAFT</div>
+            <div class="feature-desc">Evaluación del nivel de riesgo LA/FT adaptada al modelo de negocio de cada cliente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-label">Lo que hacemos</div>
+        <h2 class="section-h2">Servicios</h2>
+        <div class="gold-line"></div>
+      </div>
+      <p class="section-sub" style="margin-top:0">Cada servicio está diseñado para responder a un riesgo real y específico, no a una plantilla genérica.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-num">01 / PREVENCIÓN</div>
+        <span class="service-icon">🛡️</span>
+        <h3 class="service-title">Sistema de Prevención LA/FT (SPLAFT)</h3>
+        <p class="service-desc">Diseñamos e implementamos el sistema completo de prevención adaptado a su modelo de negocio, sector e industria. Incluye política de prevención, manual de cumplimiento, procedimientos KYC y matriz de riesgo.</p>
+        <div class="service-tags">
+          <span class="tag">UIF-Perú</span>
+          <span class="tag">Ley 27693</span>
+          <span class="tag">KYC/KYB</span>
+          <span class="tag">GAFI</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02 / CAPACITACIÓN</div>
+        <span class="service-icon">🎓</span>
+        <h3 class="service-title">Capacitación para Oficiales de Cumplimiento</h3>
+        <p class="service-desc">Programas de capacitación personalizados para oficiales de cumplimiento, directorios y equipos operativos. Basados en tipologías reales de la industria, no en manuales genéricos.</p>
+        <div class="service-tags">
+          <span class="tag">Oficial OC</span>
+          <span class="tag">Tipologías</span>
+          <span class="tag">ROS</span>
+          <span class="tag">Señales de alerta</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03 / ASESORÍA</div>
+        <span class="service-icon">⚖️</span>
+        <h3 class="service-title">Asesoría en Derecho Penal Económico</h3>
+        <p class="service-desc">Consultoría legal especializada en delitos tributarios, aduaneros, monetarios y de corrupción privada. Análisis de riesgo penal empresarial y orientación estratégica ante investigaciones fiscales.</p>
+        <div class="service-tags">
+          <span class="tag">D. Leg. 1106</span>
+          <span class="tag">Ley Penal Trib.</span>
+          <span class="tag">Ley 27693</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04 / ANÁLISIS</div>
+        <span class="service-icon">🔍</span>
+        <h3 class="service-title">Due Diligence & Diagnóstico de Riesgo</h3>
+        <p class="service-desc">Análisis de contraparte, perfil de riesgo de proveedores y socios estratégicos. Diagnóstico SPLAFT previo a auditorías o procesos de adquisición. Entregable escrito con recomendaciones.</p>
+        <div class="service-tags">
+          <span class="tag">Perfil de riesgo</span>
+          <span class="tag">OFAC/ONU</span>
+          <span class="tag">PEP</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05 / REGULATORIO</div>
+        <span class="service-icon">📋</span>
+        <h3 class="service-title">Análisis de Posición Regulatoria</h3>
+        <p class="service-desc">Determinamos si su empresa califica como sujeto obligado ante la UIF-Perú y qué obligaciones le corresponden bajo la Ley 29038, el D.S. 020-2017-JUS y el nuevo Reglamento del Sistema de Pagos del BCRP.</p>
+        <div class="service-tags">
+          <span class="tag">Ley 29038</span>
+          <span class="tag">BCRP 2026</span>
+          <span class="tag">SBS</span>
+          <span class="tag">PSP</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06 / AUDITORÍA</div>
+        <span class="service-icon">📊</span>
+        <h3 class="service-title">Auditoría de Cumplimiento</h3>
+        <p class="service-desc">Revisión integral del sistema de prevención existente: identificamos brechas, evaluamos controles y emitimos un informe con el nivel de exposición actual y las medidas correctivas priorizadas.</p>
+        <div class="service-tags">
+          <span class="tag">Brechas SPLAFT</span>
+          <span class="tag">Controles</span>
+          <span class="tag">Informe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOLOGIES -->
+<section id="typologies">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Riesgos que identificamos</div>
+      <h2 class="section-h2">Tipologías de riesgo LA/FT<br>en el sector de pagos y distribución</h2>
+      <p class="section-sub">Las empresas de recaudación, distribución digital y redes de puntos de venta están expuestas a modalidades específicas que el GAFI y la UIF-Perú han identificado como de alto riesgo.</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="typo-grid reveal">
+      <div class="typo-item">
+        <div class="typo-bullet"></div>
+        <div>
+          <div class="typo-title">Structuring / Fraccionamiento coordinado</div>
+          <div class="typo-desc">Uso deliberado de múltiples puntos de venta en una misma zona para dividir operaciones y evadir umbrales de detección del sistema transaccional.</div>
+        </div>
+      </div>
+      <div class="typo-item">
+        <div class="typo-bullet"></div>
+        <div>
+          <div class="typo-title">Puntos de venta de fachada</div>
+          <div class="typo-desc">Establecimientos registrados en la plataforma sin actividad comercial real, utilizados para introducir efectivo ilícito bajo la apariencia de operaciones de recarga o cobro de servicios.</div>
+        </div>
+      </div>
+      <div class="typo-item">
+        <div class="typo-bullet"></div>
+        <div>
+          <div class="typo-title">Colocación de efectivo mediante saldo virtual</div>
+          <div class="typo-desc">El mecanismo de prepago puede emplearse como primera etapa del lavado: depósito de efectivo ilícito a cambio de saldo virtual que parece provenir de actividad comercial legítima.</div>
+        </div>
+      </div>
+      <div class="typo-item">
+        <div class="typo-bullet"></div>
+        <div>
+          <div class="typo-title">Triangulación a través de distribuidores</div>
+          <div class="typo-desc">El representante comercial opera como intermediario en la consolidación de fondos de origen ilícito, aprovechando la relación contractual indirecta con la plataforma.</div>
+        </div>
+      </div>
+      <div class="typo-item">
+        <div class="typo-bullet"></div>
+        <div>
+          <div class="typo-title">Lavado mediante loterías y juegos de azar</div>
+          <div class="typo-desc">Compra de boletos con dinero ilícito y presentación de premios como fuente legítima de ingresos. Tipología clásica identificada por el GAFI directamente aplicable en plataformas de distribución.</div>
+        </div>
+      </div>
+      <div class="typo-item">
+        <div class="typo-bullet"></div>
+        <div>
+          <div class="typo-title">Testaferros en el registro de agentes</div>
+          <div class="typo-desc">Registro de puntos de venta a nombre de personas sin vinculación real con el negocio para dificultar la trazabilidad del beneficiario final de las operaciones.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSALS ACCORDION -->
+<section id="proposals">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Propuestas disponibles</div>
+      <h2 class="section-h2">Programas de capacitación</h2>
+      <p class="section-sub">Cada programa se diseña a partir del modelo de negocio del cliente. Lo que ve aquí es el punto de partida, no el límite.</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="accordion reveal" style="margin-top:3rem">
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-title">
+            Prevención LA/FT para Redes de Distribución Digital
+            <span class="accordion-badge">USD 200 · 2 horas</span>
+          </div>
+          <div class="accordion-icon">+</div>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <p class="prop-desc">Capacitación diseñada para empresas con redes de puntos de venta, recaudación por cuenta de terceros y saldo virtual prepagado. Identifica los vectores de riesgo LA/FT reales del modelo operativo y equipa al Oficial de Cumplimiento con herramientas concretas, con independencia de si la empresa es actualmente sujeto obligado.</p>
+            <div class="prop-modules">
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 01</div>
+                <div class="prop-module-title">¿Por qué su empresa necesita el SPLAFT?</div>
+                <div class="prop-module-time">20 min · Marco normativo y contexto de riesgo</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 02</div>
+                <div class="prop-module-title">Estructura y herramientas SPLAFT</div>
+                <div class="prop-module-time">35 min · KYC, debida diligencia, registros</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 03</div>
+                <div class="prop-module-title">Tipologías y señales de alerta</div>
+                <div class="prop-module-time">30 min · 6 tipologías específicas del sector</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 04</div>
+                <div class="prop-module-title">Taller práctico con escenarios reales</div>
+                <div class="prop-module-time">35 min · Análisis de casos y consultas</div>
+              </div>
+            </div>
+            <div class="prop-footer">
+              <div class="prop-price">USD 200 <span>· 2 horas de exposición</span></div>
+              <div class="prop-value">
+                <div class="prop-val-item">Diagnóstico SPLAFT previo</div>
+                <div class="prop-val-item">Mapa de tipologías</div>
+                <div class="prop-val-item">Informe regulatorio</div>
+                <div class="prop-val-item">Seguimiento 30 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-title">
+            SPLAFT para Sujetos Obligados (PSAV / Empresas Financieras)
+            <span class="accordion-badge">A consultar · 3 horas</span>
+          </div>
+          <div class="accordion-icon">+</div>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <p class="prop-desc">Capacitación integral para empresas formalmente registradas ante la UIF-Perú como sujetos obligados: empresas de transferencia de fondos, proveedores de servicios de activos virtuales (PSAV), cooperativas y entidades del sistema financiero no bancario. Cubre todas las obligaciones regulatorias con énfasis en responsabilidad del Oficial de Cumplimiento.</p>
+            <div class="prop-modules">
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 01</div>
+                <div class="prop-module-title">Marco ALA/CFT: UIF-Perú, GAFI y normativa vigente</div>
+                <div class="prop-module-time">45 min · Ley 27693, D.S. 020-2017-JUS</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 02</div>
+                <div class="prop-module-title">Componentes del SPLAFT y Oficial de Cumplimiento</div>
+                <div class="prop-module-time">45 min · Manual, política, registros, responsabilidad</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 03</div>
+                <div class="prop-module-title">KYC avanzado, PEP y debida diligencia reforzada</div>
+                <div class="prop-module-time">30 min · OFAC, ONU, umbrales</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">MÓDULO 04</div>
+                <div class="prop-module-title">ROS, sanciones y casos prácticos</div>
+                <div class="prop-module-time">60 min · Simulación de reporte y evaluación</div>
+              </div>
+            </div>
+            <div class="prop-footer">
+              <div class="prop-price">A consultar <span>· 3 horas · Modalidad virtual o presencial</span></div>
+              <div class="prop-value">
+                <div class="prop-val-item">Diagnóstico previo</div>
+                <div class="prop-val-item">Checklist regulatorio</div>
+                <div class="prop-val-item">Sesión de seguimiento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <div class="accordion-title">
+            Diseño e Implementación del SPLAFT (Servicio Integral)
+            <span class="accordion-badge">A consultar · Proyecto</span>
+          </div>
+          <div class="accordion-icon">+</div>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <p class="prop-desc">Servicio integral para empresas que necesitan construir su sistema de prevención desde cero o actualizar un sistema existente que no cumple con la normativa vigente. Incluye diagnóstico, diseño, documentación, capacitación e implementación acompañada.</p>
+            <div class="prop-modules">
+              <div class="prop-module">
+                <div class="prop-module-num">FASE 01</div>
+                <div class="prop-module-title">Diagnóstico de riesgo LA/FT</div>
+                <div class="prop-module-time">Entrevistas, análisis del modelo de negocio, matriz de riesgo</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">FASE 02</div>
+                <div class="prop-module-title">Diseño del sistema SPLAFT</div>
+                <div class="prop-module-time">Política, manual, procedimientos KYC, código de conducta</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">FASE 03</div>
+                <div class="prop-module-title">Capacitación y despliegue</div>
+                <div class="prop-module-time">Formación del OC y equipos, entregables finales</div>
+              </div>
+              <div class="prop-module">
+                <div class="prop-module-num">FASE 04</div>
+                <div class="prop-module-title">Seguimiento y ajuste</div>
+                <div class="prop-module-time">Revisión post-implementación y soporte continuo</div>
+              </div>
+            </div>
+            <div class="prop-footer">
+              <div class="prop-price">A consultar <span>· Cronograma personalizado</span></div>
+              <div class="prop-value">
+                <div class="prop-val-item">Proyecto a medida</div>
+                <div class="prop-val-item">Documentación completa</div>
+                <div class="prop-val-item">Soporte post-entrega</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Cómo trabajamos</div>
+      <h2 class="section-h2">El proceso</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="process-steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Diagnóstico inicial</div>
+        <div class="step-desc">Analizamos el modelo de negocio, los flujos de dinero y los riesgos específicos del sector antes de proponer cualquier solución.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Propuesta personalizada</div>
+        <div class="step-desc">Diseñamos un servicio a medida: sin plantillas, sin contenido genérico. Todo basado en los riesgos reales identificados.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Ejecución y entrega</div>
+        <div class="step-desc">Capacitación, implementación o asesoría con entregables concretos: informes, manuales, diagnósticos o matrices de riesgo.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Seguimiento continuo</div>
+        <div class="step-desc">Sesión de seguimiento post-entrega para resolver dudas de implementación y ajustar en función de cambios normativos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Trayectoria</div>
+      <h2 class="section-h2">Experiencia en números</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="expertise-grid reveal">
+      <div class="counters" id="counters">
+        <div class="counter-box">
+          <span class="counter-value" data-target="8">0</span>
+          <div class="counter-label">Años activo</div>
+        </div>
+        <div class="counter-box">
+          <span class="counter-value" data-target="50" data-suffix="+">0</span>
+          <div class="counter-label">Clientes</div>
+        </div>
+        <div class="counter-box">
+          <span class="counter-value" data-target="120" data-suffix="K">0</span>
+          <div class="counter-label">Agentes formados</div>
+        </div>
+        <div class="counter-box">
+          <span class="counter-value" data-target="3">0</span>
+          <div class="counter-label">Sectores clave</div>
+        </div>
+      </div>
+      <div class="expertise-bars" id="bars">
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-label">Compliance ALA/CFT</span>
+            <span class="bar-pct">95%</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.95"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-label">Derecho Penal Económico</span>
+            <span class="bar-pct">90%</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.9"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-label">Due Diligence & Riesgo Regulatorio</span>
+            <span class="bar-pct">88%</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.88"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-label">Capacitación corporativa</span>
+            <span class="bar-pct">92%</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.92"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-header">
+            <span class="bar-label">Análisis de posición regulatoria</span>
+            <span class="bar-pct">85%</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.85"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Por qué elegirnos</div>
+      <h2 class="section-h2">Lo que nos distingue</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="why-icon">🎯</span>
+        <div class="why-title">Personalización real</div>
+        <div class="why-text">Analizamos su modelo de negocio antes de proponer cualquier servicio. El diagnóstico previo es parte del trabajo, no un extra. Nada de plantillas.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🧠</span>
+        <div class="why-title">Doble perspectiva: legal y operativa</div>
+        <div class="why-text">Combinamos el conocimiento jurídico con la comprensión de cómo operan los negocios reales. Nuestras recomendaciones son implementables, no solo teóricamente correctas.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📅</span>
+        <div class="why-title">Entregables concretos</div>
+        <div class="why-text">Cada servicio termina con un entregable tangible: un informe, un manual, una matriz de riesgo o un diagnóstico escrito. No solo reuniones y conversaciones.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚡</span>
+        <div class="why-title">Respuesta ágil</div>
+        <div class="why-text">Somos un estudio boutique: sin burocracia, sin intermediarios. El especialista que diseña el servicio es el mismo que lo ejecuta y con quien se comunica.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🌐</span>
+        <div class="why-title">Actualización normativa constante</div>
+        <div class="why-text">Seguimos de cerca los cambios regulatorios del BCRP, SBS y UIF-Perú. Nuestros servicios incorporan la normativa vigente, incluido el Reglamento PSP 2026.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤝</span>
+        <div class="why-title">Confidencialidad garantizada</div>
+        <div class="why-text">Toda la información que comparte con nosotros está protegida por el deber de confidencialidad profesional y por los acuerdos de no divulgación que formalizamos desde el inicio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-label">Hablemos</div>
+      <h2 class="section-h2">¿Cómo podemos ayudarle?</h2>
+      <p class="section-sub">La primera consulta es sin costo. Cuéntenos su caso y le diremos si podemos ayudarle y cómo.</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <p class="contact-sub">Atendemos consultas sobre compliance, diseño de sistemas SPLAFT, capacitación y asesoría en Derecho Penal Económico. Respondemos en menos de 24 horas hábiles.</p>
+        <div class="contact-methods">
+          <a href="https://wa.me/51969754983?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20compliance" target="_blank" class="contact-method">
+            <div class="contact-method-icon icon-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div class="contact-method-info">
+              <div class="contact-method-type">WhatsApp</div>
+              <div class="contact-method-value">+51 969 754 983</div>
+            </div>
+          </a>
+          <a href="mailto:denis@romanicompliance.com" class="contact-method">
+            <div class="contact-method-icon icon-mail">✉️</div>
+            <div class="contact-method-info">
+              <div class="contact-method-type">Correo electrónico</div>
+              <div class="contact-method-value">denis@romanicompliance.com</div>
+            </div>
+          </a>
+          <a href="https://romanicompliance.com/" target="_blank" class="contact-method">
+            <div class="contact-method-icon icon-web">🌐</div>
+            <div class="contact-method-info">
+              <div class="contact-method-type">Sitio web</div>
+              <div class="contact-method-value">romanicompliance.com</div>
+            </div>
+          </a>
+        </div>
+        <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--navy-mid);border-radius:var(--radius);border:1px solid var(--border)">
+          <div style="font-size:0.72rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono);margin-bottom:0.5rem">Sede</div>
+          <div style="font-size:0.88rem;color:var(--white)">Av. A. Benavides N° 540, Dpto 604</div>
+          <div style="font-size:0.82rem;color:var(--slate)">Miraflores, Lima — Perú</div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-input" placeholder="Su nombre completo" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Empresa</label>
+              <input type="text" class="form-input" placeholder="Nombre de la empresa">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" class="form-input" placeholder="correo@empresa.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Servicio de interés</label>
+            <select class="form-select form-input">
+              <option value="">Seleccione un servicio</option>
+              <option>Sistema de Prevención LA/FT (SPLAFT)</option>
+              <option>Capacitación para Oficial de Cumplimiento</option>
+              <option>Asesoría en Derecho Penal Económico</option>
+              <option>Due Diligence y diagnóstico de riesgo</option>
+              <option>Análisis de posición regulatoria</option>
+              <option>Auditoría de cumplimiento</option>
+              <option>Otro / Consulta general</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-textarea" placeholder="Describa brevemente su situación o consulta…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Enviar consulta →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:2rem;margin-bottom:0.75rem">✓</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.4rem">Mensaje recibido</div>
+          <div style="font-size:0.85rem;color:var(--slate)">Le responderemos en menos de 24 horas hábiles.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Romani Compliance">
+        </div>
+        <p class="footer-desc">Estudio especializado en Derecho Penal Económico, Compliance ALA/CFT y Due Diligence. Protegemos a las empresas antes de que el riesgo se convierta en un problema legal.</p>
+        <div style="margin-top:1.25rem;display:flex;gap:0.75rem">
+          <a href="https://wa.me/51969754983" target="_blank" style="width:36px;height:36px;border-radius:var(--radius);background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;transition:all 0.3s" title="WhatsApp">💬</a>
+          <a href="mailto:denis@romanicompliance.com" style="width:36px;height:36px;border-radius:var(--radius);background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;transition:all 0.3s" title="Email">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#services">Diseño SPLAFT</a></li>
+          <li><a href="#services">Capacitación OC</a></li>
+          <li><a href="#services">Due Diligence</a></li>
+          <li><a href="#services">Posición regulatoria</a></li>
+          <li><a href="#services">Auditoría compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/51969754983">+51 969 754 983</a></li>
+          <li><a href="mailto:denis@romanicompliance.com">denis@romanicompliance.com</a></li>
+          <li><a href="mailto:dromani@pucp.pe">dromani@pucp.pe</a></li>
+          <li><a href="https://romanicompliance.com/" target="_blank">romanicompliance.com</a></li>
+          <li><a href="#contact">Consulta gratuita</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 <strong>Romani Compliance</strong> — Todos los derechos reservados.</div>
+      <div class="footer-copy">Miraflores, Lima — Perú</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-tooltip">Escribir por WhatsApp</div>
+  <a href="https://wa.me/51969754983?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20compliance" target="_blank" class="wa-btn" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+/* NAV SCROLL */
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* HAMBURGER */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() { mobileMenu.classList.remove('open'); }
+
+/* ACCORDION */
+function toggleAccordion(header) {
+  const body = header.nextElementSibling;
+  const isOpen = header.classList.contains('active');
+  document.querySelectorAll('.accordion-header').forEach(h => {
+    h.classList.remove('active');
+    h.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    header.classList.add('active');
+    body.classList.add('open');
+  }
+}
+
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(r => revealObs.observe(r));
+
+/* HERO STAT COUNTERS */
+function animateCount(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target + suffix;
+  }
+  requestAnimationFrame(update);
+}
+const heroStats = document.querySelectorAll('.stat-num[data-count]');
+const heroObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCount(e.target);
+      heroObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+heroStats.forEach(el => heroObs.observe(el));
+
+/* EXPERTISE COUNTERS */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const duration = 2000;
+  const start = performance.now();
+  function update(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 4);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (t < 1) requestAnimationFrame(update);
+    else el.textContent = target + suffix;
+  }
+  requestAnimationFrame(update);
+}
+const counterEls = document.querySelectorAll('.counter-value[data-target]');
+const barFills = document.querySelectorAll('.bar-fill');
+let countersStarted = false;
+const counterSection = document.getElementById('expertise');
+const expertiseObs = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !countersStarted) {
+    countersStarted = true;
+    counterEls.forEach(el => animateCounter(el));
+    setTimeout(() => barFills.forEach(b => b.classList.add('animated')), 200);
+  }
+}, { threshold: 0.3 });
+expertiseObs.observe(counterSection);
+
+/* FORM SUBMIT */
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.style.display = 'none';
+  success.style.display = 'block';
+}
+</script>
+</body>
+</html>
+
