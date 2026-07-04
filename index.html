@@ -4,1095 +4,506 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Propuesta SPLAFT — Red Digital del Perú S.A.C. | Romani Compliance</title>
-<meta name="description" content="Propuesta económica personalizada de capacitación SPLAFT para Red Digital del Perú S.A.C., elaborada por Romani Compliance.">
+<meta name="description" content="Propuesta económica de capacitación SPLAFT para Red Digital del Perú S.A.C.">
 <link rel="icon" href="logos.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#0E2238;
-    --ink-soft:#1B3350;
-    --paper:#F6F4EC;
-    --paper-dim:#EFEBDF;
-    --gold:#A9814C;
-    --gold-soft:#C9A876;
-    --slate:#4A5568;
-    --slate-light:#7A8494;
-    --risk:#8C3B3B;
-    --red:#8B1A1A;
-    --line:#DCD6C6;
-    --line-dark:rgba(246,244,236,0.16);
-    --radius:2px;
-    --shadow:0 20px 50px -20px rgba(14,34,56,0.35);
-    --max:1180px;
-  }
-  *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;text-decoration:none;}
-  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;margin:0;color:var(--ink);}
-  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.03em;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    font-family:'Inter',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.1em;
-    font-size:clamp(13px,1.4vw,15px);
-    font-weight:600;
-    color:var(--gold);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:14px;
-  }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);}
-  ::selection{background:var(--gold-soft);color:var(--ink);}
+:root{
+  --ink:#0E1B2D;
+  --ink-soft:#1B3350;
+  --paper:#F5F5F0;
+  --paper-dim:#ECEAE2;
+  --gold:#9B7B3A;
+  --gold-soft:#B89A56;
+  --gold-pale:#F5EDDA;
+  --slate:#4A5568;
+  --slate-light:#7A8494;
+  --accent:#1A3A5C;
+  --line:#D4CFC3;
+  --white:#FFFFFF;
+  --green-dim:#2D6A4F;
+  --green-bright:#1B8A4A;
+  --red-corp:#7A1B1B;
+  --radius:6px;
+  --shadow:0 4px 24px rgba(14,27,45,0.08);
+  --shadow-lg:0 12px 48px rgba(14,27,45,0.12);
+  --max:1140px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
-  .reveal.visible{opacity:1;transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1;transform:none;transition:none;}
-    html{scroll-behavior:auto;}
-  }
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+.anim{opacity:0;transform:translateY(30px)}
+.anim.visible{animation:fadeUp 0.6s ease forwards}
+.anim-delay-1{animation-delay:0.1s!important}
+.anim-delay-2{animation-delay:0.25s!important}
+.anim-delay-3{animation-delay:0.4s!important}
 
-  /* ---------- HEADER ---------- */
-  header{
-    position:sticky;top:0;z-index:100;
-    background:rgba(246,244,236,0.92);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 24px;max-width:var(--max);margin:0 auto;
-  }
-  .brand{display:flex;align-items:center;gap:12px;}
-  .brand img{height:38px;width:auto;}
-  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
-  .brand-text strong{font-family:'Fraunces',serif;font-size:16px;letter-spacing:0.01em;}
-  .brand-text span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--slate-light);text-transform:uppercase;}
-  .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-links a{
-    font-size:13px;font-weight:600;letter-spacing:0.02em;
-    color:var(--ink-soft);position:relative;padding:6px 0;
-  }
-  .nav-links a::after{
-    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);
-    transition:width .3s ease;
-  }
-  .nav-links a:hover::after{width:100%;}
-  .nav-cta{
-    background:var(--ink);color:var(--paper)!important;
-    padding:10px 18px;font-size:12px!important;font-family:'IBM Plex Mono',monospace;
-    text-transform:uppercase;letter-spacing:0.08em;border-radius:var(--radius);
-  }
-  .nav-cta::after{display:none;}
-  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
-  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s;}
-  .mobile-menu{
-    display:none;position:fixed;inset:0;background:var(--ink);z-index:200;
-    flex-direction:column;align-items:center;justify-content:center;gap:28px;
-  }
-  .mobile-menu.open{display:flex;}
-  .mobile-menu a{color:var(--paper);font-family:'Fraunces',serif;font-size:26px;}
-  .mobile-menu .close-btn{position:absolute;top:22px;right:24px;background:none;border:none;color:var(--paper);font-size:28px;cursor:pointer;}
-  .mobile-menu .mm-cta{
-    margin-top:10px;background:var(--gold);color:var(--ink);padding:12px 26px;
-    font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;
-  }
+/* HEADER */
+header{background:var(--ink);border-bottom:2px solid var(--gold)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:36px;filter:brightness(0) invert(1)}
+.nav-code{font-size:0.7rem;color:var(--gold-soft);letter-spacing:0.06em;padding:6px 12px;border:1px solid rgba(155,123,58,0.3);border-radius:3px}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;overflow:hidden;
-    background:radial-gradient(circle at 85% -10%, rgba(169,129,76,0.16), transparent 45%), var(--paper);
-    padding:72px 0 60px;
-    border-bottom:1px solid var(--line);
-  }
-  .hero-grid{
-    display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:start;
-  }
-  .file-meta{
-    display:flex;flex-wrap:wrap;gap:10px 22px;
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--slate);
-    text-transform:uppercase;letter-spacing:0.05em;margin-bottom:26px;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    padding:12px 0;
-  }
-  .file-meta b{color:var(--ink);font-weight:600;}
-  .hero h1{
-    font-size:clamp(32px,5vw,54px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:18px;
-  }
-  .hero p.lead{
-    font-size:17px;color:var(--slate);max-width:56ch;margin-bottom:32px;
-  }
-  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:14px 24px;font-size:13px;font-weight:600;
-    font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;
-    border-radius:var(--radius);border:1px solid transparent;cursor:pointer;
-    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
-  }
-  .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--ink);color:var(--paper);box-shadow:var(--shadow);}
-  .btn-primary:hover{background:var(--ink-soft);}
-  .btn-outline{border-color:var(--ink);color:var(--ink);}
-  .btn-outline:hover{background:var(--ink);color:var(--paper);}
-  .btn-gold{background:var(--gold);color:var(--ink);}
-  .btn-gold:hover{background:var(--gold-soft);}
-  .btn svg{width:16px;height:16px;flex-shrink:0;}
+/* HERO - clean, no gradient */
+.hero{background:var(--ink);padding:3rem 0 3rem;text-align:center}
+.hero .wrap{position:relative;z-index:2}
+.hero-eyebrow{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold-soft);font-weight:600;margin-bottom:12px}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);color:var(--white);font-weight:700;line-height:1.2;margin-bottom:10px}
+.hero h1 span{color:var(--red-corp)}
+.hero-sub{color:rgba(255,255,255,0.6);font-size:clamp(0.85rem,1.5vw,1rem);max-width:640px;margin:0 auto 1.5rem}
+.hero-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero-badge{font-size:0.7rem;color:var(--gold-soft);border:1px solid rgba(155,123,58,0.25);padding:5px 14px;border-radius:3px;letter-spacing:0.04em}
 
-  .hero-card{
-    background:var(--ink);color:var(--paper);
-    border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow);
-    position:relative;
-  }
-  .hero-card .tag{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
-    letter-spacing:0.1em;color:var(--gold-soft);margin-bottom:10px;display:block;
-  }
-  .hero-card h3{color:var(--paper);font-size:22px;margin-bottom:6px;}
-  .hero-card .price{
-    font-family:'Fraunces',serif;font-size:46px;color:var(--paper);margin:14px 0 4px;
-  }
-  .hero-card .price sup{font-size:18px;color:var(--gold-soft);}
-  .hero-card .price small{font-family:'Inter',sans-serif;font-size:13px;color:rgba(246,244,236,0.55);display:block;margin-top:4px;}
-  .hero-card ul{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .hero-card li{
-    display:flex;gap:10px;font-size:13.5px;color:rgba(246,244,236,0.85);align-items:flex-start;
-  }
-  .hero-card li .dot{
-    width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:7px;flex-shrink:0;
-  }
-  .hero-card .validity{
-    border-top:1px solid var(--line-dark);margin-top:20px;padding-top:16px;
-    font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,244,236,0.5);
-    text-transform:uppercase;letter-spacing:0.06em;
-  }
+/* SECTION TITLES */
+.section-title{text-align:center;margin-bottom:2.5rem}
+.section-title h2{font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink);margin-bottom:6px}
+.section-title p{color:var(--slate);font-size:0.9rem;max-width:560px;margin:0 auto}
 
-  /* ---------- STATS ---------- */
-  .stats{
-    background:var(--ink);color:var(--paper);padding:56px 0;
-  }
-  .stats-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;
-  }
-  .stat b{
-    display:block;font-family:'Fraunces',serif;font-size:clamp(34px,4vw,50px);color:var(--gold-soft);
-  }
-  .stat span{
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;
-    letter-spacing:0.08em;color:rgba(246,244,236,0.65);display:block;margin-top:8px;
-  }
+/* PLANS SECTION */
+.plans-section{padding:3rem 0 4rem;position:relative;z-index:3}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:960px;margin:0 auto;border-radius:var(--radius);overflow:visible}
+.plan-card{background:var(--white);padding:2rem 1.5rem;display:flex;flex-direction:column;border:1px solid var(--line);position:relative;transition:transform 0.3s ease;border-radius:0;box-shadow:var(--shadow)}
+.plan-card:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.plan-card:last-child{border-radius:0 var(--radius) var(--radius) 0}
+.plan-card.featured{background:var(--ink);color:var(--white);border-color:var(--ink);transform:scale(1.04);z-index:2;box-shadow:0 8px 40px rgba(14,27,45,0.3);border-radius:var(--radius)}
+.plan-card.featured .plan-price{color:var(--white)}
+.plan-card.featured .plan-label{color:var(--gold-soft)}
+.plan-card.featured .plan-desc{color:rgba(255,255,255,0.6)}
+.plan-card.featured .plan-features li{color:rgba(255,255,255,0.8);border-bottom-color:rgba(255,255,255,0.08)}
+.plan-card.featured .check-mark{color:var(--gold-soft)}
 
-  /* ---------- SECTION GENERIC ---------- */
-  section{padding:88px 0;}
-  .section-head{max-width:640px;margin-bottom:52px;}
-  .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;}
-  .section-head p{color:var(--slate);font-size:16px;margin-top:14px;}
-  .divider{border:none;border-top:1px solid var(--line);}
+.plan-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 18px;border-radius:0 0 4px 4px}
+.plan-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;margin-top:1.2rem;margin-bottom:2px}
+.plan-desc{font-size:0.78rem;color:var(--slate);margin-bottom:1rem;min-height:36px}
+.plan-price{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--ink);line-height:1}
+.plan-price-note{font-size:0.75rem;color:var(--slate-light);font-weight:400;display:block;margin-top:4px;margin-bottom:1rem}
+.plan-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:var(--gold);margin-bottom:10px}
 
-  /* ---------- CARACTERISTICAS ---------- */
-  .char-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-  .char-cell{background:var(--paper);padding:32px 28px;}
-  .char-cell .num{font-family:'Inter',sans-serif;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:0.06em;margin-bottom:10px;display:block;text-transform:uppercase;}
-  .char-cell h4{font-size:19px;margin-bottom:10px;}
-  .char-cell p{color:var(--slate);font-size:14.5px;margin:0;}
+/* Cert badges */
+.cert-badge{display:inline-block;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:3px;margin-bottom:1rem;letter-spacing:0.02em}
+.cert-green{background:rgba(27,138,74,0.12);color:var(--green-bright)}
+.cert-gray{background:rgba(74,85,104,0.1);color:var(--slate)}
 
-  /* ---------- TEMARIO / ACCORDION ---------- */
-  .folio{
-    border:1px solid var(--line);background:var(--paper);margin-bottom:14px;
-    border-radius:var(--radius);overflow:hidden;transition:box-shadow .3s ease;
-  }
-  .folio.open{box-shadow:var(--shadow);}
-  .folio-head{
-    display:flex;align-items:center;gap:20px;padding:22px 26px;cursor:pointer;background:var(--paper);
-    transition:background .25s ease;
-  }
-  .folio-head:hover{background:var(--paper-dim);}
-  .folio-index{
-    font-family:'Fraunces',serif;font-size:34px;color:var(--gold-soft);width:56px;flex-shrink:0;
-  }
-  .folio-title{flex:1;}
-  .folio-title h3{font-size:19px;margin-bottom:4px;}
-  .folio-title .meta{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.06em;
-  }
-  .folio-toggle{
-    width:30px;height:30px;border:1px solid var(--line);border-radius:50%;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;position:relative;
-  }
-  .folio-toggle::before,.folio-toggle::after{
-    content:"";position:absolute;background:var(--ink);transition:transform .3s ease;
-  }
-  .folio-toggle::before{width:12px;height:1.5px;}
-  .folio-toggle::after{width:1.5px;height:12px;}
-  .folio.open .folio-toggle::after{transform:scaleY(0);}
-  .folio-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
-  .folio-body-inner{padding:0 26px 30px 26px;}
-  .folio-body-inner .sub{margin-bottom:18px;}
-  .folio-body-inner .sub h5{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
-    letter-spacing:0.08em;color:var(--gold);margin-bottom:10px;
-  }
-  .folio-body-inner ul{margin:0;padding-left:18px;color:var(--slate);font-size:14.5px;}
-  .folio-body-inner li{margin-bottom:8px;}
-  .folio-body-inner li::marker{color:var(--gold);}
+/* Preview items before toggle */
+.plan-preview{list-style:none;padding:0;margin:0 0 0.8rem}
+.plan-preview li{font-size:0.78rem;padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.plan-card.featured .plan-preview li{color:rgba(255,255,255,0.8)}
 
-  .timedist{margin-top:56px;}
-  .timedist h4{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--slate);margin-bottom:18px;}
-  .timebar{display:flex;width:100%;height:14px;border-radius:20px;overflow:hidden;background:var(--paper-dim);border:1px solid var(--line);}
-  .timebar span{height:100%;display:block;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1);}
-  .timebar .m1{background:#8C7A55;}
-  .timebar .m2{background:#A9814C;}
-  .timebar .m3{background:#8C3B3B;}
-  .timebar .m4{background:#0E2238;}
-  .timelegend{display:flex;flex-wrap:wrap;gap:18px 26px;margin-top:16px;}
-  .timelegend div{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--slate);}
-  .timelegend i{width:9px;height:9px;border-radius:50%;display:block;}
+/* Toggle button with arrow */
+.plan-toggle{width:100%;padding:10px;background:transparent;border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:600;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s;margin-bottom:0.5rem}
+.plan-card.featured .plan-toggle{border-color:rgba(255,255,255,0.15);color:var(--white)}
+.plan-toggle:hover{background:rgba(155,123,58,0.06)}
+.plan-card.featured .plan-toggle:hover{background:rgba(255,255,255,0.05)}
+.plan-toggle .arrow-icon{display:inline-flex;width:18px;height:18px;border-radius:50%;background:var(--gold);color:var(--white);align-items:center;justify-content:center;font-size:0.6rem;transition:transform 0.3s;animation:pulse 2s ease infinite}
+.plan-toggle.active .arrow-icon{transform:rotate(180deg);animation:none}
 
-  /* ---------- VALOR AGREGADO ---------- */
-  .value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-  .value-card{
-    border:1px solid var(--line);padding:30px 28px;background:var(--paper);position:relative;
-    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-  }
-  .value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--gold);}
-  .value-card .vnum{
-    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:0.1em;
-    display:block;margin-bottom:12px;
-  }
-  .value-card h4{font-size:18px;margin-bottom:10px;}
-  .value-card p{color:var(--slate);font-size:14.5px;margin:0;}
+.plan-details{max-height:0;overflow:hidden;transition:max-height 0.45s ease}
+.plan-details.open{max-height:1200px}
 
-  /* ---------- INVERSION ---------- */
-  .invest-wrap{
-    display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--paper);
-  }
-  .invest-left{padding:44px 40px;border-right:1px solid var(--line);}
-  .invest-left .total{font-family:'Fraunces',serif;font-size:58px;color:var(--ink);margin:8px 0 2px;}
-  .invest-left .total sup{font-size:22px;color:var(--gold);vertical-align:super;}
-  .invest-left .per-hour{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.05em;}
-  .breakdown{margin-top:30px;border-top:1px solid var(--line);}
-  .breakdown-row{
-    display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);
-    font-size:14.5px;color:var(--slate);
-  }
-  .breakdown-row b{color:var(--ink);font-weight:600;}
-  .invest-right{padding:44px 40px;background:var(--ink);color:var(--paper);}
-  .invest-right h4{color:var(--paper);font-size:18px;margin-bottom:18px;}
-  .pay-step{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
-  .pay-step .circ{
-    width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold-soft);
-    display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;flex-shrink:0;
-  }
-  .pay-step p{margin:0;font-size:13.5px;color:rgba(246,244,236,0.8);}
-  .invest-note{
-    font-size:12.5px;color:rgba(246,244,236,0.55);margin-top:24px;padding-top:20px;
-    border-top:1px solid var(--line-dark);
-  }
+.plan-features{list-style:none;padding:0;margin:0.5rem 0 0}
+.plan-features li{font-size:0.78rem;padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.check-mark{color:var(--green-dim);font-weight:700;font-size:0.85rem;flex-shrink:0;margin-top:1px}
+.plan-features li:last-child{border-bottom:none}
 
-  /* ---------- FACILITADOR ---------- */
-  .fac-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
-  .fac-avatar{
-    width:220px;height:220px;border-radius:50%;background:var(--ink);overflow:hidden;
-    display:flex;align-items:center;justify-content:center;color:var(--gold-soft);
-    font-family:'Fraunces',serif;font-size:52px;border:1px solid var(--gold);
-  }
-  .fac-avatar img{width:100%;height:100%;object-fit:cover;}
-  .fac-cred{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--slate-light);text-align:center;}
-  .fac-name{font-size:26px;margin-bottom:4px;}
-  .fac-role{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:20px;display:block;}
-  .fac-wrap p{color:var(--slate);font-size:15.5px;max-width:64ch;}
-  .fac-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
-  .fac-tags span{
-    border:1px solid var(--line);padding:7px 14px;font-size:12px;font-family:'IBM Plex Mono',monospace;
-    color:var(--slate);border-radius:20px;
-  }
+.plan-cta{margin-top:auto;padding-top:1.2rem}
+.btn-plan{display:block;width:100%;padding:11px;text-align:center;font-size:0.8rem;font-weight:700;letter-spacing:0.04em;border-radius:var(--radius);border:none;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
+.btn-outline{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--white)}
+.btn-featured{background:var(--gold);color:var(--white)}
+.btn-featured:hover{background:var(--gold-soft);transform:translateY(-1px)}
 
-  /* ---------- CONTACTO ---------- */
-  .contact{
-    background:var(--ink);color:var(--paper);border-radius:var(--radius);
-    padding:52px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
-  }
-  .contact h2{color:var(--paper);font-size:clamp(24px,3vw,34px);}
-  .contact p{color:rgba(246,244,236,0.7);margin-top:14px;max-width:48ch;}
-  .contact-actions{display:flex;flex-direction:column;gap:14px;}
-  .contact-actions .btn{justify-content:center;width:100%;}
-  .btn-wa{background:#25D366;color:#0E2238;}
-  .btn-wa:hover{background:#3ee27f;}
+/* TEMARIO */
+.temario-section{padding:3rem 0 4rem;background:var(--paper-dim)}
+.temario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem}
+.mod-card{background:var(--white);border-radius:var(--radius);padding:1.5rem;border-left:3px solid var(--gold);box-shadow:var(--shadow)}
+.mod-card h4{font-size:0.95rem;margin-bottom:6px;color:var(--ink)}
+.mod-card .mod-time{font-size:0.7rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+.mod-card ul{list-style:none;padding:0}
+.mod-card li{font-size:0.8rem;color:var(--slate);padding:3px 0;padding-left:14px;position:relative}
+.mod-card li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
 
-  /* ---------- SCHEDULER MODAL ---------- */
-  .modal-overlay{
-    display:none;position:fixed;inset:0;background:rgba(14,34,56,0.6);
-    z-index:300;align-items:center;justify-content:center;padding:20px;
-  }
-  .modal-overlay.open{display:flex;}
-  .modal{
-    background:var(--paper);max-width:480px;width:100%;border-radius:4px;
-    box-shadow:0 30px 70px -20px rgba(14,34,56,0.5);overflow:hidden;
-  }
-  .modal-header{
-    padding:24px 28px;border-bottom:1px solid var(--line);display:flex;
-    justify-content:space-between;align-items:center;
-  }
-  .modal-header h3{font-size:20px;}
-  .modal-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink);padding:4px;}
-  .modal-body{padding:28px;}
-  .modal-body label{
-    display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;
-    text-transform:uppercase;letter-spacing:0.08em;color:var(--slate);margin-bottom:8px;
-  }
-  .modal-body input,.modal-body select,.modal-body textarea{
-    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);
-    font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:var(--paper);
-    margin-bottom:20px;outline:none;transition:border-color .2s;
-  }
-  .modal-body input:focus,.modal-body select:focus,.modal-body textarea:focus{
-    border-color:var(--gold);
-  }
-  .modal-body textarea{resize:vertical;min-height:70px;}
-  .time-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;}
-  .time-slot{
-    padding:10px;text-align:center;border:1px solid var(--line);border-radius:var(--radius);
-    font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;
-    transition:all .2s;color:var(--slate);
-  }
-  .time-slot:hover{border-color:var(--gold);color:var(--ink);}
-  .time-slot.selected{background:var(--ink);color:var(--paper);border-color:var(--ink);}
-  .modal-footer{padding:0 28px 28px;}
-  .modal-footer .btn{width:100%;justify-content:center;}
-  .modal-success{display:none;text-align:center;padding:48px 28px;}
-  .modal-success h3{font-size:22px;margin-bottom:12px;}
-  .modal-success p{color:var(--slate);font-size:14px;}
+/* CAPACITADOR */
+.trainer-section{padding:3rem 0;background:var(--white)}
+.trainer-box{display:flex;gap:2rem;align-items:flex-start;max-width:800px;margin:0 auto}
+.trainer-img{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid var(--gold-pale)}
+.trainer-img img{width:100%;height:100%;object-fit:cover}
+.trainer-info h3{font-size:1.1rem;margin-bottom:4px}
+.trainer-info .trainer-title{font-size:0.78rem;color:var(--gold);font-weight:600;margin-bottom:10px}
+.trainer-info p{font-size:0.82rem;color:var(--slate);line-height:1.6}
+.trainer-creds{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.trainer-cred{font-size:0.65rem;padding:4px 10px;background:var(--gold-pale);color:var(--gold);border-radius:3px;font-weight:600}
 
-  /* ---------- FOOTER ---------- */
-  footer{padding:40px 0;border-top:1px solid var(--line);}
-  .foot-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .foot-brand{display:flex;align-items:center;gap:10px;}
-  .foot-brand img{height:26px;}
-  .foot-brand span{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.08em;}
-  .foot-links{display:flex;gap:22px;font-size:12.5px;color:var(--slate-light);font-family:'IBM Plex Mono',monospace;}
+/* CONTACT */
+.contact-section{padding:3rem 0;background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:0 auto}
+.contact-card{background:var(--white);padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center}
+.contact-card h4{font-size:0.95rem;margin-bottom:6px}
+.contact-card p{font-size:0.8rem;color:var(--slate);margin-bottom:12px}
+.contact-card a.btn-contact,.contact-card button.btn-contact{display:inline-block;padding:9px 24px;font-size:0.78rem;font-weight:600;border-radius:var(--radius);transition:all 0.2s;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-wa{background:var(--green-dim);color:var(--white)}
+.btn-wa:hover{opacity:0.9}
+.btn-mail{background:var(--accent);color:var(--white)}
+.btn-mail:hover{opacity:0.9}
 
-  /* ---------- FLOATING ACTIONS ---------- */
-  .fab-group{position:fixed;bottom:26px;right:26px;z-index:150;display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
-  .fab{
-    width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 12px 28px -8px rgba(14,34,56,0.5);cursor:pointer;border:none;transition:transform .25s ease;
-  }
-  .fab:hover{transform:scale(1.08);}
-  .fab-wa{background:#25D366;}
-  .fab-mail{background:var(--ink);}
-  .fab svg{width:24px;height:24px;}
+/* MODAL */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(14,27,45,0.6);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:var(--radius);max-width:480px;width:90%;padding:2rem;position:relative;box-shadow:var(--shadow-lg)}
+.modal h3{font-size:1.1rem;margin-bottom:1rem}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--slate)}
+.modal label{display:block;font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:4px;margin-top:12px}
+.modal input,.modal select,.modal textarea{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:4px;font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--ink)}
+.modal textarea{resize:vertical;min-height:60px}
+.modal .btn-submit{margin-top:16px;width:100%;padding:11px;background:var(--gold);color:var(--white);border:none;border-radius:var(--radius);font-weight:700;font-size:0.82rem;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.modal .btn-submit:hover{background:var(--gold-soft)}
+.modal .msg-ok{display:none;text-align:center;padding:2rem 1rem;font-size:0.9rem;color:var(--green-dim);font-weight:600}
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:960px){
-    .hero-grid{grid-template-columns:1fr;}
-    .char-grid{grid-template-columns:1fr;}
-    .value-grid{grid-template-columns:1fr;}
-    .invest-wrap{grid-template-columns:1fr;}
-    .invest-left{border-right:none;border-bottom:1px solid var(--line);}
-    .fac-wrap{grid-template-columns:1fr;text-align:center;}
-    .fac-wrap p{margin:0 auto;}
-    .fac-tags{justify-content:center;}
-    .fac-avatar{margin:0 auto;}
-    .contact{grid-template-columns:1fr;text-align:center;padding:36px 24px;}
-    .contact p{margin:10px auto 0;}
-    .contact-actions{max-width:100%;margin:0 auto;}
-    .contact-actions .btn{font-size:11px;padding:12px 16px;}
-  }
-  @media (max-width:760px){
-    .nav-links{display:none;}
-    .burger{display:block;}
-    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 20px;}
-    section{padding:64px 0;}
-    .folio-index{width:40px;font-size:26px;}
-    .folio-head{padding:18px;gap:14px;}
-    .folio-body-inner{padding:0 18px 24px;}
-  }
-  @media (max-width:480px){
-    .hero{padding:56px 0 44px;}
-    .file-meta{font-size:10.5px;gap:8px 16px;}
-    .hero-actions{flex-direction:column;}
-    .hero-actions .btn{width:100%;justify-content:center;}
-    .invest-left,.invest-right{padding:32px 24px;}
-    .invest-left .total{font-size:44px;}
-    .contact{padding:28px 20px;gap:24px;}
-    .contact h2{font-size:22px;}
-    .contact p{font-size:14px;margin:8px auto 0;}
-    .contact-actions .btn{font-size:10.5px;padding:11px 14px;gap:6px;}
-  }
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,0.5);text-align:center;padding:1.5rem;font-size:0.7rem;border-top:2px solid var(--gold)}
+footer strong{color:var(--gold-soft)}
+
+/* RESPONSIVE */
+@media(max-width:820px){
+  .plans-grid{grid-template-columns:1fr;max-width:420px}
+  .plan-card.featured{transform:none}
+  .plan-card,.plan-card:first-child,.plan-card:last-child,.plan-card.featured{border-radius:var(--radius);border:1px solid var(--line);margin-bottom:12px}
+  .plan-card.featured{border-color:var(--ink)}
+  .temario-grid{grid-template-columns:1fr}
+  .trainer-box{flex-direction:column;align-items:center;text-align:center}
+  .trainer-creds{justify-content:center}
+  .contact-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.5rem}
+  .hero-badges{flex-direction:column;align-items:center}
+}
+@media(max-width:480px){
+  .nav{flex-direction:column;gap:8px;padding:12px 16px}
+  .plan-card{padding:1.5rem 1.2rem}
+  .plans-grid{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .anim{opacity:1;transform:none}
+  .plan-toggle .arrow-icon{animation:none}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <nav class="nav">
-    <a href="#top" class="brand">
-      <img src="logos.png" alt="Romani Compliance">
-    </a>
-    <div class="nav-links">
-      <a href="#propuesta">Propuesta</a>
-      <a href="#temario">Temario</a>
-      <a href="#valor">Valor agregado</a>
-      <a href="#inversion">Inversi&oacute;n</a>
-      <a href="#facilitador">Facilitador</a>
-      <a href="#contacto" class="nav-cta">Contactar</a>
-    </div>
-    <button class="burger" id="burgerBtn" aria-label="Abrir men&uacute;">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<div class="nav">
+  <div class="brand">
+    <img src="logos.png" alt="Romani Compliance">
+  </div>
+  <span class="nav-code">COT. RD-SPLAFT-2026-001</span>
+</div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" id="closeMenu" aria-label="Cerrar men&uacute;">&times;</button>
-  <a href="#propuesta">Propuesta</a>
-  <a href="#temario">Temario</a>
-  <a href="#valor">Valor agregado</a>
-  <a href="#inversion">Inversi&oacute;n</a>
-  <a href="#facilitador">Facilitador</a>
-  <a href="#contacto" class="mm-cta">Contactar</a>
+<section class="hero">
+<div class="wrap">
+  <div class="hero-eyebrow">Propuesta de capacitaci&oacute;n SPLAFT</div>
+  <h1>Servicio especializado para<br><span>Red Digital del Per&uacute; S.A.C.</span></h1>
+  <p class="hero-sub">Capacitaci&oacute;n en prevenci&oacute;n de lavado de activos y financiamiento del terrorismo, dise&ntilde;ada para operadores de distribuci&oacute;n digital con m&aacute;s de 120,000 puntos de venta a nivel nacional.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">SBS &middot; Res. N.&deg; 789-2018</span>
+    <span class="hero-badge">D.L. 1106 &middot; D.L. 1249</span>
+    <span class="hero-badge">ISO 37001:2021</span>
+  </div>
 </div>
+</section>
 
-<!-- SCHEDULER MODAL -->
-<div class="modal-overlay" id="schedulerModal">
-  <div class="modal">
-    <div class="modal-header">
-      <h3>Agendar capacitaci&oacute;n</h3>
-      <button class="modal-close" id="closeScheduler">&times;</button>
+<!-- PLANES -->
+<section class="plans-section" id="planes">
+<div class="wrap">
+  <div class="section-title">
+    <h2>Seleccione su plan de capacitaci&oacute;n</h2>
+    <p>Tres programas adaptados a las necesidades de cumplimiento normativo de su organizaci&oacute;n</p>
+  </div>
+
+  <div class="plans-grid">
+    <!-- PLAN 1 -->
+    <div class="plan-card anim anim-delay-1">
+      <div class="plan-label">Plan Esencial</div>
+      <div class="plan-name">Capacitaci&oacute;n SPLAFT</div>
+      <div class="plan-desc">Fundamentos normativos y operativos del sistema de prevenci&oacute;n LA/FT</div>
+      <div class="plan-price">US$ 200<span class="plan-price-note">+ IGV &middot; 2 horas</span></div>
+      <span class="cert-badge cert-gray">Certificaci&oacute;n opcional</span>
+
+      <ul class="plan-preview">
+        <li><span class="check-mark">&#10003;</span> Capacitaci&oacute;n presencial o virtual de 2 horas</li>
+        <li><span class="check-mark">&#10003;</span> Marco normativo SPLAFT aplicable</li>
+        <li><span class="check-mark">&#10003;</span> Acompa&ntilde;amiento posterior de 5 d&iacute;as</li>
+      </ul>
+
+      <button class="plan-toggle" onclick="toggleDetails(this)">
+        Ver contenido completo <span class="arrow-icon">&#9660;</span>
+      </button>
+      <div class="plan-details">
+        <ul class="plan-features">
+          <li><span class="check-mark">&#10003;</span> Tipolog&iacute;as LA/FT en el sector pagos y distribuci&oacute;n digital</li>
+          <li><span class="check-mark">&#10003;</span> Obligaciones del sujeto obligado y del Oficial de Cumplimiento</li>
+          <li><span class="check-mark">&#10003;</span> Se&ntilde;ales de alerta y reporte de operaciones sospechosas (ROS)</li>
+          <li><span class="check-mark">&#10003;</span> Material de apoyo digital</li>
+        </ul>
+      </div>
+
+      <div class="plan-cta">
+        <a href="https://github.com/romanicomplianceperu/cotizacion-redfigital/raw/main/cotizacion.pdf" class="btn-plan btn-outline" download>Descargar cotizaci&oacute;n en PDF</a>
+      </div>
     </div>
-    <div id="schedulerForm">
-      <form id="schedFormEl" action="https://formsubmit.co/ajax/omaroliden1@gmail.com" method="POST">
-        <input type="hidden" name="_cc" value="dromani@pucp.pe">
-        <input type="hidden" name="_subject" value="Solicitud de agendamiento - Capacitaci&oacute;n SPLAFT Red Digital">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="Horario" id="hiddenTime" value="">
-        <div class="modal-body">
-          <label>Nombre completo</label>
-          <input type="text" name="Nombre" id="schedName" placeholder="Nombre del contacto" required>
 
-          <label>Correo electr&oacute;nico</label>
-          <input type="email" name="Correo" id="schedEmail" placeholder="correo@empresa.com" required>
+    <!-- PLAN 2 - FEATURED -->
+    <div class="plan-card featured anim anim-delay-2">
+      <div class="plan-badge">Recomendado</div>
+      <div class="plan-label">Plan Avanzado</div>
+      <div class="plan-name">Capacitaci&oacute;n + Implementaci&oacute;n</div>
+      <div class="plan-desc">Formaci&oacute;n integral con taller pr&aacute;ctico de implementaci&oacute;n del sistema SPLAFT</div>
+      <div class="plan-price">US$ 250<span class="plan-price-note">+ IGV &middot; 3 horas</span></div>
+      <span class="cert-badge cert-green">Certificado gratuito</span>
 
-          <label>Fecha preferida</label>
-          <input type="date" name="Fecha" id="schedDate" required>
+      <ul class="plan-preview">
+        <li><span class="check-mark">&#10003;</span> Todo lo incluido en el Plan Esencial</li>
+        <li><span class="check-mark">&#10003;</span> Taller pr&aacute;ctico: Matriz de Riesgos, Manual SPLAFT y C&oacute;digo de Conducta</li>
+        <li><span class="check-mark">&#10003;</span> Acompa&ntilde;amiento posterior de 10 d&iacute;as</li>
+      </ul>
 
-          <label>Horario preferido</label>
-          <div class="time-slots" id="timeSlots">
-            <div class="time-slot" data-time="09:00">09:00</div>
-            <div class="time-slot" data-time="10:00">10:00</div>
-            <div class="time-slot" data-time="11:00">11:00</div>
-            <div class="time-slot" data-time="15:00">15:00</div>
-            <div class="time-slot" data-time="16:00">16:00</div>
-            <div class="time-slot" data-time="17:00">17:00</div>
-          </div>
+      <button class="plan-toggle" onclick="toggleDetails(this)">
+        Ver contenido completo <span class="arrow-icon">&#9660;</span>
+      </button>
+      <div class="plan-details">
+        <ul class="plan-features">
+          <li><span class="check-mark">&#10003;</span> Construcci&oacute;n de la Matriz de Riesgos LA/FT</li>
+          <li><span class="check-mark">&#10003;</span> Elaboraci&oacute;n del C&oacute;digo de Conducta y Manual de Prevenci&oacute;n</li>
+          <li><span class="check-mark">&#10003;</span> Debida diligencia del cliente (DDC/KYC) aplicada al sector</li>
+          <li><span class="check-mark">&#10003;</span> Ejercicios pr&aacute;cticos de detecci&oacute;n y reporte</li>
+          <li><span class="check-mark">&#10003;</span> Rol del Oficial de Cumplimiento en la pr&aacute;ctica</li>
+          <li><span class="check-mark">&#10003;</span> Material de trabajo editable</li>
+        </ul>
+      </div>
 
-          <label>Comentarios (opcional)</label>
-          <textarea name="Comentarios" id="schedNotes" placeholder="Alguna indicaci&oacute;n adicional..."></textarea>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" id="submitSchedule">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span id="btnText">Confirmar solicitud</span>
-          </button>
-        </div>
-      </form>
+      <div class="plan-cta">
+        <a href="https://github.com/romanicomplianceperu/cotizacion-redfigital/raw/main/cotizacion2.pdf" class="btn-plan btn-featured" download>Descargar cotizaci&oacute;n en PDF</a>
+      </div>
     </div>
-    <div class="modal-success" id="schedulerSuccess">
-      <h3>Solicitud enviada</h3>
-      <p>Gracias por su inter&eacute;s en la capacitaci&oacute;n SPLAFT. Denis Romani revisar&aacute; su solicitud y confirmar&aacute; la fecha y hora a la brevedad a trav&eacute;s del correo proporcionado.</p>
-      <br>
-      <button class="btn btn-outline" id="closeSuccess">Cerrar</button>
+
+    <!-- PLAN 3 -->
+    <div class="plan-card anim anim-delay-3">
+      <div class="plan-label">Plan Integral</div>
+      <div class="plan-name">Programa Blindaje 360</div>
+      <div class="plan-desc">Dise&ntilde;o e implementaci&oacute;n completa del sistema SPLAFT de su organizaci&oacute;n</div>
+      <div class="plan-price" style="font-size:1.4rem;margin-top:8px">A consultar<span class="plan-price-note">Cotizaci&oacute;n personalizada</span></div>
+      <span class="cert-badge cert-green">Certificado gratuito para todos</span>
+
+      <ul class="plan-preview">
+        <li><span class="check-mark">&#10003;</span> Todo lo incluido en el Plan Avanzado</li>
+        <li><span class="check-mark">&#10003;</span> Manual SPLAFT personalizado para la organizaci&oacute;n</li>
+        <li><span class="check-mark">&#10003;</span> Asesor&iacute;a continua al Oficial de Cumplimiento</li>
+      </ul>
+
+      <button class="plan-toggle" onclick="toggleDetails(this)">
+        Ver contenido completo <span class="arrow-icon">&#9660;</span>
+      </button>
+      <div class="plan-details">
+        <ul class="plan-features">
+          <li><span class="check-mark">&#10003;</span> Dise&ntilde;o de Matriz de Riesgos LA/FT a medida</li>
+          <li><span class="check-mark">&#10003;</span> Elaboraci&oacute;n del C&oacute;digo de Conducta institucional</li>
+          <li><span class="check-mark">&#10003;</span> Pol&iacute;ticas de DDC/KYC adaptadas al modelo de negocio</li>
+          <li><span class="check-mark">&#10003;</span> Procedimiento de Reporte de Operaciones Sospechosas (ROS)</li>
+          <li><span class="check-mark">&#10003;</span> Registro de Operaciones (RO) conforme a la normativa SBS</li>
+          <li><span class="check-mark">&#10003;</span> Programa de capacitaci&oacute;n anual para colaboradores</li>
+          <li><span class="check-mark">&#10003;</span> Auditor&iacute;a interna del sistema SPLAFT</li>
+          <li><span class="check-mark">&#10003;</span> Soporte y acompa&ntilde;amiento de 30 d&iacute;as</li>
+        </ul>
+      </div>
+
+      <div class="plan-cta">
+        <a href="https://wa.me/51956789696?text=Hola%2C%20estoy%20interesado%20en%20el%20Programa%20Blindaje%20360%20para%20Red%20Digital%20del%20Per%C3%BA.%20Solicito%20m%C3%A1s%20informaci%C3%B3n." class="btn-plan btn-outline" target="_blank">M&aacute;s informaci&oacute;n</a>
+      </div>
     </div>
   </div>
 </div>
+</section>
 
-<main id="top">
+<!-- TEMARIO PLAN AVANZADO -->
+<section class="temario-section" id="temario">
+<div class="wrap">
+  <div class="section-title">
+    <h2>Temario del Plan Avanzado (3 horas)</h2>
+    <p>Contenido detallado de la capacitaci&oacute;n recomendada</p>
+  </div>
+  <div class="temario-grid">
+    <div class="mod-card anim">
+      <div class="mod-time">Hora 1 &middot; Fundamentos</div>
+      <h4>Marco normativo y obligaciones SPLAFT</h4>
+      <ul>
+        <li>Ley N.&deg; 27693, D.L. 1106, D.L. 1249 y sus modificatorias</li>
+        <li>Resoluciones SBS aplicables al sector pagos y distribuci&oacute;n digital</li>
+        <li>Obligaciones del sujeto obligado: registro, reporte, conservaci&oacute;n documental</li>
+        <li>Rol, requisitos y responsabilidades del Oficial de Cumplimiento</li>
+        <li>R&eacute;gimen sancionador y consecuencias penales</li>
+      </ul>
+    </div>
+    <div class="mod-card anim">
+      <div class="mod-time">Hora 2 &middot; Operativa</div>
+      <h4>Tipolog&iacute;as, se&ntilde;ales de alerta y casos pr&aacute;cticos</h4>
+      <ul>
+        <li>Tipolog&iacute;as LA/FT espec&iacute;ficas del sector pagos y recargas</li>
+        <li>Se&ntilde;ales de alerta: fraccionamiento, uso de terceros, recargas at&iacute;picas</li>
+        <li>An&aacute;lisis de casos reales adaptados al giro de negocio</li>
+        <li>Procedimiento de detecci&oacute;n, an&aacute;lisis y reporte (ROS/RO)</li>
+        <li>Debida diligencia del cliente (DDC/KYC) en operaciones digitales</li>
+      </ul>
+    </div>
+    <div class="mod-card anim">
+      <div class="mod-time">Hora 3 &middot; Implementaci&oacute;n</div>
+      <h4>Construcci&oacute;n del sistema SPLAFT</h4>
+      <ul>
+        <li>Dise&ntilde;o y estructura de la Matriz de Riesgos LA/FT</li>
+        <li>Elaboraci&oacute;n del C&oacute;digo de Conducta del sujeto obligado</li>
+        <li>Componentes esenciales del Manual de Prevenci&oacute;n SPLAFT</li>
+        <li>Ejercicios pr&aacute;cticos: construcci&oacute;n de instrumentos de gesti&oacute;n</li>
+        <li>Funciones cr&iacute;ticas del Oficial de Cumplimiento en la implementaci&oacute;n</li>
+        <li>Plan de capacitaci&oacute;n interna y cultura de cumplimiento</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" style="padding-top:72px;">
-    <div class="wrap" style="position:relative;">
-      <div class="file-meta">
-        <span><b>Cotizaci&oacute;n:</b> RC-SPLAFT-2026-001</span>
-        <span><b>Cliente:</b> Red Digital del Per&uacute; S.A.C.</span>
-        <span><b>RUC:</b> 20566598389</span>
-        <span><b>Emisi&oacute;n:</b> <span id="issueDate"></span></span>
-      </div>
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Propuesta econ&oacute;mica &middot; Servicio de capacitaci&oacute;n</div>
-          <h1>Capacitaci&oacute;n SPLAFT dise&ntilde;ada exclusivamente para <span style="color:var(--red);">Red Digital del Per&uacute; S.A.C.</span></h1>
-          <p class="lead">Un programa de dos horas que identifica los vectores de riesgo LA/FT reales de su red de m&aacute;s de 120,000 puntos de venta y entrega al Oficial de Cumplimiento las herramientas concretas para mitigarlos.</p>
-          <div class="hero-actions">
-            <a href="#temario" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-              Ver temario completo
-            </a>
-            <a href="https://raw.githubusercontent.com/romanicomplianceperu/cotizacion-redfigital/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-outline">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-              Descargar cotizaci&oacute;n
-            </a>
-            <a href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" class="btn btn-wa">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
-              WhatsApp directo
-            </a>
-            <button class="btn btn-gold" id="openSchedulerHero">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Agendar cita
-            </button>
-          </div>
-        </div>
-        <div class="hero-card">
-          <span class="tag">Inversi&oacute;n total</span>
-          <h3>Servicio de capacitaci&oacute;n SPLAFT</h3>
-          <div class="price"><sup>USD</sup> 200<small>Equivalente a USD 100.00 por hora de capacitaci&oacute;n</small></div>
-          <ul>
-            <li><span class="dot"></span>2 horas de exposici&oacute;n + 30 min de consultas espec&iacute;ficas</li>
-            <li><span class="dot"></span>Diagn&oacute;stico preliminar de riesgo SPLAFT, sin costo adicional</li>
-            <li><span class="dot"></span>An&aacute;lisis regulatorio escrito entregado en 5 d&iacute;as h&aacute;biles</li>
-            <li><span class="dot"></span>Sesi&oacute;n de seguimiento de 30 min dentro de los 5 d&iacute;as posteriores</li>
-          </ul>
-          <div class="validity">Propuesta v&aacute;lida hasta <span id="validUntil"></span></div>
-        </div>
+<!-- CAPACITADOR -->
+<section class="trainer-section" id="capacitador">
+<div class="wrap">
+  <div class="section-title">
+    <h2>Capacitador</h2>
+  </div>
+  <div class="trainer-box">
+    <div class="trainer-img">
+      <img src="imagen.png" alt="Denis Gabriel Romani Seminario">
+    </div>
+    <div class="trainer-info">
+      <h3>Denis Gabriel Romani Seminario</h3>
+      <div class="trainer-title">Abogado especialista en Criminal Compliance y ALA/CFT</div>
+      <p>M&aacute;ster en Derecho Penal por la Pontificia Universidad Cat&oacute;lica del Per&uacute; (PUCP). M&aacute;ster en Cumplimiento Normativo Penal por la Universidad de Castilla-La Mancha (UCLM), Espa&ntilde;a. M&aacute;s de 15 a&ntilde;os de experiencia en investigaci&oacute;n financiera, prevenci&oacute;n LA/FT y compliance corporativo.</p>
+      <div class="trainer-creds">
+        <span class="trainer-cred">PUCP</span>
+        <span class="trainer-cred">UCLM</span>
+        <span class="trainer-cred">ISO 37001:2021</span>
+        <span class="trainer-cred">Compliance Officer</span>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+</section>
 
-  <!-- STATS -->
-  <section class="stats" style="padding:0;">
-    <div class="wrap stats-grid" style="padding:56px 24px;">
-      <div class="stat reveal"><b data-count="21">0</b><span>A&ntilde;os de experiencia</span></div>
-      <div class="stat reveal"><b data-count="4">0</b><span>M&oacute;dulos especializados</span></div>
-      <div class="stat reveal"><b data-count="120" data-suffix="K+">0</b><span>Puntos de venta analizados</span></div>
-      <div class="stat reveal"><b data-count="100" data-suffix="%">0</b><span>Personalizada a su modelo</span></div>
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+<div class="wrap">
+  <div class="section-title">
+    <h2>Coordinemos su capacitaci&oacute;n</h2>
+    <p>Cont&aacute;ctenos para agendar fecha y resolver consultas</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h4>WhatsApp</h4>
+      <p>Respuesta inmediata en horario laboral</p>
+      <a href="https://wa.me/51956789696?text=Hola%2C%20estoy%20interesado%20en%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital%20del%20Per%C3%BA." class="btn-contact btn-wa" target="_blank">Escribir por WhatsApp</a>
     </div>
-  </section>
-
-  <!-- PROPUESTA / CARACTERISTICAS -->
-  <section id="propuesta">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Caracter&iacute;stica del servicio</div>
-        <h2>Qu&eacute; incluye y c&oacute;mo se ejecuta</h2>
-        <p>El contenido se construye sobre el modelo operativo real de Red Digital del Per&uacute; S.A.C., identificando los riesgos concretos en materia de lavado de activos y financiamiento del terrorismo.</p>
-      </div>
-      <div class="char-grid reveal">
-        <div class="char-cell">
-          <span class="num">01 / Duraci&oacute;n</span>
-          <h4>2 horas de capacitaci&oacute;n</h4>
-          <p>1 hora de preparaci&oacute;n de material a medida y 2 horas de exposici&oacute;n, con 30 minutos adicionales para consultas.</p>
-        </div>
-        <div class="char-cell">
-          <span class="num">02 / Enfoque</span>
-          <h4>Basada en su operaci&oacute;n real</h4>
-          <p>Se analizan la estructura de distribuci&oacute;n, los flujos de saldo virtual y los sectores econ&oacute;micos de su red de puntos de venta.</p>
-        </div>
-        <div class="char-cell">
-          <span class="num">03 / Entregables</span>
-          <h4>Documentaci&oacute;n de respaldo</h4>
-          <p>Diagn&oacute;stico preliminar, mapa de tipolog&iacute;as, an&aacute;lisis regulatorio escrito y sesi&oacute;n de seguimiento.</p>
-        </div>
-      </div>
+    <div class="contact-card">
+      <h4>Agendar reuni&oacute;n</h4>
+      <p>Programe una reuni&oacute;n de coordinaci&oacute;n</p>
+      <button class="btn-contact btn-mail" onclick="document.getElementById('modalAgendar').classList.add('active')">Agendar cita</button>
     </div>
-  </section>
-
-  <!-- TEMARIO -->
-  <section id="temario" style="background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Programa de capacitaci&oacute;n</div>
-        <h2>Temario</h2>
-        <p>Dirigido al Oficial de Cumplimiento de Red Digital del Per&uacute; S.A.C. Facilita: Abg. Mg. Denis Gabriel Romani Seminario.</p>
-      </div>
-
-      <div class="folios reveal">
-
-        <div class="folio">
-          <div class="folio-head">
-            <span class="folio-index">01</span>
-            <div class="folio-title">
-              <h3>&iquest;Qu&eacute; es el SPLAFT y por qu&eacute; le importa a Red Digital?</h3>
-              <span class="meta">20 minutos</span>
-            </div>
-            <span class="folio-toggle"></span>
-          </div>
-          <div class="folio-body">
-            <div class="folio-body-inner">
-              <div class="sub">
-                <h5>1.1 &middot; &iquest;Qu&eacute; es el SPLAFT?</h5>
-                <ul>
-                  <li>El Sistema de Prevenci&oacute;n de Lavado de Activos y Financiamiento del Terrorismo (SPLAFT) es el conjunto de pol&iacute;ticas y controles que toda empresa debe implementar para evitar que su negocio sea usado, directa o indirectamente, para mover dinero de origen il&iacute;cito.</li>
-                  <li>No importa si la empresa est&aacute; formalmente inscrita ante la UIF-Per&uacute;: el riesgo penal existe igual. El D.Leg. N.&deg; 1106 sanciona la facilitaci&oacute;n del lavado de activos sin importar la condici&oacute;n formal de la empresa.</li>
-                </ul>
-              </div>
-              <div class="sub">
-                <h5>1.2 &middot; &iquest;Por qu&eacute; Red Digital est&aacute; expuesta?</h5>
-                <ul>
-                  <li>M&aacute;s de 120,000 puntos de venta manejan efectivo de forma descentralizada. Eso, por s&iacute; solo, ya es una se&ntilde;al de riesgo para la UIF-Per&uacute; y el GAFI.</li>
-                  <li>La recaudaci&oacute;n por cuenta de marcas afiliadas convierte a cada punto de venta en un canal de ingreso de dinero al sistema formal.</li>
-                  <li>El nuevo Reglamento del Sistema de Pagos del BCRP introduce la figura del Proveedor de Servicios de Pago (PSP), que podr&iacute;a aplicar a Red Digital.</li>
-                </ul>
-              </div>
-              <div class="sub">
-                <h5>1.3 &middot; &iquest;C&oacute;mo le sirve a Red Digital?</h5>
-                <ul>
-                  <li>Protege a la empresa y a sus directivos de responsabilidad penal.</li>
-                  <li>Reduce el riesgo de sanciones administrativas y multas.</li>
-                  <li>Genera confianza ante las marcas afiliadas, bancos y socios comerciales.</li>
-                  <li>Prepara a Red Digital para cumplir con las nuevas exigencias regulatorias antes de que sean obligatorias.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="folio">
-          <div class="folio-head">
-            <span class="folio-index">02</span>
-            <div class="folio-title">
-              <h3>El SPLAFT aplicado a Red Digital: estructura y herramientas</h3>
-              <span class="meta">35 minutos</span>
-            </div>
-            <span class="folio-toggle"></span>
-          </div>
-          <div class="folio-body">
-            <div class="folio-body-inner">
-              <div class="sub">
-                <h5>2.1 &middot; Componentes m&iacute;nimos de un sistema de prevenci&oacute;n</h5>
-                <ul>
-                  <li>Pol&iacute;tica de prevenci&oacute;n, C&oacute;digo de Conducta y Manual interno adaptados al modelo de distribuci&oacute;n con terceros.</li>
-                  <li>El Oficial de Cumplimiento: funciones, autonom&iacute;a operativa y protecci&oacute;n legal.</li>
-                  <li>Registro de Operaciones: qu&eacute; datos conservar, en qu&eacute; formato y por cu&aacute;nto tiempo.</li>
-                </ul>
-              </div>
-              <div class="sub">
-                <h5>2.2 &middot; Conocimiento del cliente (KYC) en la red de distribuci&oacute;n</h5>
-                <ul>
-                  <li>A qui&eacute;n se aplica el KYC: puntos de venta, distribuidores y usuarios finales.</li>
-                  <li>Debida diligencia b&aacute;sica en el alta de un punto de venta y se&ntilde;ales que activan una debida diligencia reforzada.</li>
-                  <li>Listas de control OFAC, ONU, GAFI y Personas Expuestas Pol&iacute;ticamente (PEP).</li>
-                  <li>Umbrales de alerta y fraccionamiento en el monitoreo de operaciones.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="folio">
-          <div class="folio-head">
-            <span class="folio-index">03</span>
-            <div class="folio-title">
-              <h3>Tipolog&iacute;as de riesgo y se&ntilde;ales de alerta</h3>
-              <span class="meta">30 minutos</span>
-            </div>
-            <span class="folio-toggle"></span>
-          </div>
-          <div class="folio-body">
-            <div class="folio-body-inner">
-              <div class="sub">
-                <h5>3.1 &middot; Tipolog&iacute;as identificadas en el modelo de negocio</h5>
-                <ul>
-                  <li>Fraccionamiento coordinado en m&uacute;ltiples puntos de venta (structuring).</li>
-                  <li>Puntos de venta de fachada, sin actividad comercial real.</li>
-                  <li>Colocaci&oacute;n de efectivo mediante saldo virtual prepagado.</li>
-                  <li>Triangulaci&oacute;n a trav&eacute;s de distribuidores.</li>
-                  <li>Lavado mediante venta de loter&iacute;as y juegos de azar.</li>
-                  <li>Uso de identidades de terceros (testaferros) en el registro de puntos de venta.</li>
-                </ul>
-              </div>
-              <div class="sub">
-                <h5>3.2 &middot; Se&ntilde;ales de alerta y proceso de reporte</h5>
-                <ul>
-                  <li>Se&ntilde;ales operativas: horarios at&iacute;picos, vol&uacute;menes inusuales, concentraci&oacute;n de operaciones.</li>
-                  <li>Proceso interno de detecci&oacute;n, an&aacute;lisis y escalamiento.</li>
-                  <li>El Reporte de Operaciones Sospechosas (ROS): plazos y canal ante la UIF-Per&uacute;.</li>
-                  <li>Prohibici&oacute;n de alertar al cliente (no tipping off) y responsabilidad penal.</li>
-                </ul>
-              </div>
-              <div class="sub">
-                <h5>3.3 &middot; Sanciones</h5>
-                <ul>
-                  <li>Infracciones leves, graves y muy graves seg&uacute;n la normativa SBS/UIF.</li>
-                  <li>Responsabilidad penal del Oficial de Cumplimiento y del representante legal.</li>
-                  <li>Casos reales de empresas de distribuci&oacute;n y recaudaci&oacute;n digital sancionadas en la regi&oacute;n.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="folio">
-          <div class="folio-head">
-            <span class="folio-index">04</span>
-            <div class="folio-title">
-              <h3>Taller pr&aacute;ctico y consultas</h3>
-              <span class="meta">35 minutos</span>
-            </div>
-            <span class="folio-toggle"></span>
-          </div>
-          <div class="folio-body">
-            <div class="folio-body-inner">
-              <div class="sub">
-                <ul>
-                  <li>Revisi&oacute;n conjunta del diagn&oacute;stico preliminar de riesgo SPLAFT de Red Digital.</li>
-                  <li>Ejercicio pr&aacute;ctico con tres escenarios reales: recarga masiva, cobro de servicios en punto de venta reciente y venta de SOAT con datos inconsistentes.</li>
-                  <li>Evaluaci&oacute;n de la posici&oacute;n regulatoria de Red Digital como posible PSP y como potencial sujeto obligado.</li>
-                  <li>Preguntas y respuestas sobre el modelo de negocio.</li>
-                  <li>Hoja de ruta m&iacute;nima para iniciar la implementaci&oacute;n interna del SPLAFT.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="timedist reveal">
-        <h4>Distribuci&oacute;n del tiempo — 2 horas totales</h4>
-        <div class="timebar" id="timebar">
-          <span class="m1" data-width="16.6"></span>
-          <span class="m2" data-width="29.2"></span>
-          <span class="m3" data-width="25"></span>
-          <span class="m4" data-width="29.2"></span>
-        </div>
-        <div class="timelegend">
-          <div><i style="background:#8C7A55"></i> M&oacute;dulo 1 &middot; 20 min</div>
-          <div><i style="background:#A9814C"></i> M&oacute;dulo 2 &middot; 35 min</div>
-          <div><i style="background:#8C3B3B"></i> M&oacute;dulo 3 &middot; 30 min</div>
-          <div><i style="background:#0E2238"></i> M&oacute;dulo 4 &middot; 35 min</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALOR AGREGADO -->
-  <section id="valor">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Valor agregado</div>
-        <h2>Incluido en la inversi&oacute;n</h2>
-        <p>Documentaci&oacute;n de trabajo real que el Oficial de Cumplimiento puede usar de inmediato.</p>
-      </div>
-      <div class="value-grid reveal">
-        <div class="value-card">
-          <span class="vnum">Antes de la sesi&oacute;n</span>
-          <h4>Diagn&oacute;stico preliminar de riesgo SPLAFT</h4>
-          <p>Adaptado al modelo de Red Digital: estructura de distribuci&oacute;n, flujos de saldo virtual y sectores econ&oacute;micos predominantes en la red de puntos de venta.</p>
-        </div>
-        <div class="value-card">
-          <span class="vnum">Durante la sesi&oacute;n</span>
-          <h4>Mapa de tipolog&iacute;as de riesgo</h4>
-          <p>Espec&iacute;fico para redes de recaudaci&oacute;n digital, elaborado con base en las alertas tipol&oacute;gicas del GAFI y la UIF-Per&uacute;.</p>
-        </div>
-        <div class="value-card">
-          <span class="vnum">5 d&iacute;as h&aacute;biles despu&eacute;s</span>
-          <h4>An&aacute;lisis regulatorio escrito</h4>
-          <p>Posici&oacute;n de Red Digital bajo el nuevo Reglamento del Sistema de Pagos del BCRP (Circular 2025/2026), con recomendaci&oacute;n sobre los pasos m&iacute;nimos de adecuaci&oacute;n preventiva.</p>
-        </div>
-        <div class="value-card">
-          <span class="vnum">Dentro de 5 d&iacute;as</span>
-          <h4>Sesi&oacute;n de seguimiento</h4>
-          <p>30 minutos adicionales para resolver dudas sobre la implementaci&oacute;n de las recomendaciones entregadas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INVERSION -->
-  <section id="inversion" style="background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Costo del servicio</div>
-        <h2>Inversi&oacute;n</h2>
-        <p>Cotizaci&oacute;n para Red Digital del Per&uacute; S.A.C. Incluye recibo por honorarios.</p>
-      </div>
-      <div class="invest-wrap reveal">
-        <div class="invest-left">
-          <span class="mono" style="font-size:12px;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.08em;">Costo total del servicio</span>
-          <div class="total"><sup>USD</sup> 200.00</div>
-          <span class="per-hour">Equivalente a USD 100.00 por hora de capacitaci&oacute;n</span>
-          <div class="breakdown">
-            <div class="breakdown-row"><span>Preparaci&oacute;n de material</span><b>1 hora</b></div>
-            <div class="breakdown-row"><span>Exposici&oacute;n</span><b>2 horas</b></div>
-            <div class="breakdown-row"><span>Consultas sobre el modelo operativo</span><b>30 min.</b></div>
-            <div class="breakdown-row"><span>Documentaci&oacute;n y seguimiento</span><b>Incluidos</b></div>
-          </div>
-        </div>
-        <div class="invest-right">
-          <h4>Modalidad de pago</h4>
-          <div class="pay-step">
-            <span class="circ">1</span>
-            <p>50% al confirmar la sesi&oacute;n, para reservar la fecha e iniciar la preparaci&oacute;n del material.</p>
-          </div>
-          <div class="pay-step">
-            <span class="circ">2</span>
-            <p>50% restante al t&eacute;rmino de la capacitaci&oacute;n, contra entrega de materiales.</p>
-          </div>
-          <div class="pay-step">
-            <span class="circ">3</span>
-            <p>Se emite recibo por honorarios profesionales por el total del servicio.</p>
-          </div>
-          <div class="invest-note mono">Propuesta sujeta a confirmaci&oacute;n de fecha y disponibilidad del facilitador.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FACILITADOR -->
-  <section id="facilitador">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Facilitador</div>
-        <h2>Qui&eacute;n dicta la capacitaci&oacute;n</h2>
-      </div>
-      <div class="fac-wrap reveal">
-        <div class="fac-avatar">
-          <img src="imagen.png" alt="Foto del facilitador">
-        </div>
-        <div class="fac-info">
-          <h3 class="fac-name">Abg. Mg. Denis Gabriel Romani Seminario</h3>
-          <span class="fac-role">Especialista en Derecho Penal Econ&oacute;mico y Compliance</span>
-          <p>Abogado especialista en Compliance Penal, ALA/CFT e Investigaciones Financieras</p>
-          <p>Magister en Derecho Penal (PUCP) | M&aacute;ster en Cumplimiento Normativo Penal (UCLM, Espa&ntilde;a)</p>
-          <p>Ex analista principal de la Unidad de Inteligencia Financiera - PER&Uacute;</p>
-          <p>Especialista en Compliance y Oficial de Cumplimiento – ISO 37001:2021 (AENOR Latam / IPC)</p>
-          <div class="fac-tags">
-            <span>Derecho Penal Econ&oacute;mico</span>
-            <span>SPLAFT / LA-FT</span>
-            <span>Compliance corporativo</span>
-            <span>Litigio y asesor&iacute;a regulatoria</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="wrap">
-      <div class="contact reveal">
-        <div>
-          <div class="eyebrow" style="color:var(--gold-soft);">Siguiente paso</div>
-          <h2>Coordinemos la fecha</h2>
-          <p>Escriba a Denis Romani para confirmar disponibilidad o agende directamente.</p>
-        </div>
-        <div class="contact-actions">
-          <button class="btn btn-primary" id="openScheduler">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            Agendar cita
-          </button>
-          <a href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" class="btn btn-wa">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
-            +51 969 754 983
-          </a>
-          <a href="mailto:denis@romanicompliance.com?subject=Consulta%20-%20Propuesta%20SPLAFT%20Red%20Digital" class="btn btn-outline" style="border-color:rgba(246,244,236,0.4);color:var(--paper);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
-            denis@romanicompliance.com
-          </a>
-          <a href="https://raw.githubusercontent.com/romanicomplianceperu/cotizacion-redfigital/main/cotizacion.pdf" download="cotizacion.pdf" class="btn btn-gold">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-            Descargar cotizaci&oacute;n PDF
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
+  </div>
+</div>
+</section>
 
 <footer>
-  <div class="wrap foot-wrap">
-    <div class="foot-brand">
-      <img src="logos.png" alt="Romani Compliance">
-      <span>Romani Compliance — Derecho Penal Econ&oacute;mico &amp; Compliance</span>
-    </div>
-    <div class="foot-links">
-      <span>Cotizaci&oacute;n RC-SPLAFT-2026-001</span>
-      <span id="footYear"></span>
-    </div>
-  </div>
+  <p><strong>Romani Compliance</strong> &middot; Criminal Compliance &middot; ALA/CFT &middot; Investigaci&oacute;n Financiera</p>
+  <p style="margin-top:4px">dromani@pucp.pe &middot; +51 956 789 696</p>
 </footer>
 
-<div class="fab-group">
-  <a class="fab fab-wa" href="https://wa.me/51969754983?text=Hola%20Denis%2C%20quiero%20coordinar%20la%20capacitaci%C3%B3n%20SPLAFT%20para%20Red%20Digital." target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="#0E2238"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 004.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 01-1.26-4.4c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 012.41 5.81c0 4.54-3.7 8.26-8.24 8.26z"/></svg>
-  </a>
-  <a class="fab fab-mail" href="mailto:denis@romanicompliance.com?subject=Consulta%20-%20Propuesta%20SPLAFT%20Red%20Digital" aria-label="Correo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#F6F4EC" stroke-width="2"><path d="M4 6l8 7 8-7M4 6h16v12H4V6z"/></svg>
-  </a>
+<!-- MODAL AGENDAR -->
+<div class="modal-overlay" id="modalAgendar">
+<div class="modal">
+  <button class="modal-close" onclick="this.closest('.modal-overlay').classList.remove('active')">&times;</button>
+  <div id="formContent">
+    <h3>Agendar reuni&oacute;n de coordinaci&oacute;n</h3>
+    <label>Nombre completo</label>
+    <input type="text" id="agNombre" required>
+    <label>Correo electr&oacute;nico</label>
+    <input type="email" id="agEmail" required>
+    <label>Tel&eacute;fono</label>
+    <input type="tel" id="agTel">
+    <label>Fecha preferida</label>
+    <input type="date" id="agFecha">
+    <label>Horario preferido</label>
+    <select id="agHora">
+      <option value="09:00">09:00 a.m.</option>
+      <option value="10:00">10:00 a.m.</option>
+      <option value="11:00">11:00 a.m.</option>
+      <option value="14:00">02:00 p.m.</option>
+      <option value="15:00">03:00 p.m.</option>
+      <option value="16:00">04:00 p.m.</option>
+      <option value="17:00">05:00 p.m.</option>
+    </select>
+    <label>Plan de inter&eacute;s</label>
+    <select id="agPlan">
+      <option value="Plan Esencial (US$ 200)">Plan Esencial (US$ 200)</option>
+      <option value="Plan Avanzado (US$ 250)" selected>Plan Avanzado (US$ 250)</option>
+      <option value="Programa Blindaje 360 (a consultar)">Programa Blindaje 360 (a consultar)</option>
+    </select>
+    <label>Mensaje adicional</label>
+    <textarea id="agMsg" placeholder="Indique cualquier consulta o detalle adicional"></textarea>
+    <button class="btn-submit" onclick="enviarAgenda()">Enviar solicitud</button>
+  </div>
+  <div class="msg-ok" id="msgOk">Solicitud enviada correctamente. Nos pondremos en contacto a la brevedad.</div>
+</div>
 </div>
 
 <script>
-  // ---- Mobile menu ----
-  const burgerBtn = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  burgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+function toggleDetails(btn){
+  btn.classList.toggle('active');
+  const details=btn.nextElementSibling;
+  details.classList.toggle('open');
+}
 
-  // ---- Dates ----
-  const monthsEs = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-  function formatDate(d){ return d.getDate() + " de " + monthsEs[d.getMonth()] + " de " + d.getFullYear(); }
-  const today = new Date();
-  const valid = new Date(today.getTime() + 15*24*60*60*1000);
-  document.getElementById('issueDate').textContent = formatDate(today);
-  document.getElementById('validUntil').textContent = formatDate(valid);
-  document.getElementById('footYear').textContent = "\u00a9 " + today.getFullYear() + " Romani Compliance";
+// Scroll animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
+},{threshold:0.15});
+document.querySelectorAll('.anim').forEach(el=>observer.observe(el));
 
-  // ---- Accordion ----
-  document.querySelectorAll('.folio-head').forEach(head => {
-    head.addEventListener('click', () => {
-      const folio = head.parentElement;
-      const body = folio.querySelector('.folio-body');
-      const isOpen = folio.classList.contains('open');
-      document.querySelectorAll('.folio').forEach(f => {
-        f.classList.remove('open');
-        f.querySelector('.folio-body').style.maxHeight = null;
-      });
-      if(!isOpen){
-        folio.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + "px";
-      }
+async function enviarAgenda(){
+  const nombre=document.getElementById('agNombre').value;
+  const email=document.getElementById('agEmail').value;
+  const tel=document.getElementById('agTel').value;
+  const fecha=document.getElementById('agFecha').value;
+  const hora=document.getElementById('agHora').value;
+  const plan=document.getElementById('agPlan').value;
+  const msg=document.getElementById('agMsg').value;
+  if(!nombre||!email){alert('Complete nombre y correo.');return;}
+  const body=`Solicitud de agendamiento - Romani Compliance\n\nNombre: ${nombre}\nCorreo: ${email}\nTeléfono: ${tel}\nFecha preferida: ${fecha}\nHora: ${hora}\nPlan: ${plan}\nMensaje: ${msg}`;
+  try{
+    await fetch('https://formsubmit.co/ajax/omaroliden1@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name:nombre,email:email,message:body,_cc:'dromani@pucp.pe',_subject:'Agendamiento SPLAFT - Red Digital del Perú'})
     });
-  });
-
-  // ---- Scroll reveal ----
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
-  }, {threshold:0.15});
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  // ---- Counters ----
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-count'));
-        const suffix = el.getAttribute('data-suffix') || '';
-        let current = 0;
-        const duration = 1400;
-        const start = performance.now();
-        function tick(now){
-          const progress = Math.min((now - start)/duration, 1);
-          const eased = 1 - Math.pow(1-progress, 3);
-          current = Math.floor(eased * target);
-          el.textContent = current + suffix;
-          if(progress < 1){ requestAnimationFrame(tick); }
-          else { el.textContent = target + suffix; }
-        }
-        requestAnimationFrame(tick);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, {threshold:0.4});
-  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
-
-  // ---- Time distribution bar ----
-  const timebarObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.querySelectorAll('span[data-width]').forEach(s => {
-          s.style.width = s.getAttribute('data-width') + '%';
-        });
-        timebarObserver.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.5});
-  const timebarEl = document.getElementById('timebar');
-  if(timebarEl){ timebarObserver.observe(timebarEl); }
-
-  // ---- Scheduler Modal ----
-  const schedulerModal = document.getElementById('schedulerModal');
-  const schedulerForm = document.getElementById('schedulerForm');
-  const schedulerSuccess = document.getElementById('schedulerSuccess');
-
-  document.getElementById('openScheduler').addEventListener('click', openSchedulerFn);
-  document.getElementById('openSchedulerHero').addEventListener('click', openSchedulerFn);
-
-  function openSchedulerFn() {
-    schedulerModal.classList.add('open');
-    schedulerForm.style.display = 'block';
-    schedulerSuccess.style.display = 'none';
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const dateInput = document.getElementById('schedDate');
-    dateInput.min = tomorrow.toISOString().split('T')[0];
-    const suggested = new Date();
-    suggested.setDate(suggested.getDate() + 3);
-    while(suggested.getDay() === 0 || suggested.getDay() === 6){ suggested.setDate(suggested.getDate() + 1); }
-    dateInput.value = suggested.toISOString().split('T')[0];
+    document.getElementById('formContent').style.display='none';
+    document.getElementById('msgOk').style.display='block';
+  }catch(e){
+    alert('Error al enviar. Intente por WhatsApp.');
   }
-
-  document.getElementById('closeScheduler').addEventListener('click', () => {
-    schedulerModal.classList.remove('open');
-  });
-  document.getElementById('closeSuccess').addEventListener('click', () => {
-    schedulerModal.classList.remove('open');
-  });
-  schedulerModal.addEventListener('click', (e) => {
-    if(e.target === schedulerModal) schedulerModal.classList.remove('open');
-  });
-
-  // Time slot selection
-  document.querySelectorAll('.time-slot').forEach(slot => {
-    slot.addEventListener('click', () => {
-      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-      slot.classList.add('selected');
-      document.getElementById('hiddenTime').value = slot.getAttribute('data-time') + ' hrs';
-    });
-  });
-
-  // Submit scheduler via FormSubmit
-  document.getElementById('schedFormEl').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const selectedSlot = document.querySelector('.time-slot.selected');
-    if(!selectedSlot){
-      alert('Seleccione un horario preferido.');
-      return;
-    }
-    const btnText = document.getElementById('btnText');
-    btnText.textContent = 'Enviando...';
-    document.getElementById('submitSchedule').disabled = true;
-
-    fetch(this.action, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({
-        Nombre: document.getElementById('schedName').value,
-        Correo: document.getElementById('schedEmail').value,
-        Fecha: document.getElementById('schedDate').value,
-        Horario: document.getElementById('hiddenTime').value,
-        Comentarios: document.getElementById('schedNotes').value || '(sin comentarios)',
-        _subject: 'Solicitud de agendamiento - Capacitacion SPLAFT Red Digital',
-        _cc: 'dromani@pucp.pe',
-        _template: 'table'
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      schedulerForm.style.display = 'none';
-      schedulerSuccess.style.display = 'block';
-    })
-    .catch(error => {
-      btnText.textContent = 'Confirmar solicitud';
-      document.getElementById('submitSchedule').disabled = false;
-      alert('Hubo un error al enviar. Intente de nuevo o escriba directamente por WhatsApp.');
-    });
-  });
+}
 </script>
-
 </body>
 </html>
